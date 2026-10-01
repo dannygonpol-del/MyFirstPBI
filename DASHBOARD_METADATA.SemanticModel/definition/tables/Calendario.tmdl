@@ -1,0 +1,90 @@
+table Calendario
+	lineageTag: f4df4d28-ace2-4703-a9f8-ec2a9b54cf02
+	dataCategory: Time
+
+	column Date
+		isUnique
+		formatString: General Date
+		lineageTag: 447e04d6-036f-4708-a46b-e12bcdc12561
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Date]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Año
+		formatString: 0
+		lineageTag: 1f095ad8-c9d7-4f11-8331-c270b9325589
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Año]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Mes
+		lineageTag: 8baf6f49-2c69-4c7c-82b4-c3ce88f45947
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Mes]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Trimestre
+		lineageTag: 36de7e9f-ff4c-4156-9c17-eab6d173045d
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Trimestre]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Mes Número'
+		formatString: 0
+		lineageTag: 2d95a0da-ae8d-434e-b3cd-0113346956ea
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Mes Número]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Día
+		formatString: 0
+		lineageTag: a5387911-dd57-4e2c-81fd-58f926879c50
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Día]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Día Semana'
+		lineageTag: 7d1fde63-4e84-4434-81c9-c3683512e350
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Día Semana]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Año-Mes
+		lineageTag: 1f47bf9a-64f1-4485-a4e3-6463d0bca95c
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Año-Mes]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Calendario = calculated
+		mode: import
+		source =
+				VAR FechaInicio = min('data del mes'[Fecha])
+				VAR FechaFin = DATE(YEAR(TODAY())+1,12,31)
+				RETURN
+				ADDCOLUMNS(
+				    CALENDAR(FechaInicio, FechaFin),
+				    "Año", YEAR([Date]),
+				    "Mes", FORMAT([Date], "MMMM"),
+				    "Mes Número", MONTH([Date]),
+				    "Trimestre", "Q" & FORMAT([Date], "Q"),
+				    "Día", DAY([Date]),
+				    "Día Semana", FORMAT([Date], "dddd"),
+				    "Año-Mes", FORMAT([Date], "YYYY-MM")
+				)
+

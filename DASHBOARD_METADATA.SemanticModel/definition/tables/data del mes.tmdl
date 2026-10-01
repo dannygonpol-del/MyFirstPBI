@@ -1,0 +1,359 @@
+table 'data del mes'
+	lineageTag: fb76c0a3-2f10-4dcb-9c34-2ec58b268ff2
+
+	/// Total de gestiones realizadas
+	measure 'Total Gestiones' = SUM('data del mes'[CantGestiones])
+		formatString: #,##0
+		lineageTag: 9dcf179a-5153-4655-ae21-ced908b2aef3
+
+	/// Total de clientes gestionados
+	measure 'Total Clientes' = SUM('data del mes'[CantClientes])
+		formatString: #,##0
+		lineageTag: 0dd0b05d-c018-4290-9ff1-cacbdfd217c5
+
+	/// Total de contactos efectivos
+	measure 'Total Contactos' = SUM('data del mes'[Contacto])
+		formatString: #,##0
+		lineageTag: 6275533e-04ef-4b4d-823d-21e706494028
+
+	/// Porcentaje de contacto sobre clientes
+	measure 'Tasa Contacto %' = DIVIDE([Total Contactos], [Total Clientes], 0)
+		formatString: 0.00%
+		lineageTag: 42955db0-f928-4270-8fd3-72322085785b
+
+	/// Monto total cobrado en pesos dominicanos
+	measure 'Total Cobrado RD$' = SUM('data del mes'[MontoCobradoRD])
+		formatString: #,##0.00
+		lineageTag: feb04286-57e5-4e14-aecb-5d47f94130ec
+
+	/// Monto total cobrado en dólares
+	measure 'Total Cobrado US$' = SUM('data del mes'[MontoCobradoUS])
+		formatString: #,##0.00
+		lineageTag: 993a542c-0857-449c-9875-f1da5e5d971c
+
+	/// Total de promesas de pago
+	measure 'Total Promesas' = SUM('data del mes'[CantPromesa])
+		formatString: #,##0
+		lineageTag: 98202d8e-6ff9-4b87-afbc-15432efa8b90
+
+	/// Promedio de gestiones por gestor
+	measure 'Promedio Gestiones x Gestor' = AVERAGEX(VALUES('data del mes'[Gestor]), [Total Gestiones])
+		formatString: #,##0.0
+		lineageTag: ea813c12-5242-4835-b8b4-4b0d9ee10e81
+
+	/// Número de gestores con actividad en el período
+	measure 'Gestores Activos' = DISTINCTCOUNT('data del mes'[Gestor])
+		formatString: #,##0
+		lineageTag: 92473eda-eca4-497b-9569-f64a33192982
+
+	/// Porcentaje del monto cobrado vs el monto asignado
+	measure 'Cobrado vs Asignado %' = DIVIDE([Total Cobrado RD$], SUM(Gestores[MontoAsignado]), 0)
+		formatString: 0.00%
+		lineageTag: 7be45716-3102-43b7-9aee-896e030e0ca7
+
+	measure 'Monto Cobrado RD' = SUM('data del mes'[MontoCobradoRD])
+		lineageTag: 60473687-4c37-40e6-9dfd-b5395dad1419
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	/// Proyección de cobros para Abril 2026 por unidad usando regresión lineal sobre histórico Ene-Mar 2026
+	measure 'Predicción Cobro Abr 2026' =
+			VAR _Unidad = SELECTEDVALUE(Gestores[IdUnidad], "TODAS")
+			VAR _CC1_Pred  = 0
+			VAR _CC2_Pred  = 3097129.27
+			VAR _CC3_Pred  = 15900000.00
+			VAR _CC4_Pred  = 36127872.76
+			VAR _SWAT_Pred = 1822385.04
+			VAR _LEGAL_Pred = 0
+			VAR _Total = _CC1_Pred + _CC2_Pred + _CC3_Pred + _CC4_Pred + _SWAT_Pred + _LEGAL_Pred
+			RETURN
+			    SWITCH(
+			        _Unidad,
+			        "CC1",   _CC1_Pred,
+			        "CC2",   _CC2_Pred,
+			        "CC3",   _CC3_Pred,
+			        "CC4",   _CC4_Pred,
+			        "SWAT",  _SWAT_Pred,
+			        "LEGAL", _LEGAL_Pred,
+			        _Total
+			    )
+		formatString: RD$ #,##0.00
+		displayFolder: 📈 Predicciones
+		lineageTag: 7035c027-dd00-4e96-8c6c-93f6de437fad
+
+	/// Proyección de cobros para Mayo 2026 por unidad usando regresión lineal sobre histórico Ene-Mar 2026
+	measure 'Predicción Cobro May 2026' =
+			VAR _Unidad = SELECTEDVALUE(Gestores[IdUnidad], "TODAS")
+			VAR _CC1_Pred  = 0
+			VAR _CC2_Pred  = 4258552.74
+			VAR _CC3_Pred  = 23850000.00
+			VAR _CC4_Pred  = 48812825.46
+			VAR _SWAT_Pred = 2733577.56
+			VAR _LEGAL_Pred = 0
+			VAR _Total = _CC1_Pred + _CC2_Pred + _CC3_Pred + _CC4_Pred + _SWAT_Pred + _LEGAL_Pred
+			RETURN
+			    SWITCH(
+			        _Unidad,
+			        "CC1",   _CC1_Pred,
+			        "CC2",   _CC2_Pred,
+			        "CC3",   _CC3_Pred,
+			        "CC4",   _CC4_Pred,
+			        "SWAT",  _SWAT_Pred,
+			        "LEGAL", _LEGAL_Pred,
+			        _Total
+			    )
+		formatString: RD$ #,##0.00
+		displayFolder: 📈 Predicciones
+		lineageTag: bffddc27-3f77-4a0b-b082-4eff57ef44cb
+
+	/// Proyección de cobros para Junio 2026 por unidad usando regresión lineal sobre histórico Ene-Mar 2026
+	measure 'Predicción Cobro Jun 2026' =
+			VAR _Unidad = SELECTEDVALUE(Gestores[IdUnidad], "TODAS")
+			VAR _CC1_Pred  = 0
+			VAR _CC2_Pred  = 5419976.22
+			VAR _CC3_Pred  = 31800000.00
+			VAR _CC4_Pred  = 61497778.17
+			VAR _SWAT_Pred = 3644770.08
+			VAR _LEGAL_Pred = 0
+			VAR _Total = _CC1_Pred + _CC2_Pred + _CC3_Pred + _CC4_Pred + _SWAT_Pred + _LEGAL_Pred
+			RETURN
+			    SWITCH(
+			        _Unidad,
+			        "CC1",   _CC1_Pred,
+			        "CC2",   _CC2_Pred,
+			        "CC3",   _CC3_Pred,
+			        "CC4",   _CC4_Pred,
+			        "SWAT",  _SWAT_Pred,
+			        "LEGAL", _LEGAL_Pred,
+			        _Total
+			    )
+		formatString: RD$ #,##0.00
+		displayFolder: 📈 Predicciones
+		lineageTag: 08af8f68-8ab9-4de8-9f2a-7ddab03f530f
+
+	/// Suma total de cobros predichos para Abr, May y Jun 2026
+	measure 'Total Predicción 3 Meses' =
+			VAR _Unidad = SELECTEDVALUE(Gestores[IdUnidad], "TODAS")
+			VAR _CC1  = 0
+			VAR _CC2  = 3097129.27 + 4258552.74 + 5419976.22
+			VAR _CC3  = 15900000 + 23850000 + 31800000
+			VAR _CC4  = 36127872.76 + 48812825.46 + 61497778.17
+			VAR _SWAT = 1822385.04 + 2733577.56 + 3644770.08
+			VAR _LEGAL = 0
+			VAR _Total = _CC1 + _CC2 + _CC3 + _CC4 + _SWAT + _LEGAL
+			RETURN
+			    SWITCH(
+			        _Unidad,
+			        "CC1",   _CC1,
+			        "CC2",   _CC2,
+			        "CC3",   _CC3,
+			        "CC4",   _CC4,
+			        "SWAT",  _SWAT,
+			        "LEGAL", _LEGAL,
+			        _Total
+			    )
+		formatString: RD$ #,##0.00
+		displayFolder: 📈 Predicciones
+		lineageTag: 0324acdd-3e08-43b0-b668-86cdb73a9d8a
+
+	/// Pendiente de la regresión lineal: incremento promedio de cobros por mes por unidad
+	measure 'Tendencia Cobro (RD$/mes)' =
+			VAR _Unidad = SELECTEDVALUE(Gestores[IdUnidad], "TODAS")
+			RETURN
+			    SWITCH(
+			        _Unidad,
+			        "CC1",   -1724477.12,
+			        "CC2",    1161423.47,
+			        "CC3",    7950000.00,
+			        "CC4",   12684952.70,
+			        "SWAT",    911192.52,
+			        "LEGAL",         0,
+			        BLANK()
+			    )
+		formatString: RD$ #,##0.00
+		displayFolder: 📈 Predicciones
+		lineageTag: 7596ed2d-a501-4741-83b0-b92717864d5d
+
+	/// Coeficiente de determinación del modelo de regresión lineal por unidad (1.0 = ajuste perfecto)
+	measure 'R² Ajuste Modelo' =
+			VAR _Unidad = SELECTEDVALUE(Gestores[IdUnidad], "TODAS")
+			RETURN
+			    SWITCH(
+			        _Unidad,
+			        "CC1",   1.0000,
+			        "CC2",   0.7500,
+			        "CC3",   1.0000,
+			        "CC4",   0.9353,
+			        "SWAT",  1.0000,
+			        "LEGAL", 1.0000,
+			        BLANK()
+			    )
+		formatString: 0.0000
+		displayFolder: 📈 Predicciones
+		lineageTag: da0def4d-43f6-442a-a9cf-6188b5863353
+
+	/// Variación porcentual entre la predicción de Abril 2026 y el cobro real de Marzo 2026
+	measure '% Crecimiento Predicho vs Actual' =
+			VAR _Unidad = SELECTEDVALUE(Gestores[IdUnidad], "TODAS")
+			VAR _AbrPred = [Predicción Cobro Abr 2026]
+			VAR _MarActual =
+			    CALCULATE(
+			        SUM('data del mes'[MontoCobradoRD]),
+			        'data del mes'[Fecha] = DATE(2026, 3, 31)
+			    )
+			RETURN
+			    IF(
+			        _MarActual <> 0,
+			        DIVIDE(_AbrPred - _MarActual, _MarActual),
+			        BLANK()
+			    )
+		formatString: 0.00%
+		displayFolder: 📈 Predicciones
+		lineageTag: 4c6c6566-46df-456f-9a00-222f2d734df5
+
+	measure NombreGestor =
+			UPPER(LEFT(Gestores[CodigoGestor],1)) &
+			LOWER(MID(Gestores[CodigoGestor],2,LEN(Gestores[CodigoGestor])))
+		lineageTag: ca7ce9cf-8330-4acc-a79b-d78038d9c23c
+
+	column Gestor
+		dataType: string
+		lineageTag: 36c9ae77-0e56-4da8-afda-f53590bf6401
+		summarizeBy: none
+		sourceColumn: Gestor
+
+		annotation SummarizationSetBy = Automatic
+
+	column Fecha
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 7c16789e-fa69-408c-8989-5e1a2df4a3d7
+		summarizeBy: none
+		sourceColumn: Fecha
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column CantGestiones
+		dataType: int64
+		formatString: 0
+		lineageTag: 5f50efa7-fb6a-42f2-a0d6-34c95d93d14c
+		summarizeBy: sum
+		sourceColumn: CantGestiones
+
+		annotation SummarizationSetBy = Automatic
+
+	column CantClientes
+		dataType: int64
+		formatString: 0
+		lineageTag: 372e3de4-b678-4a7c-aeac-7c493ed126a7
+		summarizeBy: sum
+		sourceColumn: CantClientes
+
+		annotation SummarizationSetBy = Automatic
+
+	column Contacto
+		dataType: int64
+		formatString: 0
+		lineageTag: 2fd5760a-d93e-4304-8dcf-3ee51555dc03
+		summarizeBy: sum
+		sourceColumn: Contacto
+
+		annotation SummarizationSetBy = Automatic
+
+	column CantLlamadaPend
+		dataType: int64
+		formatString: 0
+		lineageTag: 20044a64-5012-49c5-9e3d-1b8145e38844
+		summarizeBy: sum
+		sourceColumn: CantLlamadaPend
+
+		annotation SummarizationSetBy = Automatic
+
+	column CantPromesa
+		dataType: int64
+		formatString: 0
+		lineageTag: fe6dae65-5906-4b35-b671-f45be7dc26ce
+		summarizeBy: sum
+		sourceColumn: CantPromesa
+
+		annotation SummarizationSetBy = Automatic
+
+	column MontoCobradoRD
+		dataType: double
+		lineageTag: 29717742-78ea-44a2-88a5-f01891bda159
+		summarizeBy: sum
+		sourceColumn: MontoCobradoRD
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column MontoCobradoUS
+		dataType: string
+		lineageTag: c004f575-faf8-4855-b962-bba2cf54a070
+		summarizeBy: none
+		sourceColumn: MontoCobradoUS
+
+		annotation SummarizationSetBy = Automatic
+
+	column CantCartas
+		dataType: int64
+		formatString: 0
+		lineageTag: 9aba4502-1d37-4b03-b1bf-b4c3e633c42d
+		summarizeBy: sum
+		sourceColumn: CantCartas
+
+		annotation SummarizationSetBy = Automatic
+
+	column CantOrigenPLL
+		dataType: string
+		lineageTag: 0e81b368-9699-4231-bdd8-05d1a830d04e
+		summarizeBy: none
+		sourceColumn: CantOrigenPLL
+
+		annotation SummarizationSetBy = Automatic
+
+	column CantHoras
+		dataType: int64
+		formatString: 0
+		lineageTag: eae967c4-639d-448f-8956-a6891f3340a8
+		summarizeBy: sum
+		sourceColumn: CantHoras
+
+		annotation SummarizationSetBy = Automatic
+
+	column MostrarEstadistica
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 1de2a54c-8b65-471a-a588-ab01b1c7f53f
+		summarizeBy: none
+		sourceColumn: MostrarEstadistica
+
+		annotation SummarizationSetBy = Automatic
+
+	column Descanso
+		dataType: int64
+		formatString: 0
+		lineageTag: d310453c-7eba-4c7d-8645-22d3360035bf
+		summarizeBy: sum
+		sourceColumn: Descanso
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'data del mes' = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(File.Contents("C:\Users\ACER ASPIRE i7\Documents\DANNY_GP\CARPETA_TRABAJOS\BLANCHE_BI\ArchivoExcel\METADATA.xlsx"), null, true),
+				    #"data del mes_Sheet" = Source{[Item="data del mes",Kind="Sheet"]}[Data],
+				    #"Promoted Headers" = Table.PromoteHeaders(#"data del mes_Sheet", [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"Gestor", type text}, {"Fecha", type date}, {"CantGestiones", Int64.Type}, {"CantClientes", Int64.Type}, {"Contacto", Int64.Type}, {"CantLlamadaPend", Int64.Type}, {"CantPromesa", Int64.Type}, {"MontoCobradoRD", type number}, {"MontoCobradoUS", type any}, {"CantCartas", Int64.Type}, {"CantOrigenPLL", type any}, {"CantHoras", Int64.Type}, {"MostrarEstadistica", type logical}, {"Descanso", Int64.Type}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

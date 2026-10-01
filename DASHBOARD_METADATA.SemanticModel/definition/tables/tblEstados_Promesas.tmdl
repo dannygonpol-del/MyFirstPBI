@@ -1,0 +1,12 @@
+table tblEstados_Promesas
+	lineageTag: c318aef2-95be-4472-96d6-ab7f84b2fed6
+
+	column Estados
+		lineageTag: fd5d12d2-2397-4b49-a0f7-9203f2600910
+		isNameInferred
+		sourceColumn: [Estados]
+
+	partition tblEstados_Promesas = calculated
+		mode: import
+		source = DATATABLE("Estados", STRING, {{"Cumplida"}, {"Incumplida"}, {"Pendiente"}, {"Vencida"}})
+

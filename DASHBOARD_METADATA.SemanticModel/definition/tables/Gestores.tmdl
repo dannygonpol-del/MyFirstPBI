@@ -1,0 +1,62 @@
+table Gestores
+	lineageTag: 2290e9f1-914d-473e-9b08-8a15cfb2e390
+
+	measure Narrativa = ```
+			
+			VAR TopUnidad = 
+			    TOPN(1, SUMMARIZE('Unidades', 'Unidades'[idUnidad], "Monto", SUM('data del mes'[Gestor])), [Monto], DESC)
+			
+			VAR NombreTop = MAXX(TopUnidad, 'Unidades'[idUnidad])
+			VAR MontoTop = MAXX(TopUnidad, [Monto])
+			
+			RETURN
+			"El mayor aporte proviene de " & NombreTop & 
+			" con RD$" & FORMAT(MontoTop, "#,##0") & 
+			", representando la mayor concentración de ingresos. Existen unidades con baja o nula rentabilidad que requieren revisión."
+			```
+		formatString: 0
+		lineageTag: 920a1dad-e432-4b90-a052-719a31d0f8aa
+
+	measure CodigoGestor =
+			
+			SELECTEDVALUE(Gestores[Gestores])
+		lineageTag: ee814f8a-a24a-45fb-b037-9f62d739bb03
+
+	column Gestores
+		dataType: string
+		lineageTag: 58bd54b9-7b44-4dd5-8154-b9f395da2914
+		summarizeBy: none
+		sourceColumn: Gestores
+
+		annotation SummarizationSetBy = Automatic
+
+	column MontoAsignado
+		dataType: int64
+		formatString: 0
+		lineageTag: 2770fcad-1954-40f6-a6ec-6e559fb57d2a
+		summarizeBy: sum
+		sourceColumn: MontoAsignado
+
+		annotation SummarizationSetBy = Automatic
+
+	column IdUnidad
+		dataType: string
+		lineageTag: c87a1221-b696-4b28-9ae8-ac07e1ae71df
+		summarizeBy: none
+		sourceColumn: IdUnidad
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Gestores = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(File.Contents("C:\Users\ACER ASPIRE i7\Documents\DANNY_GP\CARPETA_TRABAJOS\BLANCHE_BI\ArchivoExcel\METADATA.xlsx"), null, true),
+				    Gestores_Sheet = Source{[Item="Gestores",Kind="Sheet"]}[Data],
+				    #"Promoted Headers" = Table.PromoteHeaders(Gestores_Sheet, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"Gestores", type text}, {"MontoAsignado", Int64.Type}, {"IdUnidad", type text}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_ResultType = Table
+

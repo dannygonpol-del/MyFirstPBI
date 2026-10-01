@@ -1,0 +1,14 @@
+relationship Gestores_IdUnidad_Unidades_IdUnidad
+	fromColumn: Gestores.IdUnidad
+	toColumn: Unidades.IdUnidad
+
+relationship b552fa85-2638-ea5f-7cd3-edf4d1541988
+	crossFilteringBehavior: bothDirections
+	fromCardinality: one
+	fromColumn: 'data del mes'.Gestor
+	toColumn: Gestores.Gestores
+
+relationship a3fe0fb5-c2d0-5269-fe58-2115423fec98
+	fromColumn: 'data del mes'.Fecha
+	toColumn: Calendario.Date
+

@@ -1,0 +1,3337 @@
+cultureInfo en-US
+
+	linguisticMetadata =
+			{
+			  "Version": "4.1.0",
+			  "Language": "en-US",
+			  "Entities": {
+			    "data_del_me": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "data del mes"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "data del me": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "information del me": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.609
+			          }
+			        },
+			        {
+			          "fact del me": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.609
+			          }
+			        },
+			        {
+			          "info del me": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.609
+			          }
+			        },
+			        {
+			          "statistic del me": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.609
+			          }
+			        },
+			        {
+			          "document del me": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        },
+			        {
+			          "figure del me": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        },
+			        {
+			          "record del me": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        }
+			      ]
+			    },
+			    "data_del_me.total_gestiones": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "data del mes",
+			          "ConceptualProperty": "Total Gestiones"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "total gestiones": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "aggregate gestione": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
+			          }
+			        },
+			        {
+			          "overall gestione": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
+			          }
+			        }
+			      ]
+			    },
+			    "data_del_me.total_clientes": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "data del mes",
+			          "ConceptualProperty": "Total Clientes"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "total clientes": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "aggregate cliente": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
+			          }
+			        },
+			        {
+			          "overall cliente": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
+			          }
+			        }
+			      ]
+			    },
+			    "data_del_me.total_contactos": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "data del mes",
+			          "ConceptualProperty": "Total Contactos"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "total contactos": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "aggregate contacto": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
+			          }
+			        },
+			        {
+			          "overall contacto": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
+			          }
+			        }
+			      ]
+			    },
+			    "data_del_me.tasa_contacto_": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "data del mes",
+			          "ConceptualProperty": "Tasa Contacto %"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "tasa contacto %": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "tasa contacto percentage": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.762
+			          }
+			        },
+			        {
+			          "tasa contacto pct": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.739
+			          }
+			        }
+			      ]
+			    },
+			    "data_del_me.total_cobrado_RD": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "data del mes",
+			          "ConceptualProperty": "Total Cobrado RD$"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "total cobrado RD$": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "total cobrado rd dollar": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.771
+			          }
+			        },
+			        {
+			          "aggregate cobrado rd$": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.599
+			          }
+			        },
+			        {
+			          "overall cobrado rd$": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.599
+			          }
+			        }
+			      ]
+			    },
+			    "data_del_me.total_cobrado_US": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "data del mes",
+			          "ConceptualProperty": "Total Cobrado US$"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "total cobrado US$": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "total cobrado us dollar": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.771
+			          }
+			        },
+			        {
+			          "aggregate cobrado us$": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.599
+			          }
+			        },
+			        {
+			          "overall cobrado us$": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.599
+			          }
+			        }
+			      ]
+			    },
+			    "data_del_me.total_promesas": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "data del mes",
+			          "ConceptualProperty": "Total Promesas"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "total promesas": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "aggregate promesa": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
+			          }
+			        },
+			        {
+			          "overall promesa": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
+			          }
+			        }
+			      ]
+			    },
+			    "data_del_me.promedio_gestiones_x_gestor": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "data del mes",
+			          "ConceptualProperty": "Promedio Gestiones x Gestor"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "promedio gestiones x gestor": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "data_del_me.gestores_activos": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "data del mes",
+			          "ConceptualProperty": "Gestores Activos"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "gestores activos": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "data_del_me.cobrado_vs_asignado_": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "data del mes",
+			          "ConceptualProperty": "Cobrado vs Asignado %"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "cobrado vs asignado %": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "cobrado vs asignado percentage": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.771
+			          }
+			        },
+			        {
+			          "cobrado vs asignado pct": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.748
+			          }
+			        }
+			      ]
+			    },
+			    "data_del_me.monto_cobrado_RD1": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "data del mes",
+			          "ConceptualProperty": "Monto Cobrado RD"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "monto cobrado RD": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "Cobros": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        },
+			        {
+			          "Monto Cobrado": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "gestore": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Gestores"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "gestore": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "gestore.gestore": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Gestores",
+			          "ConceptualProperty": "Gestores"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "gestore": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "gestore name": {
+			            "State": "Generated"
+			          }
+			        }
+			      ],
+			      "NameType": "Name"
+			    },
+			    "gestore.monto_asignado": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Gestores",
+			          "ConceptualProperty": "MontoAsignado"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "monto asignado": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "MontoAsignado": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "gestore.id_unidad": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Gestores",
+			          "ConceptualProperty": "IdUnidad"
+			        }
+			      },
+			      "State": "Generated",
+			      "Visibility": {
+			        "Value": "Hidden"
+			      },
+			      "Terms": [
+			        {
+			          "id unidad": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "IdUnidad": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "identification unidad": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.6
+			          }
+			        },
+			        {
+			          "identity unidad": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.6
+			          }
+			        },
+			        {
+			          "identifier unidad": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.6
+			          }
+			        },
+			        {
+			          "credential unidad": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
+			          }
+			        },
+			        {
+			          "Unidades": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "unidade": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Unidades"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "unidade": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "unidade.id_unidad": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Unidades",
+			          "ConceptualProperty": "IdUnidad"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "id unidad": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "IdUnidad": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "identification unidad": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.6
+			          }
+			        },
+			        {
+			          "identity unidad": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.6
+			          }
+			        },
+			        {
+			          "identifier unidad": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.6
+			          }
+			        },
+			        {
+			          "credential unidad": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
+			          }
+			        },
+			        {
+			          "Unidad": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "calendario": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Calendario"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "calendario": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "calendario.date": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Calendario",
+			          "ConceptualProperty": "Date"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "date": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "moment": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.736
+			          }
+			        },
+			        {
+			          "period": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.714
+			          }
+			        }
+			      ],
+			      "SemanticType": "Time"
+			    },
+			    "calendario.año": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Calendario",
+			          "ConceptualProperty": "Año"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "año": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "calendario.me": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Calendario",
+			          "ConceptualProperty": "Mes"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "me": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "calendario.trimestre": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Calendario",
+			          "ConceptualProperty": "Trimestre"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "trimestre": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "data_del_me.predicción_cobro_abr_2026": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "data del mes",
+			          "ConceptualProperty": "Predicción Cobro Abr 2026"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "predicción cobro abr 2026": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "Abr 2026": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "data_del_me.predicción_cobro_may_2026": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "data del mes",
+			          "ConceptualProperty": "Predicción Cobro May 2026"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "predicción cobro may 2026": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "May 2026": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "data_del_me.predicción_cobro_jun_2026": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "data del mes",
+			          "ConceptualProperty": "Predicción Cobro Jun 2026"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "predicción cobro jun 2026": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "Jun 2026": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "data_del_me.total_predicción_3_meses": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "data del mes",
+			          "ConceptualProperty": "Total Predicción 3 Meses"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "total predicción 3 meses": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "aggregate predicción 3 mese": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.599
+			          }
+			        },
+			        {
+			          "overall predicción 3 mese": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.599
+			          }
+			        },
+			        {
+			          "Total": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "data_del_me.tendencia_cobro_RD_mes": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "data del mes",
+			          "ConceptualProperty": "Tendencia Cobro (RD$/mes)"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "tendencia cobro (RD$/mes)": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "tendencia cobro": {
+			            "State": "Generated",
+			            "Weight": 0.75
+			          }
+			        },
+			        {
+			          "tendencia cobro (RD$": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "tendencia cobro ( RD $ mes )": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "mes)": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "tendencia cobro (rd dollar": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.78
+			          }
+			        }
+			      ]
+			    },
+			    "data_del_me.r_ajuste_modelo": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "data del mes",
+			          "ConceptualProperty": "R² Ajuste Modelo"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "r² ajuste modelo": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "data_del_me.crecimiento_predicho_vs_actual": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "data del mes",
+			          "ConceptualProperty": "% Crecimiento Predicho vs Actual"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "% crecimiento predicho vs actual": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "% crecimiento predicho vs real": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.757
+			          }
+			        },
+			        {
+			          "% crecimiento predicho vs existent": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.757
+			          }
+			        },
+			        {
+			          "% crecimiento predicho vs tangible": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.757
+			          }
+			        },
+			        {
+			          "percentage crecimiento predicho vs actual": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.624
+			          }
+			        },
+			        {
+			          "pct crecimiento predicho vs actual": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.605
+			          }
+			        }
+			      ]
+			    },
+			    "data_del_me.gestor": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "data del mes",
+			          "ConceptualProperty": "Gestor"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "gestor": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "data_del_me.fecha": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "data del mes",
+			          "ConceptualProperty": "Fecha"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "fecha": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "date": {
+			            "State": "Generated",
+			            "Weight": 0.7
+			          }
+			        }
+			      ],
+			      "SemanticType": "Time"
+			    },
+			    "data_del_me.cant_gestione": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "data del mes",
+			          "ConceptualProperty": "CantGestiones"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "cant gestione": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "CantGestiones": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "data_del_me.cant_cliente": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "data del mes",
+			          "ConceptualProperty": "CantClientes"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "cant cliente": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "CantClientes": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "data_del_me.contacto": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "data del mes",
+			          "ConceptualProperty": "Contacto"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "contacto": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "data_del_me.cant_llamada_pend": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "data del mes",
+			          "ConceptualProperty": "CantLlamadaPend"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "cant llamada pend": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "CantLlamadaPend": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "data_del_me.cant_promesa": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "data del mes",
+			          "ConceptualProperty": "CantPromesa"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "cant promesa": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "CantPromesa": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "data_del_me.monto_cobrado_RD": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "data del mes",
+			          "ConceptualProperty": "MontoCobradoRD"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "monto cobrado RD": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "MontoCobradoRD": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "data_del_me.monto_cobrado_US": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "data del mes",
+			          "ConceptualProperty": "MontoCobradoUS"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "monto cobrado US": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "MontoCobradoUS": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "data_del_me.cant_carta": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "data del mes",
+			          "ConceptualProperty": "CantCartas"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "cant carta": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "CantCartas": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "data_del_me.cant_origen_PLL": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "data del mes",
+			          "ConceptualProperty": "CantOrigenPLL"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "cant origen PLL": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "CantOrigenPLL": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "PLL": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "origen PLL": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        }
+			      ]
+			    },
+			    "data_del_me.cant_hora": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "data del mes",
+			          "ConceptualProperty": "CantHoras"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "cant hora": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "CantHoras": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "data_del_me.mostrar_estadistica": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "data del mes",
+			          "ConceptualProperty": "MostrarEstadistica"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "mostrar estadistica": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "MostrarEstadistica": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "data_del_me.descanso": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "data del mes",
+			          "ConceptualProperty": "Descanso"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "descanso": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "gestore.narrativa": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Gestores",
+			          "ConceptualProperty": "Narrativa"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "narrativa": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "unidade.monto_meta": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Unidades",
+			          "ConceptualProperty": "Monto_Meta"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "monto meta": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "Monto_Meta": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "meta": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        }
+			      ]
+			    }
+			  },
+			  "Relationships": {
+			    "gestore_has_unidade": {
+			      "Binding": {
+			        "ConceptualEntity": "Gestores"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "gestore": {
+			          "Target": {
+			            "Entity": "gestore"
+			          }
+			        },
+			        "unidade": {
+			          "Target": {
+			            "Entity": "unidade"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "gestore"
+			            },
+			            "Object": {
+			              "Role": "unidade"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "gestores_have_unidades"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "unidade"
+			            },
+			            "Object": {
+			              "Role": "gestore"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "unidades_have_gestores"
+			        }
+			      ]
+			    },
+			    "data_del_me_has_calendario": {
+			      "Binding": {
+			        "ConceptualEntity": "data del mes"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "data_del_me": {
+			          "Target": {
+			            "Entity": "data_del_me"
+			          }
+			        },
+			        "calendario": {
+			          "Target": {
+			            "Entity": "calendario"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "data_del_me"
+			            },
+			            "Object": {
+			              "Role": "calendario"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "data_del_me_have_calendarios"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "calendario"
+			            },
+			            "Object": {
+			              "Role": "data_del_me"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "calendarios_have_data_del_me"
+			        }
+			      ]
+			    },
+			    "data_del_me_has_gestore": {
+			      "Binding": {
+			        "ConceptualEntity": "data del mes"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "data_del_me": {
+			          "Target": {
+			            "Entity": "data_del_me"
+			          }
+			        },
+			        "gestore": {
+			          "Target": {
+			            "Entity": "gestore"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "data_del_me"
+			            },
+			            "Object": {
+			              "Role": "gestore"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "data_del_me_have_gestores"
+			        }
+			      ]
+			    },
+			    "unidade_has_monto_meta": {
+			      "Binding": {
+			        "ConceptualEntity": "Unidades"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "unidade": {
+			          "Target": {
+			            "Entity": "unidade"
+			          }
+			        },
+			        "unidade.monto_meta": {
+			          "Target": {
+			            "Entity": "unidade.monto_meta"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "unidade"
+			            },
+			            "Object": {
+			              "Role": "unidade.monto_meta"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "unidades_have_monto_meta"
+			        }
+			      ]
+			    },
+			    "data_del_me_has_gestore_narrativa": {
+			      "Binding": {
+			        "ConceptualEntity": "data del mes"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "data_del_me": {
+			          "Target": {
+			            "Entity": "data_del_me"
+			          }
+			        },
+			        "gestore.narrativa": {
+			          "Target": {
+			            "Entity": "gestore.narrativa"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "data_del_me"
+			            },
+			            "Object": {
+			              "Role": "gestore.narrativa"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "data_del_me_have_narrativa"
+			        }
+			      ]
+			    },
+			    "unidade_has_gestore_narrativa": {
+			      "Binding": {
+			        "ConceptualEntity": "Unidades"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "unidade": {
+			          "Target": {
+			            "Entity": "unidade"
+			          }
+			        },
+			        "gestore.narrativa": {
+			          "Target": {
+			            "Entity": "gestore.narrativa"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "unidade"
+			            },
+			            "Object": {
+			              "Role": "gestore.narrativa"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "unidades_have_narrativa"
+			        }
+			      ]
+			    },
+			    "data_del_me_has_descanso": {
+			      "Binding": {
+			        "ConceptualEntity": "data del mes"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "data_del_me": {
+			          "Target": {
+			            "Entity": "data_del_me"
+			          }
+			        },
+			        "data_del_me.descanso": {
+			          "Target": {
+			            "Entity": "data_del_me.descanso"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "data_del_me"
+			            },
+			            "Object": {
+			              "Role": "data_del_me.descanso"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "data_del_me_have_descansos"
+			        }
+			      ]
+			    },
+			    "data_del_me_has_mostrar_estadistica": {
+			      "Binding": {
+			        "ConceptualEntity": "data del mes"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "data_del_me": {
+			          "Target": {
+			            "Entity": "data_del_me"
+			          }
+			        },
+			        "data_del_me.mostrar_estadistica": {
+			          "Target": {
+			            "Entity": "data_del_me.mostrar_estadistica"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "data_del_me"
+			            },
+			            "Object": {
+			              "Role": "data_del_me.mostrar_estadistica"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "data_del_me_have_mostrar_estadisticas"
+			        }
+			      ]
+			    },
+			    "data_del_me_has_cant_hora": {
+			      "Binding": {
+			        "ConceptualEntity": "data del mes"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "data_del_me": {
+			          "Target": {
+			            "Entity": "data_del_me"
+			          }
+			        },
+			        "data_del_me.cant_hora": {
+			          "Target": {
+			            "Entity": "data_del_me.cant_hora"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "data_del_me"
+			            },
+			            "Object": {
+			              "Role": "data_del_me.cant_hora"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "data_del_me_have_cant_horas"
+			        }
+			      ]
+			    },
+			    "data_del_me_has_cant_origen_PLL": {
+			      "Binding": {
+			        "ConceptualEntity": "data del mes"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "data_del_me": {
+			          "Target": {
+			            "Entity": "data_del_me"
+			          }
+			        },
+			        "data_del_me.cant_origen_PLL": {
+			          "Target": {
+			            "Entity": "data_del_me.cant_origen_PLL"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "data_del_me"
+			            },
+			            "Object": {
+			              "Role": "data_del_me.cant_origen_PLL"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "data_del_me_have_cant_origen_PLLs"
+			        }
+			      ]
+			    },
+			    "data_del_me_has_cant_carta": {
+			      "Binding": {
+			        "ConceptualEntity": "data del mes"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "data_del_me": {
+			          "Target": {
+			            "Entity": "data_del_me"
+			          }
+			        },
+			        "data_del_me.cant_carta": {
+			          "Target": {
+			            "Entity": "data_del_me.cant_carta"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "data_del_me"
+			            },
+			            "Object": {
+			              "Role": "data_del_me.cant_carta"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "data_del_me_have_cant_cartas"
+			        }
+			      ]
+			    },
+			    "data_del_me_has_monto_cobrado_US": {
+			      "Binding": {
+			        "ConceptualEntity": "data del mes"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "data_del_me": {
+			          "Target": {
+			            "Entity": "data_del_me"
+			          }
+			        },
+			        "data_del_me.monto_cobrado_US": {
+			          "Target": {
+			            "Entity": "data_del_me.monto_cobrado_US"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "data_del_me"
+			            },
+			            "Object": {
+			              "Role": "data_del_me.monto_cobrado_US"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "data_del_me_have_monto_cobrado_US"
+			        }
+			      ]
+			    },
+			    "data_del_me_has_monto_cobrado_RD": {
+			      "Binding": {
+			        "ConceptualEntity": "data del mes"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "data_del_me": {
+			          "Target": {
+			            "Entity": "data_del_me"
+			          }
+			        },
+			        "data_del_me.monto_cobrado_RD": {
+			          "Target": {
+			            "Entity": "data_del_me.monto_cobrado_RD"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "data_del_me"
+			            },
+			            "Object": {
+			              "Role": "data_del_me.monto_cobrado_RD"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "data_del_me_have_monto_cobrado_RD"
+			        }
+			      ]
+			    },
+			    "data_del_me_has_cant_promesa": {
+			      "Binding": {
+			        "ConceptualEntity": "data del mes"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "data_del_me": {
+			          "Target": {
+			            "Entity": "data_del_me"
+			          }
+			        },
+			        "data_del_me.cant_promesa": {
+			          "Target": {
+			            "Entity": "data_del_me.cant_promesa"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "data_del_me"
+			            },
+			            "Object": {
+			              "Role": "data_del_me.cant_promesa"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "data_del_me_have_cant_promesas"
+			        }
+			      ]
+			    },
+			    "data_del_me_has_cant_llamada_pend": {
+			      "Binding": {
+			        "ConceptualEntity": "data del mes"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "data_del_me": {
+			          "Target": {
+			            "Entity": "data_del_me"
+			          }
+			        },
+			        "data_del_me.cant_llamada_pend": {
+			          "Target": {
+			            "Entity": "data_del_me.cant_llamada_pend"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "data_del_me"
+			            },
+			            "Object": {
+			              "Role": "data_del_me.cant_llamada_pend"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "data_del_me_have_cant_llamada_pend"
+			        }
+			      ]
+			    },
+			    "data_del_me_has_contacto": {
+			      "Binding": {
+			        "ConceptualEntity": "data del mes"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "data_del_me": {
+			          "Target": {
+			            "Entity": "data_del_me"
+			          }
+			        },
+			        "data_del_me.contacto": {
+			          "Target": {
+			            "Entity": "data_del_me.contacto"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "data_del_me"
+			            },
+			            "Object": {
+			              "Role": "data_del_me.contacto"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "data_del_me_have_contactos"
+			        }
+			      ]
+			    },
+			    "data_del_me_has_cant_cliente": {
+			      "Binding": {
+			        "ConceptualEntity": "data del mes"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "data_del_me": {
+			          "Target": {
+			            "Entity": "data_del_me"
+			          }
+			        },
+			        "data_del_me.cant_cliente": {
+			          "Target": {
+			            "Entity": "data_del_me.cant_cliente"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "data_del_me"
+			            },
+			            "Object": {
+			              "Role": "data_del_me.cant_cliente"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "data_del_me_have_cant_clientes"
+			        }
+			      ]
+			    },
+			    "data_del_me_has_cant_gestione": {
+			      "Binding": {
+			        "ConceptualEntity": "data del mes"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "data_del_me": {
+			          "Target": {
+			            "Entity": "data_del_me"
+			          }
+			        },
+			        "data_del_me.cant_gestione": {
+			          "Target": {
+			            "Entity": "data_del_me.cant_gestione"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "data_del_me"
+			            },
+			            "Object": {
+			              "Role": "data_del_me.cant_gestione"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "data_del_me_have_cant_gestiones"
+			        }
+			      ]
+			    },
+			    "data_del_me_has_fecha": {
+			      "Binding": {
+			        "ConceptualEntity": "data del mes"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "data_del_me": {
+			          "Target": {
+			            "Entity": "data_del_me"
+			          }
+			        },
+			        "data_del_me.fecha": {
+			          "Target": {
+			            "Entity": "data_del_me.fecha"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "data_del_me"
+			            },
+			            "Object": {
+			              "Role": "data_del_me.fecha"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "data_del_me_have_fechas"
+			        }
+			      ]
+			    },
+			    "data_del_me_has_gestor": {
+			      "Binding": {
+			        "ConceptualEntity": "data del mes"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "data_del_me": {
+			          "Target": {
+			            "Entity": "data_del_me"
+			          }
+			        },
+			        "data_del_me.gestor": {
+			          "Target": {
+			            "Entity": "data_del_me.gestor"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "data_del_me"
+			            },
+			            "Object": {
+			              "Role": "data_del_me.gestor"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "data_del_me_have_gestors"
+			        }
+			      ]
+			    },
+			    "data_del_me_has_crecimiento_predicho_vs_actual": {
+			      "Binding": {
+			        "ConceptualEntity": "data del mes"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "data_del_me": {
+			          "Target": {
+			            "Entity": "data_del_me"
+			          }
+			        },
+			        "data_del_me.crecimiento_predicho_vs_actual": {
+			          "Target": {
+			            "Entity": "data_del_me.crecimiento_predicho_vs_actual"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "data_del_me"
+			            },
+			            "Object": {
+			              "Role": "data_del_me.crecimiento_predicho_vs_actual"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "data_del_me_have__crecimiento_predicho_vs_actual"
+			        }
+			      ]
+			    },
+			    "gestore_has_data_del_me_crecimiento_predicho_vs_actual": {
+			      "Binding": {
+			        "ConceptualEntity": "Gestores"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "gestore": {
+			          "Target": {
+			            "Entity": "gestore"
+			          }
+			        },
+			        "data_del_me.crecimiento_predicho_vs_actual": {
+			          "Target": {
+			            "Entity": "data_del_me.crecimiento_predicho_vs_actual"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "gestore"
+			            },
+			            "Object": {
+			              "Role": "data_del_me.crecimiento_predicho_vs_actual"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "gestores_have__crecimiento_predicho_vs_actual"
+			        }
+			      ]
+			    },
+			    "gestore_has_data_del_me_r_ajuste_modelo": {
+			      "Binding": {
+			        "ConceptualEntity": "Gestores"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "gestore": {
+			          "Target": {
+			            "Entity": "gestore"
+			          }
+			        },
+			        "data_del_me.r_ajuste_modelo": {
+			          "Target": {
+			            "Entity": "data_del_me.r_ajuste_modelo"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "gestore"
+			            },
+			            "Object": {
+			              "Role": "data_del_me.r_ajuste_modelo"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "gestores_have_r_ajuste_modelo"
+			        }
+			      ]
+			    },
+			    "gestore_has_data_del_me_tendencia_cobro_RD_mes": {
+			      "Binding": {
+			        "ConceptualEntity": "Gestores"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "gestore": {
+			          "Target": {
+			            "Entity": "gestore"
+			          }
+			        },
+			        "data_del_me.tendencia_cobro_RD_mes": {
+			          "Target": {
+			            "Entity": "data_del_me.tendencia_cobro_RD_mes"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "gestore"
+			            },
+			            "Object": {
+			              "Role": "data_del_me.tendencia_cobro_RD_mes"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "gestores_have_tendencia_cobro_RD_mes"
+			        }
+			      ]
+			    },
+			    "gestore_has_data_del_me_total_predicción_3_meses": {
+			      "Binding": {
+			        "ConceptualEntity": "Gestores"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "gestore": {
+			          "Target": {
+			            "Entity": "gestore"
+			          }
+			        },
+			        "data_del_me.total_predicción_3_meses": {
+			          "Target": {
+			            "Entity": "data_del_me.total_predicción_3_meses"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "gestore"
+			            },
+			            "Object": {
+			              "Role": "data_del_me.total_predicción_3_meses"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "gestores_have_total_predicción_3_meses"
+			        }
+			      ]
+			    },
+			    "gestore_has_data_del_me_predicción_cobro_jun_2026": {
+			      "Binding": {
+			        "ConceptualEntity": "Gestores"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "gestore": {
+			          "Target": {
+			            "Entity": "gestore"
+			          }
+			        },
+			        "data_del_me.predicción_cobro_jun_2026": {
+			          "Target": {
+			            "Entity": "data_del_me.predicción_cobro_jun_2026"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "gestore"
+			            },
+			            "Object": {
+			              "Role": "data_del_me.predicción_cobro_jun_2026"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "gestores_have_predicción_cobro_jun_2026"
+			        }
+			      ]
+			    },
+			    "gestore_has_data_del_me_predicción_cobro_may_2026": {
+			      "Binding": {
+			        "ConceptualEntity": "Gestores"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "gestore": {
+			          "Target": {
+			            "Entity": "gestore"
+			          }
+			        },
+			        "data_del_me.predicción_cobro_may_2026": {
+			          "Target": {
+			            "Entity": "data_del_me.predicción_cobro_may_2026"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "gestore"
+			            },
+			            "Object": {
+			              "Role": "data_del_me.predicción_cobro_may_2026"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "gestores_have_predicción_cobro_may_2026"
+			        }
+			      ]
+			    },
+			    "gestore_has_data_del_me_predicción_cobro_abr_2026": {
+			      "Binding": {
+			        "ConceptualEntity": "Gestores"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "gestore": {
+			          "Target": {
+			            "Entity": "gestore"
+			          }
+			        },
+			        "data_del_me.predicción_cobro_abr_2026": {
+			          "Target": {
+			            "Entity": "data_del_me.predicción_cobro_abr_2026"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "gestore"
+			            },
+			            "Object": {
+			              "Role": "data_del_me.predicción_cobro_abr_2026"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "gestores_have_predicción_cobro_abr_2026"
+			        }
+			      ]
+			    },
+			    "calendario_has_semana": {
+			      "Binding": {
+			        "ConceptualEntity": "Calendario"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "calendario": {
+			          "Target": {
+			            "Entity": "calendario"
+			          }
+			        },
+			        "calendario.semana": {
+			          "Target": {
+			            "Entity": "calendario.semana"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "calendario"
+			            },
+			            "Object": {
+			              "Role": "calendario.semana"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "calendarios_have_semanas"
+			        }
+			      ]
+			    },
+			    "calendario_has_es_fin_de_semana": {
+			      "Binding": {
+			        "ConceptualEntity": "Calendario"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "calendario": {
+			          "Target": {
+			            "Entity": "calendario"
+			          }
+			        },
+			        "calendario.es_fin_de_semana": {
+			          "Target": {
+			            "Entity": "calendario.es_fin_de_semana"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "calendario"
+			            },
+			            "Object": {
+			              "Role": "calendario.es_fin_de_semana"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "calendarios_have_es_fin_de_semanas"
+			        }
+			      ]
+			    },
+			    "calendario_has_dia_semana_num": {
+			      "Binding": {
+			        "ConceptualEntity": "Calendario"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "calendario": {
+			          "Target": {
+			            "Entity": "calendario"
+			          }
+			        },
+			        "calendario.dia_semana_num": {
+			          "Target": {
+			            "Entity": "calendario.dia_semana_num"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "calendario"
+			            },
+			            "Object": {
+			              "Role": "calendario.dia_semana_num"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "calendarios_have_dia_semana_nums"
+			        }
+			      ]
+			    },
+			    "calendario_has_dia_semana": {
+			      "Binding": {
+			        "ConceptualEntity": "Calendario"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "calendario": {
+			          "Target": {
+			            "Entity": "calendario"
+			          }
+			        },
+			        "calendario.dia_semana": {
+			          "Target": {
+			            "Entity": "calendario.dia_semana"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "calendario"
+			            },
+			            "Object": {
+			              "Role": "calendario.dia_semana"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "calendarios_have_dia_semanas"
+			        }
+			      ]
+			    },
+			    "calendario_has_año_trimestre": {
+			      "Binding": {
+			        "ConceptualEntity": "Calendario"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "calendario": {
+			          "Target": {
+			            "Entity": "calendario"
+			          }
+			        },
+			        "calendario.año_trimestre": {
+			          "Target": {
+			            "Entity": "calendario.año_trimestre"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "calendario"
+			            },
+			            "Object": {
+			              "Role": "calendario.año_trimestre"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "calendarios_have_año_trimestres"
+			        }
+			      ]
+			    },
+			    "calendario_has_año_me": {
+			      "Binding": {
+			        "ConceptualEntity": "Calendario"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "calendario": {
+			          "Target": {
+			            "Entity": "calendario"
+			          }
+			        },
+			        "calendario.año_me": {
+			          "Target": {
+			            "Entity": "calendario.año_me"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "calendario"
+			            },
+			            "Object": {
+			              "Role": "calendario.año_me"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "calendarios_have_año_me"
+			        }
+			      ]
+			    },
+			    "calendario_has_trimestre_num": {
+			      "Binding": {
+			        "ConceptualEntity": "Calendario"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "calendario": {
+			          "Target": {
+			            "Entity": "calendario"
+			          }
+			        },
+			        "calendario.trimestre_num": {
+			          "Target": {
+			            "Entity": "calendario.trimestre_num"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "calendario"
+			            },
+			            "Object": {
+			              "Role": "calendario.trimestre_num"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "calendarios_have_trimestre_nums"
+			        }
+			      ]
+			    },
+			    "calendario_has_trimestre": {
+			      "Binding": {
+			        "ConceptualEntity": "Calendario"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "calendario": {
+			          "Target": {
+			            "Entity": "calendario"
+			          }
+			        },
+			        "calendario.trimestre": {
+			          "Target": {
+			            "Entity": "calendario.trimestre"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "calendario"
+			            },
+			            "Object": {
+			              "Role": "calendario.trimestre"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "calendarios_have_trimestres"
+			        }
+			      ]
+			    },
+			    "calendario_has_mes_corto": {
+			      "Binding": {
+			        "ConceptualEntity": "Calendario"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "calendario": {
+			          "Target": {
+			            "Entity": "calendario"
+			          }
+			        },
+			        "calendario.mes_corto": {
+			          "Target": {
+			            "Entity": "calendario.mes_corto"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "calendario"
+			            },
+			            "Object": {
+			              "Role": "calendario.mes_corto"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "calendarios_have_mes_cortos"
+			        }
+			      ]
+			    },
+			    "calendario_has_me": {
+			      "Binding": {
+			        "ConceptualEntity": "Calendario"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "calendario": {
+			          "Target": {
+			            "Entity": "calendario"
+			          }
+			        },
+			        "calendario.me": {
+			          "Target": {
+			            "Entity": "calendario.me"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "calendario"
+			            },
+			            "Object": {
+			              "Role": "calendario.me"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "calendarios_have_me"
+			        }
+			      ]
+			    },
+			    "calendario_has_mes_num": {
+			      "Binding": {
+			        "ConceptualEntity": "Calendario"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "calendario": {
+			          "Target": {
+			            "Entity": "calendario"
+			          }
+			        },
+			        "calendario.mes_num": {
+			          "Target": {
+			            "Entity": "calendario.mes_num"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "calendario"
+			            },
+			            "Object": {
+			              "Role": "calendario.mes_num"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "calendarios_have_mes_nums"
+			        }
+			      ]
+			    },
+			    "calendario_has_año": {
+			      "Binding": {
+			        "ConceptualEntity": "Calendario"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "calendario": {
+			          "Target": {
+			            "Entity": "calendario"
+			          }
+			        },
+			        "calendario.año": {
+			          "Target": {
+			            "Entity": "calendario.año"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "calendario"
+			            },
+			            "Object": {
+			              "Role": "calendario.año"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "calendarios_have_años"
+			        }
+			      ]
+			    },
+			    "calendario_has_date": {
+			      "Binding": {
+			        "ConceptualEntity": "Calendario"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "calendario": {
+			          "Target": {
+			            "Entity": "calendario"
+			          }
+			        },
+			        "calendario.date": {
+			          "Target": {
+			            "Entity": "calendario.date"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "calendario"
+			            },
+			            "Object": {
+			              "Role": "calendario.date"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "calendarios_have_dates"
+			        }
+			      ]
+			    },
+			    "unidade_has_id_unidad": {
+			      "Binding": {
+			        "ConceptualEntity": "Unidades"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "unidade": {
+			          "Target": {
+			            "Entity": "unidade"
+			          }
+			        },
+			        "unidade.id_unidad": {
+			          "Target": {
+			            "Entity": "unidade.id_unidad"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "unidade"
+			            },
+			            "Object": {
+			              "Role": "unidade.id_unidad"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "unidades_have_id_unidads"
+			        }
+			      ]
+			    },
+			    "gestore_has_monto_asignado": {
+			      "Binding": {
+			        "ConceptualEntity": "Gestores"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "gestore": {
+			          "Target": {
+			            "Entity": "gestore"
+			          }
+			        },
+			        "gestore.monto_asignado": {
+			          "Target": {
+			            "Entity": "gestore.monto_asignado"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "gestore"
+			            },
+			            "Object": {
+			              "Role": "gestore.monto_asignado"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "gestores_have_monto_asignados"
+			        }
+			      ]
+			    },
+			    "gestore_has_gestore": {
+			      "Binding": {
+			        "ConceptualEntity": "Gestores"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "gestore": {
+			          "Target": {
+			            "Entity": "gestore"
+			          }
+			        },
+			        "gestore.gestore": {
+			          "Target": {
+			            "Entity": "gestore.gestore"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "gestore"
+			            },
+			            "Object": {
+			              "Role": "gestore.gestore"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "gestores_have_gestores"
+			        },
+			        {
+			          "Name": {
+			            "Subject": {
+			              "Role": "gestore"
+			            },
+			            "Name": {
+			              "Role": "gestore.gestore"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "gestores_are_names_IDs_of_gestores"
+			        }
+			      ]
+			    },
+			    "data_del_me_has_monto_cobrado_RD1": {
+			      "Binding": {
+			        "ConceptualEntity": "data del mes"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "data_del_me": {
+			          "Target": {
+			            "Entity": "data_del_me"
+			          }
+			        },
+			        "data_del_me.monto_cobrado_RD1": {
+			          "Target": {
+			            "Entity": "data_del_me.monto_cobrado_RD1"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "data_del_me"
+			            },
+			            "Object": {
+			              "Role": "data_del_me.monto_cobrado_RD1"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "data_del_me_have_monto_cobrado_RD1"
+			        }
+			      ]
+			    },
+			    "data_del_me_has_cobrado_vs_asignado_": {
+			      "Binding": {
+			        "ConceptualEntity": "data del mes"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "data_del_me": {
+			          "Target": {
+			            "Entity": "data_del_me"
+			          }
+			        },
+			        "data_del_me.cobrado_vs_asignado_": {
+			          "Target": {
+			            "Entity": "data_del_me.cobrado_vs_asignado_"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "data_del_me"
+			            },
+			            "Object": {
+			              "Role": "data_del_me.cobrado_vs_asignado_"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "data_del_me_have_cobrado_vs_asignado_"
+			        }
+			      ]
+			    },
+			    "gestore_has_data_del_me_cobrado_vs_asignado_": {
+			      "Binding": {
+			        "ConceptualEntity": "Gestores"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "gestore": {
+			          "Target": {
+			            "Entity": "gestore"
+			          }
+			        },
+			        "data_del_me.cobrado_vs_asignado_": {
+			          "Target": {
+			            "Entity": "data_del_me.cobrado_vs_asignado_"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "gestore"
+			            },
+			            "Object": {
+			              "Role": "data_del_me.cobrado_vs_asignado_"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "gestores_have_cobrado_vs_asignado_"
+			        }
+			      ]
+			    },
+			    "data_del_me_has_gestores_activos": {
+			      "Binding": {
+			        "ConceptualEntity": "data del mes"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "data_del_me": {
+			          "Target": {
+			            "Entity": "data_del_me"
+			          }
+			        },
+			        "data_del_me.gestores_activos": {
+			          "Target": {
+			            "Entity": "data_del_me.gestores_activos"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "data_del_me"
+			            },
+			            "Object": {
+			              "Role": "data_del_me.gestores_activos"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "data_del_me_have_gestores_activos"
+			        }
+			      ]
+			    },
+			    "data_del_me_has_promedio_gestiones_x_gestor": {
+			      "Binding": {
+			        "ConceptualEntity": "data del mes"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "data_del_me": {
+			          "Target": {
+			            "Entity": "data_del_me"
+			          }
+			        },
+			        "data_del_me.promedio_gestiones_x_gestor": {
+			          "Target": {
+			            "Entity": "data_del_me.promedio_gestiones_x_gestor"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "data_del_me"
+			            },
+			            "Object": {
+			              "Role": "data_del_me.promedio_gestiones_x_gestor"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "data_del_me_have_promedio_gestiones_x_gestor"
+			        }
+			      ]
+			    },
+			    "data_del_me_has_total_promesas": {
+			      "Binding": {
+			        "ConceptualEntity": "data del mes"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "data_del_me": {
+			          "Target": {
+			            "Entity": "data_del_me"
+			          }
+			        },
+			        "data_del_me.total_promesas": {
+			          "Target": {
+			            "Entity": "data_del_me.total_promesas"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "data_del_me"
+			            },
+			            "Object": {
+			              "Role": "data_del_me.total_promesas"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "data_del_me_have_total_promesas"
+			        }
+			      ]
+			    },
+			    "data_del_me_has_total_cobrado_US": {
+			      "Binding": {
+			        "ConceptualEntity": "data del mes"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "data_del_me": {
+			          "Target": {
+			            "Entity": "data_del_me"
+			          }
+			        },
+			        "data_del_me.total_cobrado_US": {
+			          "Target": {
+			            "Entity": "data_del_me.total_cobrado_US"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "data_del_me"
+			            },
+			            "Object": {
+			              "Role": "data_del_me.total_cobrado_US"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "data_del_me_have_total_cobrado_US"
+			        }
+			      ]
+			    },
+			    "data_del_me_has_total_cobrado_RD": {
+			      "Binding": {
+			        "ConceptualEntity": "data del mes"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "data_del_me": {
+			          "Target": {
+			            "Entity": "data_del_me"
+			          }
+			        },
+			        "data_del_me.total_cobrado_RD": {
+			          "Target": {
+			            "Entity": "data_del_me.total_cobrado_RD"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "data_del_me"
+			            },
+			            "Object": {
+			              "Role": "data_del_me.total_cobrado_RD"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "data_del_me_have_total_cobrado_RD"
+			        }
+			      ]
+			    },
+			    "data_del_me_has_tasa_contacto_": {
+			      "Binding": {
+			        "ConceptualEntity": "data del mes"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "data_del_me": {
+			          "Target": {
+			            "Entity": "data_del_me"
+			          }
+			        },
+			        "data_del_me.tasa_contacto_": {
+			          "Target": {
+			            "Entity": "data_del_me.tasa_contacto_"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "data_del_me"
+			            },
+			            "Object": {
+			              "Role": "data_del_me.tasa_contacto_"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "data_del_me_have_tasa_contacto_"
+			        }
+			      ]
+			    },
+			    "data_del_me_has_total_contactos": {
+			      "Binding": {
+			        "ConceptualEntity": "data del mes"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "data_del_me": {
+			          "Target": {
+			            "Entity": "data_del_me"
+			          }
+			        },
+			        "data_del_me.total_contactos": {
+			          "Target": {
+			            "Entity": "data_del_me.total_contactos"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "data_del_me"
+			            },
+			            "Object": {
+			              "Role": "data_del_me.total_contactos"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "data_del_me_have_total_contactos"
+			        }
+			      ]
+			    },
+			    "data_del_me_has_total_clientes": {
+			      "Binding": {
+			        "ConceptualEntity": "data del mes"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "data_del_me": {
+			          "Target": {
+			            "Entity": "data_del_me"
+			          }
+			        },
+			        "data_del_me.total_clientes": {
+			          "Target": {
+			            "Entity": "data_del_me.total_clientes"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "data_del_me"
+			            },
+			            "Object": {
+			              "Role": "data_del_me.total_clientes"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "data_del_me_have_total_clientes"
+			        }
+			      ]
+			    },
+			    "data_del_me_has_total_gestiones": {
+			      "Binding": {
+			        "ConceptualEntity": "data del mes"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "data_del_me": {
+			          "Target": {
+			            "Entity": "data_del_me"
+			          }
+			        },
+			        "data_del_me.total_gestiones": {
+			          "Target": {
+			            "Entity": "data_del_me.total_gestiones"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "data_del_me"
+			            },
+			            "Object": {
+			              "Role": "data_del_me.total_gestiones"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "data_del_me_have_total_gestiones"
+			        }
+			      ]
+			    },
+			    "gestore_has_data_del_me": {
+			      "Binding": {
+			        "ConceptualEntity": "Gestores"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "gestore": {
+			          "Target": {
+			            "Entity": "gestore"
+			          }
+			        },
+			        "data_del_me": {
+			          "Target": {
+			            "Entity": "data_del_me"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "gestore"
+			            },
+			            "Object": {
+			              "Role": "data_del_me"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "gestores_have_data_del_me"
+			        }
+			      ]
+			    }
+			  },
+			  "Agents": {
+			    "Internal": {
+			      "Version": "1.1.0"
+			    }
+			  }
+			}
+		contentType: json
+

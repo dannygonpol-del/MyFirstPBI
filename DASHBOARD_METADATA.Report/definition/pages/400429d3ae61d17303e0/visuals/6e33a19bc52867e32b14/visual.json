@@ -1,0 +1,16 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
+  "name": "6e33a19bc52867e32b14",
+  "position": {
+    "x": 255.57200859804158,
+    "y": 432.88273226653928,
+    "z": 3000,
+    "height": 249.45784571292097,
+    "width": 996.60855027465959,
+    "tabOrder": 3000
+  },
+  "visualGroup": {
+    "displayName": "predicion",
+    "groupMode": "ScaleMode"
+  }
+}

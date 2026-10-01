@@ -1,0 +1,87 @@
+{
+  "version": "1.1.0",
+  "diagrams": [
+    {
+      "ordinal": 0,
+      "scrollPosition": {
+        "x": 0,
+        "y": 0
+      },
+      "nodes": [
+        {
+          "location": {
+            "x": 0,
+            "y": 0
+          },
+          "nodeIndex": "data del mes",
+          "nodeLineageTag": "fb76c0a3-2f10-4dcb-9c34-2ec58b268ff2",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 3
+        },
+        {
+          "location": {
+            "x": 534,
+            "y": 0
+          },
+          "nodeIndex": "Gestores",
+          "nodeLineageTag": "2290e9f1-914d-473e-9b08-8a15cfb2e390",
+          "size": {
+            "height": 243,
+            "width": 234
+          },
+          "zIndex": 4
+        },
+        {
+          "location": {
+            "x": 518,
+            "y": 326
+          },
+          "nodeIndex": "Unidades",
+          "nodeLineageTag": "c2795c2c-bbd9-4b22-9787-49f4d3addc95",
+          "size": {
+            "height": 168,
+            "width": 234
+          },
+          "zIndex": 2
+        },
+        {
+          "location": {
+            "x": 256.59999084472656,
+            "y": 170
+          },
+          "nodeIndex": "Calendario",
+          "nodeLineageTag": "f4df4d28-ace2-4703-a9f8-ec2a9b54cf02",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 1
+        },
+        {
+          "location": {
+            "x": 818,
+            "y": 147
+          },
+          "nodeIndex": "tblEstados_Promesas",
+          "nodeLineageTag": "c318aef2-95be-4472-96d6-ab7f84b2fed6",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 0
+        }
+      ],
+      "name": "All tables",
+      "zoomValue": 100,
+      "pinKeyFieldsToTop": false,
+      "showExtraHeaderInfo": false,
+      "hideKeyFieldsWhenCollapsed": false,
+      "tablesLocked": false
+    }
+  ],
+  "selectedDiagram": "All tables",
+  "defaultDiagram": "All tables"
+}

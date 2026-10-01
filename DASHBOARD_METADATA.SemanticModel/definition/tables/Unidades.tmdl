@@ -1,0 +1,38 @@
+table Unidades
+	lineageTag: c2795c2c-bbd9-4b22-9787-49f4d3addc95
+
+	column IdUnidad
+		dataType: string
+		lineageTag: bdec8e60-c248-46ff-8c3e-7a009549dacf
+		summarizeBy: none
+		sourceColumn: IdUnidad
+
+		annotation SummarizationSetBy = Automatic
+
+	column Monto_Meta
+		dataType: double
+		lineageTag: 4054d1e3-bac9-406e-8466-90fd74ebba82
+		summarizeBy: none
+		sourceColumn: Monto_Meta
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition Unidades = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(File.Contents("C:\Users\ACER ASPIRE i7\Documents\DANNY_GP\CARPETA_TRABAJOS\BLANCHE_BI\ArchivoExcel\METADATA.xlsx"), null, true),
+				    Unidades_Sheet = Source{[Item="Unidades",Kind="Sheet"]}[Data],
+				    #"Changed Type" = Table.TransformColumnTypes(Unidades_Sheet,{{"Column1", type text}}),
+				    #"Renamed Columns" = Table.RenameColumns(#"Changed Type",{{"Column1", "IdUnidad"}, {"Column2", "Monto_Meta"}})
+				in
+				    #"Renamed Columns"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+
