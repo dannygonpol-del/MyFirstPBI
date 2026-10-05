@@ -1,0 +1,120 @@
+table tblSupervisoresAsesores
+	lineageTag: 3fcbceca-2e2d-4e2b-ac53-6bcf174ace2c
+
+	measure AsesoresActivosPorUnidad = ```
+			
+			
+			    CALCULATE(
+			                COUNT(tblSupervisoresAsesores[Codigo]),
+			                FILTER(tblSupervisoresAsesores,
+			                        tblSupervisoresAsesores[TipoAsesor] IN {"A", "L"}
+			                        && tblSupervisoresAsesores[EstatusPuesto] = "A"
+			                      
+			
+			                     )
+			                     
+			  )
+			  
+			```
+		formatString: 0
+		lineageTag: d3404ece-6c41-44ff-a7b9-a0b7dc146a15
+
+	measure AsesoresFaltantesPorUNidad = ```
+			
+			
+			 CALCULATE(
+			
+			            tblSupervisoresAsesores[CapacidadAsesoresPorUnidad] - tblSupervisoresAsesores[AsesoresActivosPorUnidad]
+			
+			 )
+			 
+			```
+		lineageTag: 8722b360-6742-4739-9335-e5de436f1a06
+
+	measure CapacidadAsesoresPorUnidad = ```
+			
+			
+			    CALCULATE(
+			                COUNT(tblSupervisoresAsesores[Codigo]),
+			                FILTER(tblSupervisoresAsesores,
+			                        tblSupervisoresAsesores[TipoAsesor] IN {"A", "L"}
+			
+			                     )
+			                     
+			  )
+			```
+		formatString: 0
+		lineageTag: 8ccae821-d520-4e4c-80bc-a83b6d8e9fa0
+
+	measure TeamLeadersActivosPorUnidad = ```
+			
+			
+			CALCULATE(
+			    COUNT(tblSupervisoresAsesores[Codigo]),
+			            FILTER( 
+			                tblSupervisoresAsesores,
+			                tblSupervisoresAsesores[TipoAsesor] = "L"
+			                && tblSupervisoresAsesores[EstatusPuesto] = "A"
+			    
+			        )
+			    )
+			```
+		formatString: 0
+		lineageTag: d38f4f86-8cb6-4a6a-a73d-7abc91f3d006
+
+	column Codigo
+		dataType: string
+		sourceProviderType: nvarchar(12)
+		lineageTag: 04bcec4d-5413-41af-8416-bd78dc5507d1
+		summarizeBy: none
+		sourceColumn: Codigo
+
+		annotation SummarizationSetBy = Automatic
+
+	column Supervisores
+		dataType: string
+		sourceProviderType: nvarchar(12)
+		lineageTag: c6c7eb58-56ec-4c40-8a67-e85e264e53ab
+		summarizeBy: none
+		sourceColumn: Supervisores
+
+		annotation SummarizationSetBy = Automatic
+
+	column Sucursal_id
+		dataType: string
+		sourceProviderType: nvarchar(15)
+		lineageTag: 1daa3e79-b6b4-447e-8ddd-77c66ab28bbc
+		summarizeBy: none
+		sourceColumn: Sucursal_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column TipoAsesor
+		dataType: string
+		sourceProviderType: nvarchar(1)
+		lineageTag: 73c9de10-fb25-4d09-95bc-1ac610b857c9
+		summarizeBy: none
+		sourceColumn: TipoAsesor
+
+		annotation SummarizationSetBy = Automatic
+
+	column EstatusPuesto
+		dataType: string
+		sourceProviderType: nvarchar(1)
+		lineageTag: 39fbf263-17fc-408a-bbde-0ce357dbb415
+		summarizeBy: none
+		sourceColumn: EstatusPuesto
+
+		annotation SummarizationSetBy = Automatic
+
+	partition tblSupervisoresAsesores = m
+		mode: dual
+		source =
+				let
+				    Origen = Sql.Database("192.168.9.104,1433", "SigecobDS"),
+				    dbo_tblSupervisoresAsesores = Origen{[Schema="dbo",Item="tblSupervisoresAsesores"]}[Data]
+				in
+				    dbo_tblSupervisoresAsesores
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,51 @@
+model Model
+	culture: es-MX
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: es-DO
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation __PBI_TimeIntelligenceEnabled = 1
+
+annotation PBI_QueryOrder = ["tblOficiales","Clientes","vwCasos","Oficiales","vwMetas","vwDeudas","tblEstados_Promesas","vwCantidadAsesores","vwMetasAsesores","vwRotacionPagosPorClienetes_Deudores","tblClasePago","vwRotacionSinPagosPorClientes","vwCartera","vwRotacionPagosPorUnidades_Deudores","tblSupervisoresAsesores","tblSupervisores","vwCarteraVigente","RangeStart","RangeEnd","vwUltimaActualizacionPowerBI","ControlActualizacion","vwCasosDistribuidos"]
+
+annotation PBI_ProTooling = ["MCP-PBIModeling","DaxQueryView_Desktop","TMDLView_Desktop","DevMode"]
+
+ref table Calendario
+ref table tblOficiales
+ref table Clientes
+ref table vwCasos
+ref table Oficiales
+ref table vwPagos
+ref table vwMetas
+ref table vwDeudas
+ref table tblEstados_Promesas
+ref table vwGestiones
+ref table vwCasosGestiones
+ref table vwCantidadAsesores
+ref table vwMetasAsesores
+ref table vwRotacionPagosPorClienetes_Deudores
+ref table TablaIndicadores
+ref table TablaMontosGestores
+ref table tblClasePago
+ref table vwRotacionSinPagosPorClientes
+ref table vwCartera
+ref table DimCodigo
+ref table vwRotacionPagosPorUnidades_Deudores
+ref table AsesoresCasosGestionesPagos
+ref table Dashboard
+ref table tblSupervisoresLideresAsesores
+ref table tblSupervisoresAsesores
+ref table tblSupervisores
+ref table AsosoresMetasPagos
+ref table tblPromesas
+ref table vwCarteraVigente
+ref table vwUltimaActualizacionPowerBI
+ref table ControlActualizacion
+ref table DateTableTemplate_f5f6c66b-417e-4c8b-aeb4-db36ea912c93
+ref table LocalDateTable_e62ec90d-a6e3-4bf2-afbb-a11400e2386f
+ref table vwCasosDistribuidos
+
+ref cultureInfo es-MX
+

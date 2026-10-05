@@ -1,0 +1,66 @@
+table tblPromesas
+	lineageTag: c7b0e377-11ec-4478-85f7-a0403c65a989
+
+	measure ValoresPromesas = ```
+			
+			
+			VAR _Tipo = SELECTEDVALUE(tblPromesas[Concepto])
+			
+			RETURN
+			SWITCH(
+			    TRUE(),
+			
+			    _Tipo = "Promesa",
+			        COALESCE(vwCasos[CantPromesas],0.00),
+			
+			    _Tipo = "Pendientes",
+			       COALESCE(vwCasos[Promesas_Pendientes],0.00),
+			
+			    _Tipo = "Cumplida",
+			        COALESCE(vwCasos[Promesas_Cumplida],0.00),
+			
+			    _Tipo = "Incumplida",
+			        COALESCE(vwCasos[Promesas_Incumplida],0.00),
+			
+			    _Tipo = "Vencida",
+			        COALESCE(vwCasos[Promesas_Vencida],0.00),    
+			
+			    _Tipo = "Efectividad",
+			        DIVIDE(vwCasos[Promesas_Cumplida], vwCasos[CantPromesas], 0.00) * 100
+			
+			)
+			
+			```
+		lineageTag: f07f5990-26dd-4088-b36d-e56ed8730d1d
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Concepto
+		lineageTag: 012f5eb4-9dd7-42a9-9b8a-8407c2e4354b
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Concepto]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition tblPromesas = calculated
+		mode: import
+		source = ```
+				
+				
+				    DATATABLE(
+				        "Concepto", STRING,
+				        {           
+				            {"Promesa"},
+				            {"Pendientes"},
+				            {"Cumplida"},
+				            {"Incumplida"},
+				            {"Vencida"},
+				            {"Efectividad"}
+				        }
+				)
+				
+				```
+
+	annotation PBI_Id = 3703553076c645c39fbf8f02f259abfd
+

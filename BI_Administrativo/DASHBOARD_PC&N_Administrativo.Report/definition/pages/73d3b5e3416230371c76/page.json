@@ -1,0 +1,218 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.1.0/schema.json",
+  "name": "73d3b5e3416230371c76",
+  "displayName": "Recuperación Por Clientes",
+  "displayOption": "FitToPage",
+  "height": 720,
+  "width": 1280,
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "4777d3032c310d480a79",
+        "ordinal": 0,
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "vwCasos"
+              }
+            },
+            "Property": "CategoriaCliente"
+          }
+        },
+        "type": "Categorical",
+        "howCreated": "User",
+        "objects": {
+          "general": [
+            {
+              "properties": {
+                "isInvertedSelectionMode": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "true"
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        }
+      },
+      {
+        "name": "ead43a51d24c5c272eb1",
+        "ordinal": 1,
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "vwCasosGestiones"
+              }
+            },
+            "Property": "INACTIVO"
+          }
+        },
+        "type": "Categorical",
+        "filter": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "v",
+              "Entity": "vwCasosGestiones",
+              "Type": 0
+            }
+          ],
+          "Where": [
+            {
+              "Condition": {
+                "In": {
+                  "Expressions": [
+                    {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Source": "v"
+                          }
+                        },
+                        "Property": "INACTIVO"
+                      }
+                    }
+                  ],
+                  "Values": [
+                    [
+                      {
+                        "Literal": {
+                          "Value": "false"
+                        }
+                      }
+                    ]
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        "howCreated": "User"
+      }
+    ],
+    "filterSortOrder": "Custom"
+  },
+  "pageBinding": {
+    "name": "5798fb82c03170c870c2",
+    "type": "Default",
+    "parameters": [],
+    "acceptsFilterContext": "None"
+  },
+  "objects": {
+    "background": [
+      {
+        "properties": {
+          "image": {
+            "image": {
+              "name": {
+                "expr": {
+                  "Literal": {
+                    "Value": "'Diapositiva1.SVG'"
+                  }
+                }
+              },
+              "url": {
+                "expr": {
+                  "ResourcePackageItem": {
+                    "PackageName": "RegisteredResources",
+                    "PackageType": 1,
+                    "ItemName": "Diapositiva1028420718758622843.SVG"
+                  }
+                }
+              },
+              "scaling": {
+                "expr": {
+                  "Literal": {
+                    "Value": "'Normal'"
+                  }
+                }
+              }
+            }
+          },
+          "transparency": {
+            "expr": {
+              "Literal": {
+                "Value": "7D"
+              }
+            }
+          }
+        }
+      }
+    ],
+    "pageRefresh": [
+      {
+        "properties": {
+          "show": {
+            "expr": {
+              "Literal": {
+                "Value": "true"
+              }
+            }
+          },
+          "duration": {
+            "expr": {
+              "Literal": {
+                "Value": "'PT5M'"
+              }
+            }
+          }
+        }
+      }
+    ],
+    "outspacePane": [
+      {
+        "properties": {
+          "width": {
+            "expr": {
+              "Literal": {
+                "Value": "390L"
+              }
+            }
+          }
+        }
+      }
+    ]
+  },
+  "visibility": "HiddenInViewMode",
+  "visualInteractions": [
+    {
+      "source": "ff2a54f9b635a68680d9",
+      "target": "0cc245f7878ef7d5eb30",
+      "type": "NoFilter"
+    },
+    {
+      "source": "f49aac9de0a68c70eafc",
+      "target": "ff2a54f9b635a68680d9",
+      "type": "NoFilter"
+    },
+    {
+      "source": "ff2a54f9b635a68680d9",
+      "target": "671f50e7cba14d130eb3",
+      "type": "DataFilter"
+    },
+    {
+      "source": "44f06732bcc99a6e4077",
+      "target": "0cc245f7878ef7d5eb30",
+      "type": "NoFilter"
+    },
+    {
+      "source": "671f50e7cba14d130eb3",
+      "target": "0cc245f7878ef7d5eb30",
+      "type": "NoFilter"
+    },
+    {
+      "source": "671f50e7cba14d130eb3",
+      "target": "ff2a54f9b635a68680d9",
+      "type": "NoFilter"
+    },
+    {
+      "source": "62cca628900c286684be",
+      "target": "ff2a54f9b635a68680d9",
+      "type": "NoFilter"
+    }
+  ]
+}

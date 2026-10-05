@@ -1,0 +1,349 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.1.0/schema.json",
+  "name": "a31e2f17b8664b76c3a0",
+  "displayName": "ROTACION DE LA CARTERA",
+  "displayOption": "FitToPage",
+  "height": 720,
+  "width": 1280,
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "63730003ba120a1c8470",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "vwCasosGestiones"
+              }
+            },
+            "Property": "INACTIVO"
+          }
+        },
+        "type": "Categorical",
+        "filter": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "v",
+              "Entity": "vwCasosGestiones",
+              "Type": 0
+            }
+          ],
+          "Where": [
+            {
+              "Condition": {
+                "Not": {
+                  "Expression": {
+                    "In": {
+                      "Expressions": [
+                        {
+                          "Column": {
+                            "Expression": {
+                              "SourceRef": {
+                                "Source": "v"
+                              }
+                            },
+                            "Property": "INACTIVO"
+                          }
+                        }
+                      ],
+                      "Values": [
+                        [
+                          {
+                            "Literal": {
+                              "Value": "true"
+                            }
+                          }
+                        ]
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        },
+        "howCreated": "User",
+        "objects": {
+          "general": [
+            {
+              "properties": {
+                "isInvertedSelectionMode": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "true"
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        }
+      },
+      {
+        "name": "9c743069510896c52ea2",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "vwCasosGestiones"
+              }
+            },
+            "Property": "EstadoCaso"
+          }
+        },
+        "type": "Categorical",
+        "howCreated": "User",
+        "objects": {
+          "general": [
+            {
+              "properties": {
+                "isInvertedSelectionMode": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "true"
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "pageBinding": {
+    "name": "117a52553d0fa389e78a",
+    "type": "Default",
+    "parameters": [],
+    "acceptsFilterContext": "None"
+  },
+  "objects": {
+    "background": [
+      {
+        "properties": {
+          "image": {
+            "image": {
+              "name": {
+                "expr": {
+                  "Literal": {
+                    "Value": "'Diapositiva1.SVG'"
+                  }
+                }
+              },
+              "url": {
+                "expr": {
+                  "ResourcePackageItem": {
+                    "PackageName": "RegisteredResources",
+                    "PackageType": 1,
+                    "ItemName": "Diapositiva111941548422488835.SVG"
+                  }
+                }
+              },
+              "scaling": {
+                "expr": {
+                  "Literal": {
+                    "Value": "'Normal'"
+                  }
+                }
+              }
+            }
+          },
+          "transparency": {
+            "expr": {
+              "Literal": {
+                "Value": "3D"
+              }
+            }
+          }
+        }
+      }
+    ],
+    "pageRefresh": [
+      {
+        "properties": {
+          "show": {
+            "expr": {
+              "Literal": {
+                "Value": "true"
+              }
+            }
+          },
+          "duration": {
+            "expr": {
+              "Literal": {
+                "Value": "'PT5M'"
+              }
+            }
+          }
+        }
+      }
+    ],
+    "outspacePane": [
+      {
+        "properties": {
+          "width": {
+            "expr": {
+              "Literal": {
+                "Value": "300L"
+              }
+            }
+          }
+        }
+      }
+    ]
+  },
+  "visibility": "HiddenInViewMode",
+  "visualInteractions": [
+    {
+      "source": "6d7bdebd5293ae08d1f6",
+      "target": "451c268aa9be2f1ae715",
+      "type": "NoFilter"
+    },
+    {
+      "source": "6d7bdebd5293ae08d1f6",
+      "target": "2b92cf2bde26c459e4b4",
+      "type": "NoFilter"
+    },
+    {
+      "source": "6d7bdebd5293ae08d1f6",
+      "target": "cca60cc6418ee58fd6db",
+      "type": "NoFilter"
+    },
+    {
+      "source": "1919a80f23bc45cde413",
+      "target": "896e05b197c48e50451d",
+      "type": "NoFilter"
+    },
+    {
+      "source": "1919a80f23bc45cde413",
+      "target": "cca60cc6418ee58fd6db",
+      "type": "NoFilter"
+    },
+    {
+      "source": "1919a80f23bc45cde413",
+      "target": "451c268aa9be2f1ae715",
+      "type": "NoFilter"
+    },
+    {
+      "source": "1919a80f23bc45cde413",
+      "target": "2b92cf2bde26c459e4b4",
+      "type": "NoFilter"
+    },
+    {
+      "source": "6d7bdebd5293ae08d1f6",
+      "target": "896e05b197c48e50451d",
+      "type": "NoFilter"
+    },
+    {
+      "source": "1919a80f23bc45cde413",
+      "target": "6d7bdebd5293ae08d1f6",
+      "type": "NoFilter"
+    },
+    {
+      "source": "451c268aa9be2f1ae715",
+      "target": "6d7bdebd5293ae08d1f6",
+      "type": "NoFilter"
+    },
+    {
+      "source": "451c268aa9be2f1ae715",
+      "target": "2b92cf2bde26c459e4b4",
+      "type": "NoFilter"
+    },
+    {
+      "source": "451c268aa9be2f1ae715",
+      "target": "1919a80f23bc45cde413",
+      "type": "NoFilter"
+    },
+    {
+      "source": "451c268aa9be2f1ae715",
+      "target": "896e05b197c48e50451d",
+      "type": "NoFilter"
+    },
+    {
+      "source": "451c268aa9be2f1ae715",
+      "target": "cca60cc6418ee58fd6db",
+      "type": "NoFilter"
+    },
+    {
+      "source": "2b92cf2bde26c459e4b4",
+      "target": "451c268aa9be2f1ae715",
+      "type": "NoFilter"
+    },
+    {
+      "source": "2b92cf2bde26c459e4b4",
+      "target": "cca60cc6418ee58fd6db",
+      "type": "NoFilter"
+    },
+    {
+      "source": "2b92cf2bde26c459e4b4",
+      "target": "896e05b197c48e50451d",
+      "type": "NoFilter"
+    },
+    {
+      "source": "2b92cf2bde26c459e4b4",
+      "target": "6d7bdebd5293ae08d1f6",
+      "type": "NoFilter"
+    },
+    {
+      "source": "2b92cf2bde26c459e4b4",
+      "target": "1919a80f23bc45cde413",
+      "type": "NoFilter"
+    },
+    {
+      "source": "cca60cc6418ee58fd6db",
+      "target": "451c268aa9be2f1ae715",
+      "type": "NoFilter"
+    },
+    {
+      "source": "cca60cc6418ee58fd6db",
+      "target": "2b92cf2bde26c459e4b4",
+      "type": "NoFilter"
+    },
+    {
+      "source": "cca60cc6418ee58fd6db",
+      "target": "896e05b197c48e50451d",
+      "type": "NoFilter"
+    },
+    {
+      "source": "cca60cc6418ee58fd6db",
+      "target": "6d7bdebd5293ae08d1f6",
+      "type": "NoFilter"
+    },
+    {
+      "source": "cca60cc6418ee58fd6db",
+      "target": "1919a80f23bc45cde413",
+      "type": "NoFilter"
+    },
+    {
+      "source": "896e05b197c48e50451d",
+      "target": "cca60cc6418ee58fd6db",
+      "type": "NoFilter"
+    },
+    {
+      "source": "896e05b197c48e50451d",
+      "target": "451c268aa9be2f1ae715",
+      "type": "NoFilter"
+    },
+    {
+      "source": "896e05b197c48e50451d",
+      "target": "2b92cf2bde26c459e4b4",
+      "type": "NoFilter"
+    },
+    {
+      "source": "896e05b197c48e50451d",
+      "target": "6d7bdebd5293ae08d1f6",
+      "type": "NoFilter"
+    },
+    {
+      "source": "896e05b197c48e50451d",
+      "target": "1919a80f23bc45cde413",
+      "type": "NoFilter"
+    },
+    {
+      "source": "1919a80f23bc45cde413",
+      "target": "4569c4e87cee357e2ce2",
+      "type": "NoFilter"
+    }
+  ]
+}

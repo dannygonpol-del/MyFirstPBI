@@ -1,0 +1,114 @@
+relationship 6eec8db2-fbff-90c7-7563-0e62175f5d9e
+	fromColumn: vwCasos.CodigoCliente
+	toColumn: Clientes.Codigo
+
+relationship 42438c43-b0a8-3fe9-20ae-b3eddf2c4a86
+	fromColumn: vwPagos.Sucursal_id
+	toColumn: tblOficiales.IdUnidad
+
+relationship b1a5cb79-db12-678a-a551-7a6b235548a8
+	fromColumn: vwPagos.Sucursal_id
+	toColumn: vwMetas.Unidad
+
+relationship c12170e0-95f9-37cd-ba8a-dec69784b046
+	fromColumn: vwPagos.CodigoCliente
+	toColumn: Clientes.Codigo
+
+relationship f6399718-8f83-7985-8a38-110abd1cbf01
+	fromColumn: vwDeudas.OficialAsignado
+	toColumn: Oficiales.Codigo
+
+relationship d523e699-567a-7214-059c-27bd01049d7b
+	fromColumn: vwDeudas.CodigoCliente
+	toColumn: Clientes.Codigo
+
+relationship 2fb0a039-797a-d4fc-1e56-39f04c436bd7
+	fromColumn: vwCasos.Estado
+	toColumn: tblEstados_Promesas.Estados
+
+relationship 7e8c724b-5f7f-ae3e-1655-d527a58ee278
+	fromColumn: vwCasos.codigo
+	toColumn: Oficiales.Codigo
+
+relationship 4d1252a3-c236-1b94-5483-5b55643cdb20
+	fromColumn: vwGestiones.Sucursales
+	toColumn: tblOficiales.IdUnidad
+
+relationship vwGestiones_Oficiales_Oficiales_Codigo
+	fromColumn: vwGestiones.Oficiales
+	toColumn: Oficiales.Codigo
+
+relationship vwCasos_Sucursal_tblOficiales_IdUnidad
+	fromColumn: vwCasos.Sucursal
+	toColumn: tblOficiales.IdUnidad
+
+relationship 879d9e79-f7c0-c687-51c6-776e9fcb4559
+	fromColumn: vwRotacionPagosPorClienetes_Deudores.Tipo_Pago
+	toColumn: tblClasePago.ClasePagos
+
+relationship 5c298341-38fd-07c3-e717-31dde51fc97d
+	fromColumn: vwCartera.CodigoCliente
+	toColumn: Clientes.Codigo
+
+relationship d03cd660-9204-e775-db73-dccb202ab2b7
+	fromColumn: vwCasosGestiones.CodigoCliente
+	toColumn: Clientes.Codigo
+
+relationship e8827e32-e64e-e50b-a3f8-8ff2d767094d
+	crossFilteringBehavior: bothDirections
+	securityFilteringBehavior: bothDirections
+	fromColumn: vwCasosGestiones.Codigo
+	toColumn: AsesoresCasosGestionesPagos.Codigo
+
+relationship 536e1f16-1d72-5b79-2e82-bfcb94616756
+	fromColumn: vwPagos.Codigo
+	toColumn: AsesoresCasosGestionesPagos.Codigo
+
+relationship 930880fe-348f-0d92-73eb-c433a654a7b5
+	crossFilteringBehavior: bothDirections
+	fromCardinality: one
+	fromColumn: AsosoresMetasPagos.Codigo
+	toColumn: vwMetasAsesores.codigo
+
+relationship f2e510af-1510-b6da-136f-ebc2de9242c1
+	crossFilteringBehavior: bothDirections
+	fromColumn: vwPagos.Codigo
+	toColumn: AsosoresMetasPagos.Codigo
+
+relationship aea1b7bc-d756-452d-b5d9-4206ca2d056a
+	joinOnDateBehavior: datePartOnly
+	fromColumn: ControlActualizacion.FechaHoraActualizacion
+	toColumn: LocalDateTable_e62ec90d-a6e3-4bf2-afbb-a11400e2386f.Date
+
+relationship 74ef0843-5e6a-15d9-9410-5a3df279769f
+	fromColumn: vwDeudas.fecha
+	toColumn: Calendario.Date
+
+relationship f8f9b909-00f0-efae-90f0-d612552342e3
+	fromColumn: vwGestiones.fecha
+	toColumn: Calendario.Date
+
+relationship vwRotacionPagosPorClienetes_Deudores_FechaPago_Calendario_Date
+	fromColumn: vwRotacionPagosPorClienetes_Deudores.FechaPago
+	toColumn: Calendario.Date
+
+relationship 7a7a345b-32e7-570b-d1fb-30105adfe922
+	fromColumn: vwRotacionSinPagosPorClientes.FechaApoderam
+	toColumn: Calendario.Date
+
+relationship 606cec3a-9b0a-c7f4-16aa-1a96f33e12ab
+	fromColumn: vwCartera.FechaApoderam
+	toColumn: Calendario.Date
+
+relationship 6ceaf54b-13dd-d038-e979-5cd07500ef9e
+	fromColumn: vwCasos.FechaCreacion
+	toColumn: Calendario.Date
+
+relationship 5ca7c084-8bc8-87da-6601-602c9222c8ef
+	fromColumn: vwPagos.FechaCreacion
+	toColumn: Calendario.Date
+
+relationship 5e01cce9-382c-a29e-904a-91df135f2a2e
+	fromColumn: vwCasosDistribuidos.FechaAsignado
+	toColumn: Calendario.Date
+

@@ -1,0 +1,75 @@
+table vwDeudas
+	lineageTag: 7bd58c55-8f3d-4126-a491-76f8e29d4fcc
+
+	column OficialAsignado
+		dataType: string
+		sourceProviderType: varchar(15)
+		lineageTag: 7ffa83f4-e34d-459b-9b48-6bb9c16cc745
+		summarizeBy: none
+		sourceColumn: OficialAsignado
+
+		annotation SummarizationSetBy = Automatic
+
+	column CodigoCliente
+		dataType: string
+		sourceProviderType: varchar(15)
+		lineageTag: f1bf8b3f-37ee-4590-a7e0-4902730f98d1
+		summarizeBy: none
+		sourceColumn: CodigoCliente
+
+		annotation SummarizationSetBy = Automatic
+
+	column deuda
+		dataType: decimal
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		sourceProviderType: money
+		lineageTag: ef7f8e70-3f95-4436-857d-256558f276fc
+		summarizeBy: sum
+		sourceColumn: deuda
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"es-DO"}
+
+	column fecha
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime
+		lineageTag: 8e2f6d02-c8fd-4137-a4ae-499c986e2aad
+		summarizeBy: none
+		sourceColumn: fecha
+
+		annotation SummarizationSetBy = Automatic
+
+	column casoid
+		dataType: int64
+		isNullable: false
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: 71e4e9d3-bcb3-4acb-8a26-77558018a782
+		summarizeBy: sum
+		sourceColumn: casoid
+
+		annotation SummarizationSetBy = Automatic
+
+	column Indice
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: db551341-cd7d-46ca-8660-22e784044199
+		summarizeBy: sum
+		sourceColumn: Indice
+
+		annotation SummarizationSetBy = Automatic
+
+	partition vwDeudas = m
+		mode: dual
+		source =
+				let
+				    Origen = Sql.Database("192.168.9.104,1433", "SigecobDS"),
+				    dbo_vwDeudas = Origen{[Schema="dbo",Item="vwDeudas"]}[Data]
+				in
+				    dbo_vwDeudas
+
+	annotation PBI_ResultType = Table
+

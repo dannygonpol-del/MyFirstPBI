@@ -1,0 +1,28 @@
+table AsesoresCasosGestionesPagos
+	lineageTag: 709c0f24-a755-42a0-885a-908edda8de8d
+
+	column Codigo
+		lineageTag: fed372cb-8eb5-4529-b355-c24f179da092
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: vwCasosGestiones[Codigo]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition AsesoresCasosGestionesPagos = calculated
+		mode: import
+		source = ```
+				
+				
+				    VAR CodigoCasosGestiones = VALUES(vwCasosGestiones[Codigo])
+				    VAR CodigoPagos = VALUES(vwPagos[Codigo])
+				    VAR Combinacion = UNION(CodigoCasosGestiones, CodigoPagos)
+				
+				RETURN
+				
+				    DISTINCT(FILTER(Combinacion,[Codigo]<>BLANK())
+				)
+				```
+
+	annotation PBI_Id = 4dc3f5b6fb4f4294bf534cf46fea5862
+

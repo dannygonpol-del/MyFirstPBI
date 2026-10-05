@@ -1,0 +1,325 @@
+table vwMetas
+	lineageTag: e7672911-eab7-4a5a-a374-3a016835e21b
+
+	/// Diferencia entre la meta de la unidad y lo recuperado
+	measure DiferenciaMetas = ```
+			
+			    VAR TotalMeta       = max(vwMetas[MontoMetas])
+			    VAR TotalRecuperado = sum(vwPagos[MontoPagado])
+			    
+			    RETURN
+			        (TotalMeta - TotalRecuperado)
+			```
+		formatString: $#,0.00;($#,0.00);$#,0.00
+		displayFolder: Metas
+		lineageTag: 7147ac87-8ebc-4221-b9fe-e18e62d67010
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	/// Porcentaje de la meta de la unidad que falta por cumplir
+	measure %PorCumplirMetas = ```
+			VAR TotalMeta       = MAX(vwMetas[MontoMetas])
+			VAR TotalRecuperado = SUM(vwPagos[MontoPagado])
+			VAR MetaFaltante    = TotalMeta - TotalRecuperado
+			
+			RETURN    
+			 IF(
+			        MetaFaltante <= 0.00,
+			        BLANK(), 
+			        DIVIDE(MetaFaltante, TotalMeta)
+			    ) 
+			```
+		formatString: 0.00%
+		displayFolder: Metas
+		lineageTag: 4cb7c5a1-2542-459f-be54-595b34bb4e5a
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	/// Monto de la meta de la unidad
+	measure MontoMetaUnidad = MAX(vwMetas[MontoMetas])
+		formatString: $#,0.00;($#,0.00);$#,0.00
+		displayFolder: Metas
+		lineageTag: 41f2786d-de03-4b14-88e0-4856becafd24
+
+		annotation PBI_FormatHint = {"currencyCulture":"es-DO"}
+
+	/// Suma de las diferencias entre metas y recuperación por unidad
+	measure MontosDif = sumx(values(vwMetas[DifMetasRecuperacion]), CALCULATE(sum(vwMetas[DifMetasRecuperacion])))
+		formatString: $#,0.00;($#,0.00);$#,0.00
+		displayFolder: Metas
+		lineageTag: 8563cd8e-7ed0-4ac7-87fa-d18e7e152423
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	/// Suma de metas por unidad/sucursal cruzando vwPagos con vwMetas por Sucursal_id
+	measure MetasUnidadesAsesores = ```
+			
+			
+			VAR _MetaAsesor =
+			    CALCULATE(
+			        MAX(vwMetasAsesores[MontoMetas]),
+			        REMOVEFILTERS(Calendario),
+			        FILTER(
+			            ALL(vwMetasAsesores),
+			            vwMetasAsesores[Codigo]  in VALUES(AsosoresMetasPagos[Codigo])  ///= SELECTEDVALUE(vwPagos[Codigo])
+			        )
+			    )
+			
+			VAR _MetaUnidad =
+			    CALCULATE(
+			        MAX(vwMetas[MontoMetas]),
+			        REMOVEFILTERS(Calendario),
+			        FILTER(
+			            ALL(vwMetas),
+			            vwMetas[Unidad] in VALUES(AsosoresMetasPagos[Sucursal_id])  //= SELECTEDVALUE(vwPagos[Sucursal_id])
+			        )
+			    )
+			
+			VAR _TotalUnidades =
+			   CALCULATE(
+			      MAX(vwMetas[MontoMetas]),
+			        REMOVEFILTERS(Calendario),
+			        FILTER(
+			            ALL(vwMetas),
+			            vwMetas[Unidad] in VALUES(AsosoresMetasPagos[Sucursal_id])  //= SELECTEDVALUE(vwPagos[Sucursal_id])
+			        )
+			   )
+			
+			VAR _TotalGeneral =
+			   CALCULATE(
+			      SUM(vwMetas[MontoMetas]),
+			        REMOVEFILTERS(Calendario),
+			        FILTER(
+			            ALL(vwMetas),
+			            vwMetas[Unidad] in VALUES(AsosoresMetasPagos[Sucursal_id])  //= SELECTEDVALUE(vwPagos[Sucursal_id])
+			        )
+			   )
+			
+			   //     SUMX(
+			  //          VALUES(vwMetasAsesores[Sucursal_id]),
+			  //          CALCULATE(MAX(vwMetas[MontoMetas]))
+			        
+			   
+			
+			 RETURN
+			
+			SWITCH(
+			    TRUE(),
+			
+			    -- Cuando estoy en el nivel Cliente
+			    ISINSCOPE(vwPagos[NombreDeudor]), BLANK(),
+			
+			    -- Cuando estoy en el nivel Asesor
+			    ISINSCOPE(vwPagos[Asesor]), _MetaAsesor,
+			  
+			    -- Cuando estoy en el nivel Unidades
+			    ISINSCOPE(vwPagos[Sucursal_id]), _TotalUnidades,
+			
+			      -- Totales
+			      _TotalGeneral
+			)     
+			
+			```
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		displayFolder: Metas
+		lineageTag: b4ec2b6d-4eb7-4b2f-b3e9-b809bd435283
+
+		annotation PBI_FormatHint = {"currencyCulture":"es-DO"}
+
+	measure MetasUnidades = ```
+			
+			
+			    CALCULATE(SUM(vwMetas[MontoMetas]), TREATAS(values(vwPagos[Sucursal_id]),vwMetas[Unidad]))
+			
+			   --SELECTEDVALUE(vwMetas[MontoMetas])
+			
+			--max(vwMetas[MontoMetas])
+			```
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		displayFolder: Metas
+		lineageTag: 6a79dc83-8195-4f7b-97d3-b37703426610
+
+		annotation PBI_FormatHint = {"currencyCulture":"es-DO"}
+
+	measure MetasUnidadesAsesoresClientesDeudores = ```
+			
+			
+			
+			VAR _MetaUnidad =
+			    CALCULATE(
+			        MAX(vwMetas[MontoMetas]),
+			        REMOVEFILTERS(Calendario),
+			        FILTER(
+			            ALL(vwMetas),
+			            vwMetas[Unidad] in VALUES(AsosoresMetasPagos[Sucursal_id])  //= SELECTEDVALUE(vwPagos[Sucursal_id])
+			        )
+			    )
+			
+			VAR _MetaAsesor =
+			    CALCULATE(
+			        MAX(vwMetasAsesores[MontoMetas]),
+			        REMOVEFILTERS(Calendario),
+			        FILTER(
+			            ALL(vwMetasAsesores),
+			            vwMetasAsesores[Codigo]  in VALUES(AsosoresMetasPagos[Codigo])  ///= SELECTEDVALUE(vwPagos[Codigo])
+			        )
+			    )
+			
+			VAR _MetaCLientes =
+			    CALCULATE(
+			        MAX(vwMetas[MontoMetas]),
+			        REMOVEFILTERS(Calendario),
+			        FILTER(
+			            ALL(vwMetas),
+			            vwMetas[Unidad] in VALUES(AsosoresMetasPagos[Sucursal_id])  //= SELECTEDVALUE(vwPagos[Sucursal_id])
+			        )
+			    )
+			
+			
+			VAR _TotalUnidades =
+			    CALCULATE(
+			        SUMX(
+			            VALUES(vwMetas[Unidad]),
+			            CALCULATE(MAX(vwMetas[MontoMetas]))
+			        ),
+			        REMOVEFILTERS(Calendario)
+			    )
+			
+			RETURN
+			SWITCH(
+			    TRUE(),
+			    HASONEVALUE(AsosoresMetasPagos[Codigo]), _MetaAsesor,    
+			    ISINSCOPE(vwPagos[Sucursal_id]), _MetaUnidad,
+			    ISINSCOPE(vwPagos[NombreDeudor]), 0.00,
+			    ISINSCOPE(vwPagos[NombreCLiente]), 0.00,
+			    ISINSCOPE(vwPagos[NombreDeudor]), 0.00,
+			    _TotalUnidades
+			)
+			
+			
+			
+			```
+		displayFolder: Metas
+		lineageTag: a9c39825-8e87-45f6-a7b3-0ad7a6cf6db7
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure MetasAsesoresUnidades = ```
+			
+			
+			VAR _MetaAsesor =
+			    CALCULATE(
+			        MAX(vwMetasAsesores[MontoMetas]),
+			        REMOVEFILTERS(Calendario),
+			        FILTER(
+			            ALL(vwMetasAsesores),
+			            vwMetasAsesores[Codigo]  in VALUES(AsosoresMetasPagos[Codigo])  ///= SELECTEDVALUE(vwPagos[Codigo])
+			        )
+			    )
+			
+			VAR _MetaUnidad =
+			    CALCULATE(
+			        MAX(vwMetas[MontoMetas]),
+			        REMOVEFILTERS(Calendario),
+			        FILTER(
+			            ALL(vwMetas),
+			            vwMetas[Unidad] in VALUES(AsosoresMetasPagos[Sucursal_id])  //= SELECTEDVALUE(vwPagos[Sucursal_id])
+			        )
+			    )
+			
+			VAR _TotalUnidades =
+			    CALCULATE(
+			        SUMX(
+			            VALUES(vwMetas[Unidad]),
+			            CALCULATE(MAX(vwMetas[MontoMetas]))
+			        ),
+			        REMOVEFILTERS(Calendario)
+			    )
+			
+			RETURN
+			SWITCH(
+			    TRUE(),
+			    HASONEVALUE(AsosoresMetasPagos[Codigo]), _MetaAsesor,
+			   ISINSCOPE(vwPagos[Sucursal_id]), _MetaUnidad,
+			   
+			    _TotalUnidades
+			)
+			
+			   
+			```
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		displayFolder: Metas
+		lineageTag: 28a5b259-9a19-4a4e-a9c1-21bd90a4f60e
+
+		annotation PBI_FormatHint = {"currencyCulture":"es-DO"}
+
+	column Unidad
+		dataType: string
+		sourceProviderType: nchar
+		lineageTag: 8f91d765-9abe-451d-8461-90cf279fbe2e
+		summarizeBy: none
+		sourceColumn: Unidad
+
+		annotation SummarizationSetBy = Automatic
+
+	column MontoMetas
+		dataType: decimal
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		sourceProviderType: money
+		lineageTag: a7fe3900-bce0-4551-9cd6-ce262d228763
+		summarizeBy: none
+		sourceColumn: MontoMetas
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"es-DO"}
+
+	column Recuperado
+		dataType: double
+		sourceProviderType: float
+		lineageTag: 39bd6f5d-ef4c-4dd5-845c-a20d83e5465f
+		summarizeBy: none
+		sourceColumn: Recuperado
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column DifMetasRecuperacion
+		dataType: double
+		sourceProviderType: float
+		lineageTag: 165e159d-093a-49b0-ae75-4348260beb9d
+		summarizeBy: none
+		sourceColumn: DifMetasRecuperacion
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column UnidadesF =
+			
+			SWITCH(
+			    TRUE(),
+			    vwMetas[Unidad] IN {"CC1","CC2","CC3","CC4"}, MID(vwMetas[Unidad], 1, 2) & "-" & RIGHT(vwMetas[Unidad]),
+			    vwMetas[Unidad] IN {"ADMINISTRATIVOS"}, "Administrativos",
+			    vwMetas[Unidad] IN {"GA"}, "Area Legal",
+			    vwMetas[Unidad] IN {"SWAT"}, "SWAT",
+			    vwMetas[Unidad]   -- valor por defecto
+			)
+		displayFolder: Metas
+		lineageTag: 4227b2f2-2d34-4ac5-aef7-5918c3c17bf0
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	partition vwMetas = m
+		mode: dual
+		source =
+				let
+				    Origen = Sql.Database("192.168.9.104,1433", "SigecobDS"),
+				    dbo_vwMetas = Origen{[Schema="dbo",Item="vwMetas"]}[Data]
+				in
+				    dbo_vwMetas
+
+	annotation PBI_ResultType = Table
+

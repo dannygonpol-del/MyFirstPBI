@@ -1,0 +1,82 @@
+table TablaIndicadores
+	lineageTag: d92e2f4e-ee6c-4e7e-9274-3115aa6eaa34
+
+	/// Indicador dinámico que retorna Gestiones, Promesas o Contactos según el tipo seleccionado en TablaIndicadores
+	measure 'Valor Indicador' = ```
+			
+			
+			VAR _Tipo = SELECTEDVALUE(TablaIndicadores[Tipo])
+			
+			RETURN
+			SWITCH(
+			    TRUE(),
+			
+			    _Tipo = "Gestiones",
+			        COALESCE(vwCasosGestiones[Cant_Gestiones],0),
+			
+			    _Tipo = "Contactos",
+			        COALESCE(vwCasosGestiones[Cant_Contactos],0),
+			
+			    _Tipo = "Promesas",
+			        COALESCE(vwCasosGestiones[Cant_Promesas],0), 
+			        
+			       // +    
+			       // 
+			       //                                                 CALCULATE(
+			       //                                                     vwCasosGestiones[Cant_Contactos],
+			       //                                                     vwGestiones[GestionId] = "0087"
+			       //                                                 ),
+			
+			    CALCULATE(
+			        vwCasosGestiones[Cant_Contactos],
+			        TREATAS(
+			            {_Tipo},
+			            vwGestiones[Descripcion] 
+			        ),
+			         vwGestiones[GestionId] <> "0087"
+			
+			    )
+			)
+			
+			
+			```
+		formatString: 0
+		displayFolder: Indicadores
+		lineageTag: 4b7d3017-00c6-4bc6-a332-555dad9d9b09
+
+	column Tipo
+		lineageTag: 1cb7e400-6a3a-4a31-9c93-7cb6e578cce1
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Tipo]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition TablaIndicadores = calculated
+		mode: import
+		source = ```
+				
+				UNION(
+				    DATATABLE(
+				        "Tipo", STRING,
+				        {
+				            {"Gestiones"},
+				            {"Contactos"},
+				            {"Promesas"}
+				        }
+				    ),
+				DISTINCT(
+				    SELECTCOLUMNS(
+				        FILTER(
+				            vwGestiones,
+				            vwGestiones[Resultado] = "CONTACTADO"  // && vwGestiones[GestionId] <> "0087"
+				        ),
+				        "Tipo", vwGestiones[Descripcion]
+				    )
+				)
+				)
+				
+				```
+
+	annotation PBI_Id = c0da63a8fff648388623265fc58265ba
+

@@ -1,0 +1,6229 @@
+cultureInfo es-MX
+
+	linguisticMetadata =
+			{
+			  "Version": "4.1.0",
+			  "Language": "en-US",
+			  "Entities": {
+			    "calendario": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Calendario"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "calendario": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "calendario.date": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Calendario",
+			          "ConceptualProperty": "Date"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "date": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "moment": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.736
+			          }
+			        },
+			        {
+			          "period": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.714
+			          }
+			        }
+			      ],
+			      "SemanticType": "Time"
+			    },
+			    "calendario.date.jerarquía_de_fecha": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Calendario",
+			          "VariationSource": "Date",
+			          "VariationSet": "Variación",
+			          "Hierarchy": "Jerarquía de fechas"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "jerarquía de fecha": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "calendario.date.año": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Calendario",
+			          "VariationSource": "Date",
+			          "VariationSet": "Variación",
+			          "Hierarchy": "Jerarquía de fechas",
+			          "HierarchyLevel": "Año"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "año": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "date año": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "moment año": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.6
+			          }
+			        },
+			        {
+			          "period año": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
+			          }
+			        }
+			      ]
+			    },
+			    "calendario.date.trimestre": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Calendario",
+			          "VariationSource": "Date",
+			          "VariationSet": "Variación",
+			          "Hierarchy": "Jerarquía de fechas",
+			          "HierarchyLevel": "Trimestre"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "trimestre": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "date trimestre": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "moment trimestre": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.6
+			          }
+			        },
+			        {
+			          "period trimestre": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
+			          }
+			        }
+			      ]
+			    },
+			    "calendario.date.me": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Calendario",
+			          "VariationSource": "Date",
+			          "VariationSet": "Variación",
+			          "Hierarchy": "Jerarquía de fechas",
+			          "HierarchyLevel": "Mes"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "me": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "date me": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "moment me": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.75
+			          }
+			        },
+			        {
+			          "period me": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.727
+			          }
+			        }
+			      ]
+			    },
+			    "calendario.date.día": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Calendario",
+			          "VariationSource": "Date",
+			          "VariationSet": "Variación",
+			          "Hierarchy": "Jerarquía de fechas",
+			          "HierarchyLevel": "Día"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "día": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "date día": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "moment día": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.6
+			          }
+			        },
+			        {
+			          "period día": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
+			          }
+			        }
+			      ]
+			    },
+			    "calendario.año": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Calendario",
+			          "ConceptualProperty": "Año"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "año": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "calendario.me": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Calendario",
+			          "ConceptualProperty": "Mes"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "me": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "calendario.año_me": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Calendario",
+			          "ConceptualProperty": "AñoMes"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "año me": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "AñoMes": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "tbl_oficiale": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "tblOficiales"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "tbl oficiale": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "tblOficiales": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "tbl_oficiale.id_unidad": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "tblOficiales",
+			          "ConceptualProperty": "IdUnidad"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "id unidad": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "IdUnidad": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "identification unidad": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.6
+			          }
+			        },
+			        {
+			          "identity unidad": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.6
+			          }
+			        },
+			        {
+			          "identifier unidad": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.6
+			          }
+			        },
+			        {
+			          "credential unidad": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
+			          }
+			        }
+			      ]
+			    },
+			    "cliente": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Clientes"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "cliente": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "cliente.codigo": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Clientes",
+			          "ConceptualProperty": "Codigo"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "codigo": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "cliente.nombre": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Clientes",
+			          "ConceptualProperty": "Nombre"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "nombre": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "cliente.direccion": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Clientes",
+			          "ConceptualProperty": "Direccion"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "direccion": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "cliente.telefono": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Clientes",
+			          "ConceptualProperty": "Telefono"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "telefono": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "cliente.fax": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Clientes",
+			          "ConceptualProperty": "Fax"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "fax": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "transmission": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "facsimile": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "message": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "document": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "copy": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        }
+			      ]
+			    },
+			    "cliente.contacto": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Clientes",
+			          "ConceptualProperty": "Contacto"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "contacto": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "cliente.rnc_cedula": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Clientes",
+			          "ConceptualProperty": "RncCedula"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "rnc cedula": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "RncCedula": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "cliente.e_mail": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Clientes",
+			          "ConceptualProperty": "eMail"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "e mail": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "eMail": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "mail": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "mailing": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "posting": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "post-office": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "delivery": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "e correspondence": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.461
+			          }
+			        },
+			        {
+			          "e post": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.461
+			          }
+			        },
+			        {
+			          "correspondence": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.452
+			          }
+			        },
+			        {
+			          "post": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.452
+			          }
+			        },
+			        {
+			          "message": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.452
+			          }
+			        },
+			        {
+			          "communication": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.452
+			          }
+			        }
+			      ]
+			    },
+			    "cliente.ncf_tipo": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Clientes",
+			          "ConceptualProperty": "NcfTipo"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "ncf tipo": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "NcfTipo": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "cliente.condicion_pago": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Clientes",
+			          "ConceptualProperty": "CondicionPago"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "condicion pago": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "CondicionPago": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "cliente.archivo_carga": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Clientes",
+			          "ConceptualProperty": "ArchivoCarga"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "archivo carga": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "ArchivoCarga": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "cliente.cargo_fijo_unico": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Clientes",
+			          "ConceptualProperty": "CargoFijoUnico"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "cargo fijo unico": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "CargoFijoUnico": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "cliente.modo_aplica_pago_abono": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Clientes",
+			          "ConceptualProperty": "ModoAplicaPago_Abono"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "modo aplica pago abono": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "ModoAplicaPago_Abono": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "cliente.modo_aplica_pago_saldo": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Clientes",
+			          "ConceptualProperty": "ModoAplicaPago_Saldo"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "modo aplica pago saldo": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "ModoAplicaPago_Saldo": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "cliente.nombre_representante": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Clientes",
+			          "ConceptualProperty": "NombreRepresentante"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "nombre representante": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "NombreRepresentante": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "cliente.cedula_representante": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Clientes",
+			          "ConceptualProperty": "CedulaRepresentante"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "cedula representante": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "CedulaRepresentante": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "cliente.sub_cliente": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Clientes",
+			          "ConceptualProperty": "Sub_cliente"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "sub cliente": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "Sub_cliente": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "cliente.agrupar_en": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Clientes",
+			          "ConceptualProperty": "AgruparEn"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "agrupar en": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "AgruparEn": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "cliente.mostrar_distribucion_pago": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Clientes",
+			          "ConceptualProperty": "MostrarDistribucionPago"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "mostrar distribucion pago": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "MostrarDistribucionPago": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "cliente.supervisado_por": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Clientes",
+			          "ConceptualProperty": "SupervisadoPor"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "supervisado por": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "SupervisadoPor": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "cliente.inactivo": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Clientes",
+			          "ConceptualProperty": "Inactivo"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "inactivo": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "cliente.formato_remision": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Clientes",
+			          "ConceptualProperty": "FormatoRemision"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "formato remision": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "FormatoRemision": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "cliente.producto_sin_guion": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Clientes",
+			          "ConceptualProperty": "ProductoSinGuion"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "producto sin guion": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "ProductoSinGuion": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "cliente.cedula_sin_guion": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Clientes",
+			          "ConceptualProperty": "CedulaSinGuion"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "cedula sin guion": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "CedulaSinGuion": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "cliente.generale": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Clientes",
+			          "ConceptualProperty": "Generales"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "generale": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "cliente.tipo_recibo": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Clientes",
+			          "ConceptualProperty": "TipoRecibo"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "tipo recibo": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "TipoRecibo": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "cliente.grupo_cliente": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Clientes",
+			          "ConceptualProperty": "GrupoCliente"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "grupo cliente": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "GrupoCliente": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "cliente.alerta_cargo_cobrado": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Clientes",
+			          "ConceptualProperty": "AlertaCargoCobrado"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "alerta cargo cobrado": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "AlertaCargoCobrado": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "cliente.calcular_hon_ciclo": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Clientes",
+			          "ConceptualProperty": "CalcularHonCiclo"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "calcular hon ciclo": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "CalcularHonCiclo": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "cliente.meta_mensual": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Clientes",
+			          "ConceptualProperty": "MetaMensual"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "meta mensual": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "MetaMensual": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "cliente.auto_crear_no_prod": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Clientes",
+			          "ConceptualProperty": "AutoCrearNoProd"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "auto crear no prod": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "AutoCrearNoProd": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "auto crear number prod": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.599
+			          }
+			        },
+			        {
+			          "auto crear no nudge": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.499
+			          }
+			        },
+			        {
+			          "auto crear no poke": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.499
+			          }
+			        },
+			        {
+			          "auto crear no elbow": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.499
+			          }
+			        },
+			        {
+			          "auto crear no dig": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.499
+			          }
+			        },
+			        {
+			          "auto crear no jab": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.499
+			          }
+			        },
+			        {
+			          "auto crear no push": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.499
+			          }
+			        }
+			      ]
+			    },
+			    "cliente.prefijo_no_prod": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Clientes",
+			          "ConceptualProperty": "PrefijoNoProd"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "prefijo no prod": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "PrefijoNoProd": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "prefijo number prod": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        },
+			        {
+			          "prefijo no nudge": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.492
+			          }
+			        },
+			        {
+			          "prefijo no poke": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.492
+			          }
+			        },
+			        {
+			          "prefijo no elbow": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.492
+			          }
+			        },
+			        {
+			          "prefijo no dig": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.492
+			          }
+			        },
+			        {
+			          "prefijo no jab": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.492
+			          }
+			        },
+			        {
+			          "prefijo no push": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.492
+			          }
+			        }
+			      ]
+			    },
+			    "cliente.promesa_no_contagia": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Clientes",
+			          "ConceptualProperty": "PromesaNoContagia"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "promesa no contagia": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "PromesaNoContagia": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "promesa number contagia": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        }
+			      ]
+			    },
+			    "cliente.vicidial_campaign": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Clientes",
+			          "ConceptualProperty": "VicidialCampaign"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "vicidial campaign": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "VicidialCampaign": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "vicidial movement": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "vicidial operation": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "vicidial promotion": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "vicidial crusade": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "vicidial drive": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "vicidial fight": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "vicidial battle": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "vicidial war": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        }
+			      ]
+			    },
+			    "cliente.vicidial_list": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Clientes",
+			          "ConceptualProperty": "VicidialList"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "vicidial list": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "VicidialList": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "vicidial chronology": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.75
+			          }
+			        },
+			        {
+			          "vicidial directory": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.727
+			          }
+			        },
+			        {
+			          "vicidial catalog": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.727
+			          }
+			        },
+			        {
+			          "vicidial catalogue": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.727
+			          }
+			        },
+			        {
+			          "vicidial inventory": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.727
+			          }
+			        },
+			        {
+			          "vicidial record": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.727
+			          }
+			        }
+			      ]
+			    },
+			    "cliente.ics": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Clientes",
+			          "ConceptualProperty": "ICS"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "ics": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "cliente.programa_lealtad": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Clientes",
+			          "ConceptualProperty": "ProgramaLealtad"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "programa lealtad": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "ProgramaLealtad": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "cliente.gestion_por_caso": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Clientes",
+			          "ConceptualProperty": "GestionPorCaso"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "gestion por caso": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "GestionPorCaso": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "cliente.permitir_caso_duplicado": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Clientes",
+			          "ConceptualProperty": "PermitirCasoDuplicado"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "permitir caso duplicado": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "PermitirCasoDuplicado": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "cliente.cartera_comun": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Clientes",
+			          "ConceptualProperty": "CarteraComun"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "cartera comun": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "CarteraComun": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "cliente.no_rebajar_pago": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Clientes",
+			          "ConceptualProperty": "NoRebajarPago"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "no rebajar pago": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "NoRebajarPago": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "number rebajar pago": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        }
+			      ]
+			    },
+			    "cliente.prefijo_tel_local": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Clientes",
+			          "ConceptualProperty": "PrefijoTelLocal"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "prefijo tel local": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "PrefijoTelLocal": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "cliente.prefijo_tel_cel": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Clientes",
+			          "ConceptualProperty": "PrefijoTelCel"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "prefijo tel cel": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "PrefijoTelCel": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "cliente.fuera_cola_trabajo": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Clientes",
+			          "ConceptualProperty": "FueraColaTrabajo"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "fuera cola trabajo": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "FueraColaTrabajo": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "cliente.cliente_id": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Clientes",
+			          "ConceptualProperty": "ClienteId"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "cliente id": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "ClienteId": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "cliente identification": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.75
+			          }
+			        },
+			        {
+			          "cliente identity": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.75
+			          }
+			        },
+			        {
+			          "cliente identifier": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.75
+			          }
+			        },
+			        {
+			          "cliente credential": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.727
+			          }
+			        }
+			      ]
+			    },
+			    "oficiales.nombres": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Oficiales",
+			          "ConceptualProperty": "Nombres"
+			        }
+			      },
+			      "State": "Generated"
+			    },
+			    "vwcasos.monto_prometido": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "vwCasos",
+			          "ConceptualProperty": "Monto_Prometido"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Monto Prometido": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "vwcasos.monto_cumplido": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "vwCasos",
+			          "ConceptualProperty": "Monto_Cumplido"
+			        }
+			      },
+			      "State": "Generated"
+			    },
+			    "vwcasos.nombredeudor": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "vwCasos",
+			          "ConceptualProperty": "NombreDeudor"
+			        }
+			      },
+			      "State": "Generated"
+			    },
+			    "vwpagos.nombredeudor": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "vwPagos",
+			          "ConceptualProperty": "NombreDeudor"
+			        }
+			      },
+			      "State": "Generated"
+			    },
+			    "vwpagos.codigocliente": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "vwPagos",
+			          "ConceptualProperty": "CodigoCliente"
+			        }
+			      },
+			      "State": "Generated"
+			    },
+			    "vwpagos.sucursal_id": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "vwPagos",
+			          "ConceptualProperty": "Sucursal_id"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Unidades": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "vwpagos.cumplimiento": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "vwPagos",
+			          "ConceptualProperty": "%PorCumplir"
+			        }
+			      },
+			      "State": "Generated"
+			    },
+			    "vwpagos.pormedirabs": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "vwPagos",
+			          "ConceptualProperty": "PorCumplir"
+			        }
+			      },
+			      "State": "Generated"
+			    },
+			    "vwmetas.unidad": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "vwMetas",
+			          "ConceptualProperty": "Unidad"
+			        }
+			      },
+			      "State": "Generated"
+			    },
+			    "vwmetas.diferenciametas": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "vwMetas",
+			          "ConceptualProperty": "DiferenciaMetas"
+			        }
+			      },
+			      "State": "Generated"
+			    },
+			    "vwmetas.porcumplirmetas": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "vwMetas",
+			          "ConceptualProperty": "%PorCumplirMetas"
+			        }
+			      },
+			      "State": "Generated"
+			    },
+			    "vwpagos.montometa": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "vwPagos",
+			          "ConceptualProperty": "MontoMeta"
+			        }
+			      },
+			      "State": "Generated"
+			    },
+			    "vwpagos.montometa1": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "vwPagos",
+			          "ConceptualProperty": "MontoMeta$"
+			        }
+			      },
+			      "State": "Generated"
+			    },
+			    "vwcasos.sucursal": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "vwCasos",
+			          "ConceptualProperty": "Sucursal"
+			        }
+			      },
+			      "State": "Generated"
+			    },
+			    "tblestados_promesas.estados": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "tblEstados_Promesas",
+			          "ConceptualProperty": "Estados"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Estatus Promesas": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "vwcasos.cantpromesas": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "vwCasos",
+			          "ConceptualProperty": "CantPromesas"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Promesas": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "vwcasos.promesascumplidas": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "vwCasos",
+			          "ConceptualProperty": "%PromesasCumplidas"
+			        }
+			      },
+			      "State": "Generated"
+			    },
+			    "vwpagos.montorecuperado": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "vwPagos",
+			          "ConceptualProperty": "MontoRecuperado"
+			        }
+			      },
+			      "State": "Generated"
+			    },
+			    "vwpagos.recuperacion": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "vwPagos",
+			          "ConceptualProperty": "%Recuperacion"
+			        }
+			      },
+			      "State": "Generated"
+			    },
+			    "vwpagos.porrevision": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "vwPagos",
+			          "ConceptualProperty": "%PorRevision"
+			        }
+			      },
+			      "State": "Generated"
+			    },
+			    "vwmetas.unidadesf": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "vwMetas",
+			          "ConceptualProperty": "UnidadesF"
+			        }
+			      },
+			      "State": "Generated"
+			    },
+			    "vwpagos.cantpagosproc": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "vwPagos",
+			          "ConceptualProperty": "CantPagosProc"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Pagos Procesados": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "vwpagos.cantpagosrev": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "vwPagos",
+			          "ConceptualProperty": "CantPagosRev"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Pagos en Revisión": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "vwpagos.cantpagos": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "vwPagos",
+			          "ConceptualProperty": "CantPagos"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Pagos Recibidos": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "vwpagos.montosrevision": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "vwPagos",
+			          "ConceptualProperty": "MontosRevision"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Montos en Revision": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "vwpagos.montosprocesados": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "vwPagos",
+			          "ConceptualProperty": "MontosProcesados"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Montos Procesados": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "vwmetas.metasunidades": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "vwMetas",
+			          "ConceptualProperty": "MetasUnidadesAsesores"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Metas": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "vwcasos.cantidadcasos": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "vwCasos",
+			          "ConceptualProperty": "CantidadCasos"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Expedientes": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "vwgestiones.cantgestiones": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "vwGestiones",
+			          "ConceptualProperty": "CantGestiones"
+			        }
+			      },
+			      "State": "Generated"
+			    },
+			    "vwcasosgestiones.cant_gestiones": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "vwCasosGestiones",
+			          "ConceptualProperty": "Cant_Gestiones"
+			        }
+			      },
+			      "State": "Generated"
+			    },
+			    "vwcasosgestiones.monto_recuperacion": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "vwCasosGestiones",
+			          "ConceptualProperty": "Monto_recuperacion"
+			        }
+			      },
+			      "State": "Generated"
+			    },
+			    "vwcasos.monto_deuda": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "vwCasos",
+			          "ConceptualProperty": "Monto_Deuda"
+			        }
+			      },
+			      "State": "Generated"
+			    },
+			    "vwcasosgestiones.monto_promesas": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "vwCasosGestiones",
+			          "ConceptualProperty": "Monto_Promesas"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Monto Promesas": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "vwcasosgestiones.sucursal_id": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "vwCasosGestiones",
+			          "ConceptualProperty": "Sucursal_id"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Unidad de Negocios": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        },
+			        {
+			          "Unidades": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "vwcasosgestiones.cant_casos": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "vwCasosGestiones",
+			          "ConceptualProperty": "Cant_Casos$_bk"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Expedientes": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        },
+			        {
+			          "Cartera": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        },
+			        {
+			          "Cartera Total": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "vwcasosgestiones.cant_promesas": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "vwCasosGestiones",
+			          "ConceptualProperty": "Cant_Promesas"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Promesas": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "vwcasosgestiones.cantasesores": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "vwCasosGestiones",
+			          "ConceptualProperty": "CantAsesores"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Asesores": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "vwcasosgestiones.casos_dias__0_15": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "vwCasosGestiones",
+			          "ConceptualProperty": "Casos_Dias_ 0_15"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "0 a 15": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        },
+			        {
+			          "0 a 15 Dias": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "vwcasosgestiones.casos_dias__16_30": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "vwCasosGestiones",
+			          "ConceptualProperty": "Casos_Dias_ 16_30"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "16 a 30": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        },
+			        {
+			          "16 a 30 Dias": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "vwcasosgestiones.casos_dias__mas_30": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "vwCasosGestiones",
+			          "ConceptualProperty": "Casos_Dias_ Mas_30"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Mas de 30": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        },
+			        {
+			          "Mas de 30 Dias": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "vwcasosgestiones.oficiales": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "vwCasosGestiones",
+			          "ConceptualProperty": "Oficiales"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Asesores": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "vwcasosgestiones.casos_cc1": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "vwCasosGestiones",
+			          "ConceptualProperty": "Casos_CC1"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "CC1": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "vwcasosgestiones.casos_cc2": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "vwCasosGestiones",
+			          "ConceptualProperty": "Casos_CC2"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "CC2": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "vwcasosgestiones.casos_cc3": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "vwCasosGestiones",
+			          "ConceptualProperty": "Casos_CC3"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "CC3": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "vwcasosgestiones.casos_cc4": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "vwCasosGestiones",
+			          "ConceptualProperty": "Casos_CC4"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "CC4": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "vwcasosgestiones.casos_swat": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "vwCasosGestiones",
+			          "ConceptualProperty": "Casos_SWAT"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "SWAT": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "vwcasosgestiones.casos_admlegal": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "vwCasosGestiones",
+			          "ConceptualProperty": "Casos_ADMLEGAL"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Administración": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "vwcasosgestiones.nombrecliente": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "vwCasosGestiones",
+			          "ConceptualProperty": "NombreCliente"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Clientes": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "vwcasosgestiones.cant_carteravigente": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "vwCasosGestiones",
+			          "ConceptualProperty": "Cant_CarteraVigente"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Vigente": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "vwcasosgestiones.cant_carteracastigada": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "vwCasosGestiones",
+			          "ConceptualProperty": "Cant_CarteraCastigada"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Castigada": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "vwcasosgestiones.casos_legal": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "vwCasosGestiones",
+			          "ConceptualProperty": "Casos_Legal"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Legal": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "vwcasosgestiones.categoriacliente": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "vwCasosGestiones",
+			          "ConceptualProperty": "CategoriaCliente"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Categoria de Cliente": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        },
+			        {
+			          "Categoria Clientes": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "vwcasosgestiones.monto_metas1": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "vwCasosGestiones",
+			          "ConceptualProperty": "Monto_Metas1$"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Metas por Unidad": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "vwcasos.promesas_pendientes": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "vwCasos",
+			          "ConceptualProperty": "Promesas_Pendientes"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Pendientes": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "vwcasos.promesas_cumplida": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "vwCasos",
+			          "ConceptualProperty": "Promesas_Cumplida"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Cumplida": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "vwcasos.promesas_incumplida": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "vwCasos",
+			          "ConceptualProperty": "Promesas_Incumplida"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Incumplida": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "vwcasos.promesas_vencida": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "vwCasos",
+			          "ConceptualProperty": "Promesas_Vencida"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Vencida": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "vwcasos.monto_recuperado": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "vwCasos",
+			          "ConceptualProperty": "Monto_Recuperado$"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Monto Recuperado": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "vwcasosgestiones.montocarterard": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "vwCasosGestiones",
+			          "ConceptualProperty": "MontoCarteraRD"
+			        }
+			      },
+			      "State": "Generated"
+			    },
+			    "vwcasosgestiones.montocarteraus": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "vwCasosGestiones",
+			          "ConceptualProperty": "MontoCarteraUS"
+			        }
+			      },
+			      "State": "Generated"
+			    },
+			    "vwcasosgestiones.faltante_meta_recuperado": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "vwCasosGestiones",
+			          "ConceptualProperty": "Faltante_Meta_Recuperado"
+			        }
+			      },
+			      "State": "Generated"
+			    },
+			    "vwcasos.nombres": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "vwCasos",
+			          "ConceptualProperty": "Nombres"
+			        }
+			      },
+			      "State": "Generated"
+			    },
+			    "vwrotacionpagosporclienetes_deudores.nombrecliente_orig": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "vwRotacionPagosPorClienetes_Deudores",
+			          "ConceptualProperty": "NombreCliente_Orig"
+			        }
+			      },
+			      "State": "Generated"
+			    },
+			    "vwpagos.cant_promesas_clientes": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "vwPagos",
+			          "ConceptualProperty": "Cant_Promesas_clientes"
+			        }
+			      },
+			      "State": "Generated"
+			    },
+			    "vwcasosgestiones.cant_contactos": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "vwCasosGestiones",
+			          "ConceptualProperty": "Cant_Contactos"
+			        }
+			      },
+			      "State": "Generated"
+			    },
+			    "vwgestiones.descripcion": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "vwGestiones",
+			          "ConceptualProperty": "Descripcion"
+			        }
+			      },
+			      "State": "Generated"
+			    },
+			    "tablaindicadores.valor_indicador": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "TablaIndicadores",
+			          "ConceptualProperty": "Valor Indicador"
+			        }
+			      },
+			      "State": "Generated"
+			    },
+			    "clientes.clientesagrupados": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Clientes",
+			          "ConceptualProperty": "ClientesAgrupados"
+			        }
+			      },
+			      "State": "Generated"
+			    },
+			    "vwcasosgestiones.casos_embretent": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "vwCasosGestiones",
+			          "ConceptualProperty": "Casos_EMB-RETENT"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Embargados": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        },
+			        {
+			          "EMB-RETENT": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "vwcasos.montometaunidades": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "vwCasos",
+			          "ConceptualProperty": "MontoMetaUnidades"
+			        }
+			      },
+			      "State": "Generated"
+			    },
+			    "tablamontosgestores.montos": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "TablaMontosGestores",
+			          "ConceptualProperty": "Montos"
+			        }
+			      },
+			      "State": "Generated"
+			    },
+			    "tablamontosgestores.valor_montos": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "TablaMontosGestores",
+			          "ConceptualProperty": "Valor Montos"
+			        }
+			      },
+			      "State": "Generated"
+			    },
+			    "tablaindicadores.tipo": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "TablaIndicadores",
+			          "ConceptualProperty": "Tipo"
+			        }
+			      },
+			      "State": "Generated"
+			    },
+			    "vwcasos.nombrecliente": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "vwCasos",
+			          "ConceptualProperty": "NombreCliente"
+			        }
+			      },
+			      "State": "Generated"
+			    },
+			    "vwcasosgestiones.casos_devolver": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "vwCasosGestiones",
+			          "ConceptualProperty": "Casos_DEVOLVER"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Exp. por Devolver": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        },
+			        {
+			          "A DEVOLVER": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "vwcasosgestiones.cartera_real": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "vwCasosGestiones",
+			          "ConceptualProperty": "Cartera_Real"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Exp. Activos": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        },
+			        {
+			          "Cartera Real": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "vwcartera.sucursal_id": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "vwCartera",
+			          "ConceptualProperty": "Sucursal_id"
+			        }
+			      },
+			      "State": "Generated"
+			    },
+			    "vwcasosgestiones.casos_supervisores": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "vwCasosGestiones",
+			          "ConceptualProperty": "Casos_SUPERVISORES"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "SUPERVISORES": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "vwcasosgestiones.casos_vigente": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "vwCasosGestiones",
+			          "ConceptualProperty": "Casos_VIGENTE"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Vigentes": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "vwcasosgestiones.casos_castigada": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "vwCasosGestiones",
+			          "ConceptualProperty": "Casos_CASTIGADA"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Castigados": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "vwcasos.categoriacliente": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "vwCasos",
+			          "ConceptualProperty": "CategoriaCliente"
+			        }
+			      },
+			      "State": "Generated"
+			    },
+			    "vwcasos.montopromesas": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "vwCasos",
+			          "ConceptualProperty": "MontoPromesas"
+			        }
+			      },
+			      "State": "Generated"
+			    },
+			    "vwcasos.montorecuperadomontopromesas": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "vwCasos",
+			          "ConceptualProperty": "%MontoRecuperadoMontoPromesas"
+			        }
+			      },
+			      "State": "Generated"
+			    },
+			    "vwcasosgestiones.cant_promesa01": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "vwCasosGestiones",
+			          "ConceptualProperty": "Cant_Promesa01"
+			        }
+			      },
+			      "State": "Generated"
+			    },
+			    "vwcasosgestiones.monto_recuperacion_clientes": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "vwCasosGestiones",
+			          "ConceptualProperty": "Monto_Recuperacion_Clientes"
+			        }
+			      },
+			      "State": "Generated"
+			    },
+			    "vwcasosgestiones.monto_promesas_cli": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "vwCasosGestiones",
+			          "ConceptualProperty": "Monto_Promesas_Cli"
+			        }
+			      },
+			      "State": "Generated"
+			    },
+			    "vwcasosgestiones.column_meta_recuperado": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "vwCasosGestiones",
+			          "ConceptualProperty": "%_Meta_Recuperado"
+			        }
+			      },
+			      "State": "Generated"
+			    },
+			    "vwcasosgestiones.montometaunidades01": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "vwCasosGestiones",
+			          "ConceptualProperty": "MontoMetaUnidades01"
+			        }
+			      },
+			      "State": "Generated"
+			    },
+			    "vwcasos.cantpromesasclientes": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "vwCasos",
+			          "ConceptualProperty": "CantPromesasClientes"
+			        }
+			      },
+			      "State": "Generated"
+			    },
+			    "tblsupervisoreslideresasesores.tipo": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "tblSupervisoresLideresAsesores",
+			          "ConceptualProperty": "Tipo"
+			        }
+			      },
+			      "State": "Generated"
+			    },
+			    "tblsupervisoreslideresasesores.disponibilidad": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "tblSupervisoresLideresAsesores",
+			          "ConceptualProperty": "Disponibilidad"
+			        }
+			      },
+			      "State": "Generated"
+			    },
+			    "vwrotacionpagosporunidades_deudores.sucursal_id": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "vwRotacionPagosPorUnidades_Deudores",
+			          "ConceptualProperty": "Sucursal_id"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Unidades de Negocios": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "vwpagos.recuperacionaplicada": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "vwPagos",
+			          "ConceptualProperty": "%RecuperacionAplicada"
+			        }
+			      },
+			      "State": "Generated"
+			    },
+			    "vwmetas.metasunidades1": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "vwMetas",
+			          "ConceptualProperty": "MetasUnidades"
+			        }
+			      },
+			      "State": "Generated"
+			    },
+			    "vwcasosgestiones.cant_promesasclientes": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "vwCasosGestiones",
+			          "ConceptualProperty": "Cant_PromesasClientes"
+			        }
+			      },
+			      "State": "Generated"
+			    },
+			    "vwcasosgestiones.monto_recuperadoclientes": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "vwCasosGestiones",
+			          "ConceptualProperty": "% Monto_RecuperadoClientes"
+			        }
+			      },
+			      "State": "Generated"
+			    },
+			    "vwcasosgestiones.monto_promesasclientes": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "vwCasosGestiones",
+			          "ConceptualProperty": "Monto_PromesasClientes"
+			        }
+			      },
+			      "State": "Generated"
+			    },
+			    "vwcasosgestiones.cant_promesasdeudores": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "vwCasosGestiones",
+			          "ConceptualProperty": "Cant_PromesasDeudores"
+			        }
+			      },
+			      "State": "Generated"
+			    },
+			    "vwcasosgestiones.monto_promesasdeudores": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "vwCasosGestiones",
+			          "ConceptualProperty": "Monto_PromesasDeudores"
+			        }
+			      },
+			      "State": "Generated"
+			    },
+			    "vwcasosgestiones.monto_recuperaciondeudores": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "vwCasosGestiones",
+			          "ConceptualProperty": "Monto_RecuperacionDeudores"
+			        }
+			      },
+			      "State": "Generated"
+			    },
+			    "vwcasosgestiones.monto_recuperadodeudores": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "vwCasosGestiones",
+			          "ConceptualProperty": "% Monto_RecuperadoDeudores"
+			        }
+			      },
+			      "State": "Generated"
+			    },
+			    "vwpagos.codigo": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "vwPagos",
+			          "ConceptualProperty": "Codigo"
+			        }
+			      },
+			      "State": "Generated"
+			    },
+			    "vwpagos.nombrecliente": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "vwPagos",
+			          "ConceptualProperty": "NombreCliente"
+			        }
+			      },
+			      "State": "Generated"
+			    },
+			    "vwmetas.metasunidadesasesoresclientesdeudores": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "vwMetas",
+			          "ConceptualProperty": "MetasUnidadesAsesoresClientesDeudores"
+			        }
+			      },
+			      "State": "Generated"
+			    },
+			    "vwpagos.monto_promesas_clientes": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "vwPagos",
+			          "ConceptualProperty": "Monto_Promesas_clientes_Deudores"
+			        }
+			      },
+			      "State": "Generated"
+			    },
+			    "vwpagos.montosaplicados": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "vwPagos",
+			          "ConceptualProperty": "MontosAplicados"
+			        }
+			      },
+			      "State": "Generated"
+			    },
+			    "vwcasos.efectividad": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "vwCasos",
+			          "ConceptualProperty": "Efectividad"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "%": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "vwmetas.metasasesoresunidades": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "vwMetas",
+			          "ConceptualProperty": "MetasAsesoresUnidades"
+			        }
+			      },
+			      "State": "Generated"
+			    },
+			    "vwcasos.cantpromesasasesor": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "vwCasos",
+			          "ConceptualProperty": "CantPromesasAsesor"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Promesas": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "vwcasos.promesas_pendientesasesor": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "vwCasos",
+			          "ConceptualProperty": "Promesas_PendientesAsesor"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Pendientes": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "vwcasos.promesas_cumplidaasesores": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "vwCasos",
+			          "ConceptualProperty": "Promesas_CumplidaAsesores"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Cumplida": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "vwcasos.promesas_incumplidaasesores": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "vwCasos",
+			          "ConceptualProperty": "Promesas_IncumplidaAsesores"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Incumplida": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "vwcasos.promesas_vencidaasesores": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "vwCasos",
+			          "ConceptualProperty": "Promesas_VencidaAsesores"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Vencida": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "vwcasos.efectividadasesor": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "vwCasos",
+			          "ConceptualProperty": "EfectividadAsesor"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "%": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "vwcasosgestiones.pagos_promesas_cumplidas": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "vwCasosGestiones",
+			          "ConceptualProperty": "Pagos_Promesas_Cumplidas"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Monto Cobrado": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "vwcasosgestiones.monto_recuperado": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "vwCasosGestiones",
+			          "ConceptualProperty": "% Monto_Recuperado"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "% Recuperado": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "vwpagos.monto_recuperadocliente": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "vwPagos",
+			          "ConceptualProperty": "Monto RecuperadoCliente"
+			        }
+			      },
+			      "State": "Generated"
+			    },
+			    "vwcasos.cantpromesas_clientes": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "vwCasos",
+			          "ConceptualProperty": "CantPromesas_Clientes"
+			        }
+			      },
+			      "State": "Generated"
+			    },
+			    "vwcasosgestiones.column_meta_recuperado_eficiencia": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "vwCasosGestiones",
+			          "ConceptualProperty": "%_Meta_Recuperado_Eficiencia"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "% Eficiencia": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "vwcasosgestiones.asesoresactivos": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "vwCasosGestiones",
+			          "ConceptualProperty": "AsesoresActivos"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Asesores": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "tblsupervisoresasesores.sucursal_id": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "tblSupervisoresAsesores",
+			          "ConceptualProperty": "Sucursal_id"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Unidad": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "tblsupervisoresasesores.capacidadasesoresporunidad": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "tblSupervisoresAsesores",
+			          "ConceptualProperty": "CapacidadAsesoresPorUnidad"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Capacidad": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "tblsupervisoresasesores.asesoresactivosporunidad": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "tblSupervisoresAsesores",
+			          "ConceptualProperty": "AsesoresActivosPorUnidad"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Activos": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "tblsupervisoresasesores.asesoresfaltantesporunidad": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "tblSupervisoresAsesores",
+			          "ConceptualProperty": "AsesoresFaltantesPorUNidad"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Faltantes": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "tblsupervisoresasesores.teamleadersactivosporunidad": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "tblSupervisoresAsesores",
+			          "ConceptualProperty": "TeamLeadersActivosPorUnidad"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Team Leaders": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "vwpagos.recuperacionprocesada": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "vwPagos",
+			          "ConceptualProperty": "%RecuperacionProcesada"
+			        }
+			      },
+			      "State": "Generated"
+			    },
+			    "vwcasos.cantpagosclientes": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "vwCasos",
+			          "ConceptualProperty": "CantPagosClientes"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Cantidad Pagos": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "vwpagos.montosprocesadoscarteracastigada": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "vwPagos",
+			          "ConceptualProperty": "MontosAplicadosCarteraCastigada"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Cartera Castigada": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "vwpagos.montosprocesadoscarteravigente": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "vwPagos",
+			          "ConceptualProperty": "MontosAplicadosCarteraVigente"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Cartera Vigente": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "vwcasos.monto_recuperado_vigente": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "vwCasos",
+			          "ConceptualProperty": "Monto_Recuperado_Vigente"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Cartera Viegnte": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "vwcasos.monto_recuperado_castigado": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "vwCasos",
+			          "ConceptualProperty": "Monto_Recuperado_Castigado"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Cartera Castigada": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "vwpagos.cantidadexpedientes": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "vwPagos",
+			          "ConceptualProperty": "CantidadExpedientes"
+			        }
+			      },
+			      "State": "Generated"
+			    },
+			    "vwpagos.cantidadexpedientes_vigentes": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "vwPagos",
+			          "ConceptualProperty": "CantidadExpedientes_Vigentes"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Vigente": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "vwpagos.cantidadexpedientes_castigada": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "vwPagos",
+			          "ConceptualProperty": "CantidadExpedientes_cASTIGADA_bk"
+			        }
+			      },
+			      "State": "Generated"
+			    },
+			    "vwpagos.cantidadexpedientes_castigadas": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "vwPagos",
+			          "ConceptualProperty": "CantidadExpedientes_Castigadas"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Castigada": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "vwcasosdistribuidos.cantcasospordistribuir": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "vwCasosDistribuidos",
+			          "ConceptualProperty": "CantCasosPorDistribuir"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Cantidad": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "vwcasosdistribuidos.cantcasosdistribuidos": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "vwCasosDistribuidos",
+			          "ConceptualProperty": "CantCasosDistribuidos"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Cantidad": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "vwcasosdistribuidos.usuariodistribuidor": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "vwCasosDistribuidos",
+			          "ConceptualProperty": "UsuarioDistribuidor"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Distribuidor": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "vwcasosgestiones.cant_casos1": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "vwCasosGestiones",
+			          "ConceptualProperty": "Cant_Casos$"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Total de Expedientes": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "vwcasosgestiones.casoslegal": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "vwCasosGestiones",
+			          "ConceptualProperty": "CasosLegal"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Casos en Legal": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "vwpagos.narrativa_tooltip_recuperacion": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "vwPagos",
+			          "ConceptualProperty": "Narrativa_Tooltip_Recuperacion"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Narrativa:": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "vwcasos.cantpromesasclientes01": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "vwCasos",
+			          "ConceptualProperty": "CantPromesasClientes01"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Promesas": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "vwcasosgestiones.cantpagos01": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "vwCasosGestiones",
+			          "ConceptualProperty": "CantPagos01"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Pagos": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    }
+			  },
+			  "Relationships": {
+			    "calendario_date_me_has_calendario_date_día": {
+			      "Binding": {
+			        "ConceptualEntity": "Calendario"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "calendario.date.me": {
+			          "Target": {
+			            "Entity": "calendario.date.me"
+			          }
+			        },
+			        "calendario.date.día": {
+			          "Target": {
+			            "Entity": "calendario.date.día"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "calendario.date.me"
+			            },
+			            "Object": {
+			              "Role": "calendario.date.día"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "me_have_días"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "calendario.date.día"
+			            },
+			            "Object": {
+			              "Role": "calendario.date.me"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "días_have_me"
+			        },
+			        {
+			          "Preposition": {
+			            "Subject": {
+			              "Role": "calendario.date.día"
+			            },
+			            "Prepositions": [
+			              {
+			                "in": {
+			                  "State": "Generated"
+			                }
+			              }
+			            ],
+			            "Object": {
+			              "Role": "calendario.date.me"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "días_are_in_me"
+			        }
+			      ]
+			    },
+			    "calendario_date_trimestre_has_calendario_date_me": {
+			      "Binding": {
+			        "ConceptualEntity": "Calendario"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "calendario.date.trimestre": {
+			          "Target": {
+			            "Entity": "calendario.date.trimestre"
+			          }
+			        },
+			        "calendario.date.me": {
+			          "Target": {
+			            "Entity": "calendario.date.me"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "calendario.date.trimestre"
+			            },
+			            "Object": {
+			              "Role": "calendario.date.me"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "trimestres_have_me"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "calendario.date.me"
+			            },
+			            "Object": {
+			              "Role": "calendario.date.trimestre"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "me_have_trimestres"
+			        },
+			        {
+			          "Preposition": {
+			            "Subject": {
+			              "Role": "calendario.date.me"
+			            },
+			            "Prepositions": [
+			              {
+			                "in": {
+			                  "State": "Generated"
+			                }
+			              }
+			            ],
+			            "Object": {
+			              "Role": "calendario.date.trimestre"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "me_are_in_trimestres"
+			        }
+			      ]
+			    },
+			    "calendario_date_año_has_calendario_date_trimestre": {
+			      "Binding": {
+			        "ConceptualEntity": "Calendario"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "calendario.date.año": {
+			          "Target": {
+			            "Entity": "calendario.date.año"
+			          }
+			        },
+			        "calendario.date.trimestre": {
+			          "Target": {
+			            "Entity": "calendario.date.trimestre"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "calendario.date.año"
+			            },
+			            "Object": {
+			              "Role": "calendario.date.trimestre"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "años_have_trimestres"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "calendario.date.trimestre"
+			            },
+			            "Object": {
+			              "Role": "calendario.date.año"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "trimestres_have_años"
+			        },
+			        {
+			          "Preposition": {
+			            "Subject": {
+			              "Role": "calendario.date.trimestre"
+			            },
+			            "Prepositions": [
+			              {
+			                "in": {
+			                  "State": "Generated"
+			                }
+			              }
+			            ],
+			            "Object": {
+			              "Role": "calendario.date.año"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "trimestres_are_in_años"
+			        }
+			      ]
+			    },
+			    "calendario_date_jerarquía_de_fecha_has_calendario_date_día": {
+			      "Binding": {
+			        "ConceptualEntity": "Calendario"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "calendario.date.jerarquía_de_fecha": {
+			          "Target": {
+			            "Entity": "calendario.date.jerarquía_de_fecha"
+			          }
+			        },
+			        "calendario.date.día": {
+			          "Target": {
+			            "Entity": "calendario.date.día"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "calendario.date.jerarquía_de_fecha"
+			            },
+			            "Object": {
+			              "Role": "calendario.date.día"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "jerarquía_de_fechas_have_días1"
+			        }
+			      ]
+			    },
+			    "calendario_date_jerarquía_de_fecha_has_calendario_date_me": {
+			      "Binding": {
+			        "ConceptualEntity": "Calendario"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "calendario.date.jerarquía_de_fecha": {
+			          "Target": {
+			            "Entity": "calendario.date.jerarquía_de_fecha"
+			          }
+			        },
+			        "calendario.date.me": {
+			          "Target": {
+			            "Entity": "calendario.date.me"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "calendario.date.jerarquía_de_fecha"
+			            },
+			            "Object": {
+			              "Role": "calendario.date.me"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "jerarquía_de_fechas_have_me1"
+			        }
+			      ]
+			    },
+			    "calendario_date_jerarquía_de_fecha_has_calendario_date_trimestre": {
+			      "Binding": {
+			        "ConceptualEntity": "Calendario"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "calendario.date.jerarquía_de_fecha": {
+			          "Target": {
+			            "Entity": "calendario.date.jerarquía_de_fecha"
+			          }
+			        },
+			        "calendario.date.trimestre": {
+			          "Target": {
+			            "Entity": "calendario.date.trimestre"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "calendario.date.jerarquía_de_fecha"
+			            },
+			            "Object": {
+			              "Role": "calendario.date.trimestre"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "jerarquía_de_fechas_have_trimestres1"
+			        }
+			      ]
+			    },
+			    "calendario_date_jerarquía_de_fecha_has_calendario_date_año": {
+			      "Binding": {
+			        "ConceptualEntity": "Calendario"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "calendario.date.jerarquía_de_fecha": {
+			          "Target": {
+			            "Entity": "calendario.date.jerarquía_de_fecha"
+			          }
+			        },
+			        "calendario.date.año": {
+			          "Target": {
+			            "Entity": "calendario.date.año"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "calendario.date.jerarquía_de_fecha"
+			            },
+			            "Object": {
+			              "Role": "calendario.date.año"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "jerarquía_de_fechas_have_años1"
+			        }
+			      ]
+			    },
+			    "calendario_date_has_jerarquía_de_fecha": {
+			      "Binding": {
+			        "ConceptualEntity": "Calendario"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "calendario.date": {
+			          "Target": {
+			            "Entity": "calendario.date"
+			          }
+			        },
+			        "calendario.date.jerarquía_de_fecha": {
+			          "Target": {
+			            "Entity": "calendario.date.jerarquía_de_fecha"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "calendario.date"
+			            },
+			            "Object": {
+			              "Role": "calendario.date.jerarquía_de_fecha"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dates_have_jerarquía_de_fechas"
+			        }
+			      ]
+			    },
+			    "cliente_has_cliente_id": {
+			      "Binding": {
+			        "ConceptualEntity": "Clientes"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "cliente": {
+			          "Target": {
+			            "Entity": "cliente"
+			          }
+			        },
+			        "cliente.cliente_id": {
+			          "Target": {
+			            "Entity": "cliente.cliente_id"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "cliente"
+			            },
+			            "Object": {
+			              "Role": "cliente.cliente_id"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "clientes_have_cliente_ids"
+			        }
+			      ]
+			    },
+			    "cliente_has_fuera_cola_trabajo": {
+			      "Binding": {
+			        "ConceptualEntity": "Clientes"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "cliente": {
+			          "Target": {
+			            "Entity": "cliente"
+			          }
+			        },
+			        "cliente.fuera_cola_trabajo": {
+			          "Target": {
+			            "Entity": "cliente.fuera_cola_trabajo"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "cliente"
+			            },
+			            "Object": {
+			              "Role": "cliente.fuera_cola_trabajo"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "clientes_have_fuera_cola_trabajos"
+			        }
+			      ]
+			    },
+			    "cliente_has_prefijo_tel_cel": {
+			      "Binding": {
+			        "ConceptualEntity": "Clientes"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "cliente": {
+			          "Target": {
+			            "Entity": "cliente"
+			          }
+			        },
+			        "cliente.prefijo_tel_cel": {
+			          "Target": {
+			            "Entity": "cliente.prefijo_tel_cel"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "cliente"
+			            },
+			            "Object": {
+			              "Role": "cliente.prefijo_tel_cel"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "clientes_have_prefijo_tel_cels"
+			        }
+			      ]
+			    },
+			    "cliente_has_prefijo_tel_local": {
+			      "Binding": {
+			        "ConceptualEntity": "Clientes"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "cliente": {
+			          "Target": {
+			            "Entity": "cliente"
+			          }
+			        },
+			        "cliente.prefijo_tel_local": {
+			          "Target": {
+			            "Entity": "cliente.prefijo_tel_local"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "cliente"
+			            },
+			            "Object": {
+			              "Role": "cliente.prefijo_tel_local"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "clientes_have_prefijo_tel_locals"
+			        }
+			      ]
+			    },
+			    "cliente_has_no_rebajar_pago": {
+			      "Binding": {
+			        "ConceptualEntity": "Clientes"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "cliente": {
+			          "Target": {
+			            "Entity": "cliente"
+			          }
+			        },
+			        "cliente.no_rebajar_pago": {
+			          "Target": {
+			            "Entity": "cliente.no_rebajar_pago"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "cliente"
+			            },
+			            "Object": {
+			              "Role": "cliente.no_rebajar_pago"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "clientes_have_no_rebajar_pago"
+			        }
+			      ]
+			    },
+			    "cliente_has_cartera_comun": {
+			      "Binding": {
+			        "ConceptualEntity": "Clientes"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "cliente": {
+			          "Target": {
+			            "Entity": "cliente"
+			          }
+			        },
+			        "cliente.cartera_comun": {
+			          "Target": {
+			            "Entity": "cliente.cartera_comun"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "cliente"
+			            },
+			            "Object": {
+			              "Role": "cliente.cartera_comun"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "clientes_have_cartera_comuns"
+			        }
+			      ]
+			    },
+			    "cliente_has_permitir_caso_duplicado": {
+			      "Binding": {
+			        "ConceptualEntity": "Clientes"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "cliente": {
+			          "Target": {
+			            "Entity": "cliente"
+			          }
+			        },
+			        "cliente.permitir_caso_duplicado": {
+			          "Target": {
+			            "Entity": "cliente.permitir_caso_duplicado"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "cliente"
+			            },
+			            "Object": {
+			              "Role": "cliente.permitir_caso_duplicado"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "clientes_have_permitir_caso_duplicados"
+			        }
+			      ]
+			    },
+			    "cliente_has_gestion_por_caso": {
+			      "Binding": {
+			        "ConceptualEntity": "Clientes"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "cliente": {
+			          "Target": {
+			            "Entity": "cliente"
+			          }
+			        },
+			        "cliente.gestion_por_caso": {
+			          "Target": {
+			            "Entity": "cliente.gestion_por_caso"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "cliente"
+			            },
+			            "Object": {
+			              "Role": "cliente.gestion_por_caso"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "clientes_have_gestion_por_casos"
+			        }
+			      ]
+			    },
+			    "cliente_has_programa_lealtad": {
+			      "Binding": {
+			        "ConceptualEntity": "Clientes"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "cliente": {
+			          "Target": {
+			            "Entity": "cliente"
+			          }
+			        },
+			        "cliente.programa_lealtad": {
+			          "Target": {
+			            "Entity": "cliente.programa_lealtad"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "cliente"
+			            },
+			            "Object": {
+			              "Role": "cliente.programa_lealtad"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "clientes_have_programa_lealtads"
+			        }
+			      ]
+			    },
+			    "cliente_has_ics": {
+			      "Binding": {
+			        "ConceptualEntity": "Clientes"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "cliente": {
+			          "Target": {
+			            "Entity": "cliente"
+			          }
+			        },
+			        "cliente.ics": {
+			          "Target": {
+			            "Entity": "cliente.ics"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "cliente"
+			            },
+			            "Object": {
+			              "Role": "cliente.ics"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "clientes_have_ics"
+			        }
+			      ]
+			    },
+			    "cliente_has_vicidial_list": {
+			      "Binding": {
+			        "ConceptualEntity": "Clientes"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "cliente": {
+			          "Target": {
+			            "Entity": "cliente"
+			          }
+			        },
+			        "cliente.vicidial_list": {
+			          "Target": {
+			            "Entity": "cliente.vicidial_list"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "cliente"
+			            },
+			            "Object": {
+			              "Role": "cliente.vicidial_list"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "clientes_have_vicidial_lists"
+			        }
+			      ]
+			    },
+			    "cliente_has_vicidial_campaign": {
+			      "Binding": {
+			        "ConceptualEntity": "Clientes"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "cliente": {
+			          "Target": {
+			            "Entity": "cliente"
+			          }
+			        },
+			        "cliente.vicidial_campaign": {
+			          "Target": {
+			            "Entity": "cliente.vicidial_campaign"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "cliente"
+			            },
+			            "Object": {
+			              "Role": "cliente.vicidial_campaign"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "clientes_have_vicidial_campaigns"
+			        }
+			      ]
+			    },
+			    "cliente_has_promesa_no_contagia": {
+			      "Binding": {
+			        "ConceptualEntity": "Clientes"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "cliente": {
+			          "Target": {
+			            "Entity": "cliente"
+			          }
+			        },
+			        "cliente.promesa_no_contagia": {
+			          "Target": {
+			            "Entity": "cliente.promesa_no_contagia"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "cliente"
+			            },
+			            "Object": {
+			              "Role": "cliente.promesa_no_contagia"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "clientes_have_promesa_no_contagias"
+			        }
+			      ]
+			    },
+			    "cliente_has_prefijo_no_prod": {
+			      "Binding": {
+			        "ConceptualEntity": "Clientes"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "cliente": {
+			          "Target": {
+			            "Entity": "cliente"
+			          }
+			        },
+			        "cliente.prefijo_no_prod": {
+			          "Target": {
+			            "Entity": "cliente.prefijo_no_prod"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "cliente"
+			            },
+			            "Object": {
+			              "Role": "cliente.prefijo_no_prod"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "clientes_have_prefijo_no_prods"
+			        }
+			      ]
+			    },
+			    "cliente_has_auto_crear_no_prod": {
+			      "Binding": {
+			        "ConceptualEntity": "Clientes"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "cliente": {
+			          "Target": {
+			            "Entity": "cliente"
+			          }
+			        },
+			        "cliente.auto_crear_no_prod": {
+			          "Target": {
+			            "Entity": "cliente.auto_crear_no_prod"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "cliente"
+			            },
+			            "Object": {
+			              "Role": "cliente.auto_crear_no_prod"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "clientes_have_auto_crear_no_prods"
+			        }
+			      ]
+			    },
+			    "cliente_has_meta_mensual": {
+			      "Binding": {
+			        "ConceptualEntity": "Clientes"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "cliente": {
+			          "Target": {
+			            "Entity": "cliente"
+			          }
+			        },
+			        "cliente.meta_mensual": {
+			          "Target": {
+			            "Entity": "cliente.meta_mensual"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "cliente"
+			            },
+			            "Object": {
+			              "Role": "cliente.meta_mensual"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "clientes_have_meta_mensuals"
+			        }
+			      ]
+			    },
+			    "cliente_has_calcular_hon_ciclo": {
+			      "Binding": {
+			        "ConceptualEntity": "Clientes"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "cliente": {
+			          "Target": {
+			            "Entity": "cliente"
+			          }
+			        },
+			        "cliente.calcular_hon_ciclo": {
+			          "Target": {
+			            "Entity": "cliente.calcular_hon_ciclo"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "cliente"
+			            },
+			            "Object": {
+			              "Role": "cliente.calcular_hon_ciclo"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "clientes_have_calcular_hon_ciclos"
+			        }
+			      ]
+			    },
+			    "cliente_has_alerta_cargo_cobrado": {
+			      "Binding": {
+			        "ConceptualEntity": "Clientes"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "cliente": {
+			          "Target": {
+			            "Entity": "cliente"
+			          }
+			        },
+			        "cliente.alerta_cargo_cobrado": {
+			          "Target": {
+			            "Entity": "cliente.alerta_cargo_cobrado"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "cliente"
+			            },
+			            "Object": {
+			              "Role": "cliente.alerta_cargo_cobrado"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "clientes_have_alerta_cargo_cobrados"
+			        }
+			      ]
+			    },
+			    "cliente_has_grupo_cliente": {
+			      "Binding": {
+			        "ConceptualEntity": "Clientes"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "cliente": {
+			          "Target": {
+			            "Entity": "cliente"
+			          }
+			        },
+			        "cliente.grupo_cliente": {
+			          "Target": {
+			            "Entity": "cliente.grupo_cliente"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "cliente"
+			            },
+			            "Object": {
+			              "Role": "cliente.grupo_cliente"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "clientes_have_grupo_clientes"
+			        }
+			      ]
+			    },
+			    "cliente_has_tipo_recibo": {
+			      "Binding": {
+			        "ConceptualEntity": "Clientes"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "cliente": {
+			          "Target": {
+			            "Entity": "cliente"
+			          }
+			        },
+			        "cliente.tipo_recibo": {
+			          "Target": {
+			            "Entity": "cliente.tipo_recibo"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "cliente"
+			            },
+			            "Object": {
+			              "Role": "cliente.tipo_recibo"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "clientes_have_tipo_recibos"
+			        }
+			      ]
+			    },
+			    "cliente_has_generale": {
+			      "Binding": {
+			        "ConceptualEntity": "Clientes"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "cliente": {
+			          "Target": {
+			            "Entity": "cliente"
+			          }
+			        },
+			        "cliente.generale": {
+			          "Target": {
+			            "Entity": "cliente.generale"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "cliente"
+			            },
+			            "Object": {
+			              "Role": "cliente.generale"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "clientes_have_generales"
+			        }
+			      ]
+			    },
+			    "cliente_has_cedula_sin_guion": {
+			      "Binding": {
+			        "ConceptualEntity": "Clientes"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "cliente": {
+			          "Target": {
+			            "Entity": "cliente"
+			          }
+			        },
+			        "cliente.cedula_sin_guion": {
+			          "Target": {
+			            "Entity": "cliente.cedula_sin_guion"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "cliente"
+			            },
+			            "Object": {
+			              "Role": "cliente.cedula_sin_guion"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "clientes_have_cedula_sin_guions"
+			        }
+			      ]
+			    },
+			    "cliente_has_producto_sin_guion": {
+			      "Binding": {
+			        "ConceptualEntity": "Clientes"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "cliente": {
+			          "Target": {
+			            "Entity": "cliente"
+			          }
+			        },
+			        "cliente.producto_sin_guion": {
+			          "Target": {
+			            "Entity": "cliente.producto_sin_guion"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "cliente"
+			            },
+			            "Object": {
+			              "Role": "cliente.producto_sin_guion"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "clientes_have_producto_sin_guions"
+			        }
+			      ]
+			    },
+			    "cliente_has_formato_remision": {
+			      "Binding": {
+			        "ConceptualEntity": "Clientes"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "cliente": {
+			          "Target": {
+			            "Entity": "cliente"
+			          }
+			        },
+			        "cliente.formato_remision": {
+			          "Target": {
+			            "Entity": "cliente.formato_remision"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "cliente"
+			            },
+			            "Object": {
+			              "Role": "cliente.formato_remision"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "clientes_have_formato_remisions"
+			        }
+			      ]
+			    },
+			    "cliente_has_inactivo": {
+			      "Binding": {
+			        "ConceptualEntity": "Clientes"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "cliente": {
+			          "Target": {
+			            "Entity": "cliente"
+			          }
+			        },
+			        "cliente.inactivo": {
+			          "Target": {
+			            "Entity": "cliente.inactivo"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "cliente"
+			            },
+			            "Object": {
+			              "Role": "cliente.inactivo"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "clientes_have_inactivos"
+			        }
+			      ]
+			    },
+			    "cliente_has_supervisado_por": {
+			      "Binding": {
+			        "ConceptualEntity": "Clientes"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "cliente": {
+			          "Target": {
+			            "Entity": "cliente"
+			          }
+			        },
+			        "cliente.supervisado_por": {
+			          "Target": {
+			            "Entity": "cliente.supervisado_por"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "cliente"
+			            },
+			            "Object": {
+			              "Role": "cliente.supervisado_por"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "clientes_have_supervisado_pors"
+			        }
+			      ]
+			    },
+			    "cliente_has_mostrar_distribucion_pago": {
+			      "Binding": {
+			        "ConceptualEntity": "Clientes"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "cliente": {
+			          "Target": {
+			            "Entity": "cliente"
+			          }
+			        },
+			        "cliente.mostrar_distribucion_pago": {
+			          "Target": {
+			            "Entity": "cliente.mostrar_distribucion_pago"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "cliente"
+			            },
+			            "Object": {
+			              "Role": "cliente.mostrar_distribucion_pago"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "clientes_have_mostrar_distribucion_pago"
+			        }
+			      ]
+			    },
+			    "cliente_has_agrupar_en": {
+			      "Binding": {
+			        "ConceptualEntity": "Clientes"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "cliente": {
+			          "Target": {
+			            "Entity": "cliente"
+			          }
+			        },
+			        "cliente.agrupar_en": {
+			          "Target": {
+			            "Entity": "cliente.agrupar_en"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "cliente"
+			            },
+			            "Object": {
+			              "Role": "cliente.agrupar_en"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "clientes_have_agrupar_ens"
+			        }
+			      ]
+			    },
+			    "cliente_has_sub_cliente": {
+			      "Binding": {
+			        "ConceptualEntity": "Clientes"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "cliente": {
+			          "Target": {
+			            "Entity": "cliente"
+			          }
+			        },
+			        "cliente.sub_cliente": {
+			          "Target": {
+			            "Entity": "cliente.sub_cliente"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "cliente"
+			            },
+			            "Object": {
+			              "Role": "cliente.sub_cliente"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "clientes_have_sub_clientes"
+			        }
+			      ]
+			    },
+			    "cliente_has_cedula_representante": {
+			      "Binding": {
+			        "ConceptualEntity": "Clientes"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "cliente": {
+			          "Target": {
+			            "Entity": "cliente"
+			          }
+			        },
+			        "cliente.cedula_representante": {
+			          "Target": {
+			            "Entity": "cliente.cedula_representante"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "cliente"
+			            },
+			            "Object": {
+			              "Role": "cliente.cedula_representante"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "clientes_have_cedula_representantes"
+			        }
+			      ]
+			    },
+			    "cliente_has_nombre_representante": {
+			      "Binding": {
+			        "ConceptualEntity": "Clientes"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "cliente": {
+			          "Target": {
+			            "Entity": "cliente"
+			          }
+			        },
+			        "cliente.nombre_representante": {
+			          "Target": {
+			            "Entity": "cliente.nombre_representante"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "cliente"
+			            },
+			            "Object": {
+			              "Role": "cliente.nombre_representante"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "clientes_have_nombre_representantes"
+			        }
+			      ]
+			    },
+			    "cliente_has_modo_aplica_pago_saldo": {
+			      "Binding": {
+			        "ConceptualEntity": "Clientes"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "cliente": {
+			          "Target": {
+			            "Entity": "cliente"
+			          }
+			        },
+			        "cliente.modo_aplica_pago_saldo": {
+			          "Target": {
+			            "Entity": "cliente.modo_aplica_pago_saldo"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "cliente"
+			            },
+			            "Object": {
+			              "Role": "cliente.modo_aplica_pago_saldo"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "clientes_have_modo_aplica_pago_saldos"
+			        }
+			      ]
+			    },
+			    "cliente_has_modo_aplica_pago_abono": {
+			      "Binding": {
+			        "ConceptualEntity": "Clientes"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "cliente": {
+			          "Target": {
+			            "Entity": "cliente"
+			          }
+			        },
+			        "cliente.modo_aplica_pago_abono": {
+			          "Target": {
+			            "Entity": "cliente.modo_aplica_pago_abono"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "cliente"
+			            },
+			            "Object": {
+			              "Role": "cliente.modo_aplica_pago_abono"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "clientes_have_modo_aplica_pago_abonos"
+			        }
+			      ]
+			    },
+			    "cliente_has_cargo_fijo_unico": {
+			      "Binding": {
+			        "ConceptualEntity": "Clientes"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "cliente": {
+			          "Target": {
+			            "Entity": "cliente"
+			          }
+			        },
+			        "cliente.cargo_fijo_unico": {
+			          "Target": {
+			            "Entity": "cliente.cargo_fijo_unico"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "cliente"
+			            },
+			            "Object": {
+			              "Role": "cliente.cargo_fijo_unico"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "clientes_have_cargo_fijo_unicos"
+			        }
+			      ]
+			    },
+			    "cliente_has_archivo_carga": {
+			      "Binding": {
+			        "ConceptualEntity": "Clientes"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "cliente": {
+			          "Target": {
+			            "Entity": "cliente"
+			          }
+			        },
+			        "cliente.archivo_carga": {
+			          "Target": {
+			            "Entity": "cliente.archivo_carga"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "cliente"
+			            },
+			            "Object": {
+			              "Role": "cliente.archivo_carga"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "clientes_have_archivo_cargas"
+			        }
+			      ]
+			    },
+			    "cliente_has_condicion_pago": {
+			      "Binding": {
+			        "ConceptualEntity": "Clientes"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "cliente": {
+			          "Target": {
+			            "Entity": "cliente"
+			          }
+			        },
+			        "cliente.condicion_pago": {
+			          "Target": {
+			            "Entity": "cliente.condicion_pago"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "cliente"
+			            },
+			            "Object": {
+			              "Role": "cliente.condicion_pago"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "clientes_have_condicion_pago"
+			        }
+			      ]
+			    },
+			    "cliente_has_ncf_tipo": {
+			      "Binding": {
+			        "ConceptualEntity": "Clientes"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "cliente": {
+			          "Target": {
+			            "Entity": "cliente"
+			          }
+			        },
+			        "cliente.ncf_tipo": {
+			          "Target": {
+			            "Entity": "cliente.ncf_tipo"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "cliente"
+			            },
+			            "Object": {
+			              "Role": "cliente.ncf_tipo"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "clientes_have_ncf_tipos"
+			        }
+			      ]
+			    },
+			    "cliente_has_e_mail": {
+			      "Binding": {
+			        "ConceptualEntity": "Clientes"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "cliente": {
+			          "Target": {
+			            "Entity": "cliente"
+			          }
+			        },
+			        "cliente.e_mail": {
+			          "Target": {
+			            "Entity": "cliente.e_mail"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "cliente"
+			            },
+			            "Object": {
+			              "Role": "cliente.e_mail"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "clientes_have_e_mails"
+			        }
+			      ]
+			    },
+			    "cliente_has_rnc_cedula": {
+			      "Binding": {
+			        "ConceptualEntity": "Clientes"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "cliente": {
+			          "Target": {
+			            "Entity": "cliente"
+			          }
+			        },
+			        "cliente.rnc_cedula": {
+			          "Target": {
+			            "Entity": "cliente.rnc_cedula"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "cliente"
+			            },
+			            "Object": {
+			              "Role": "cliente.rnc_cedula"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "clientes_have_rnc_cedulas"
+			        }
+			      ]
+			    },
+			    "cliente_has_contacto": {
+			      "Binding": {
+			        "ConceptualEntity": "Clientes"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "cliente": {
+			          "Target": {
+			            "Entity": "cliente"
+			          }
+			        },
+			        "cliente.contacto": {
+			          "Target": {
+			            "Entity": "cliente.contacto"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "cliente"
+			            },
+			            "Object": {
+			              "Role": "cliente.contacto"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "clientes_have_contactos"
+			        }
+			      ]
+			    },
+			    "cliente_has_fax": {
+			      "Binding": {
+			        "ConceptualEntity": "Clientes"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "cliente": {
+			          "Target": {
+			            "Entity": "cliente"
+			          }
+			        },
+			        "cliente.fax": {
+			          "Target": {
+			            "Entity": "cliente.fax"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "cliente"
+			            },
+			            "Object": {
+			              "Role": "cliente.fax"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "clientes_have_faxes"
+			        }
+			      ]
+			    },
+			    "cliente_has_telefono": {
+			      "Binding": {
+			        "ConceptualEntity": "Clientes"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "cliente": {
+			          "Target": {
+			            "Entity": "cliente"
+			          }
+			        },
+			        "cliente.telefono": {
+			          "Target": {
+			            "Entity": "cliente.telefono"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "cliente"
+			            },
+			            "Object": {
+			              "Role": "cliente.telefono"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "clientes_have_telefonos"
+			        }
+			      ]
+			    },
+			    "cliente_has_direccion": {
+			      "Binding": {
+			        "ConceptualEntity": "Clientes"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "cliente": {
+			          "Target": {
+			            "Entity": "cliente"
+			          }
+			        },
+			        "cliente.direccion": {
+			          "Target": {
+			            "Entity": "cliente.direccion"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "cliente"
+			            },
+			            "Object": {
+			              "Role": "cliente.direccion"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "clientes_have_direccions"
+			        }
+			      ]
+			    },
+			    "cliente_has_nombre": {
+			      "Binding": {
+			        "ConceptualEntity": "Clientes"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "cliente": {
+			          "Target": {
+			            "Entity": "cliente"
+			          }
+			        },
+			        "cliente.nombre": {
+			          "Target": {
+			            "Entity": "cliente.nombre"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "cliente"
+			            },
+			            "Object": {
+			              "Role": "cliente.nombre"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "clientes_have_nombres"
+			        }
+			      ]
+			    },
+			    "cliente_has_codigo": {
+			      "Binding": {
+			        "ConceptualEntity": "Clientes"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "cliente": {
+			          "Target": {
+			            "Entity": "cliente"
+			          }
+			        },
+			        "cliente.codigo": {
+			          "Target": {
+			            "Entity": "cliente.codigo"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "cliente"
+			            },
+			            "Object": {
+			              "Role": "cliente.codigo"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "clientes_have_codigos"
+			        }
+			      ]
+			    },
+			    "tbl_oficiale_has_id_unidad": {
+			      "Binding": {
+			        "ConceptualEntity": "tblOficiales"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "tbl_oficiale": {
+			          "Target": {
+			            "Entity": "tbl_oficiale"
+			          }
+			        },
+			        "tbl_oficiale.id_unidad": {
+			          "Target": {
+			            "Entity": "tbl_oficiale.id_unidad"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "tbl_oficiale"
+			            },
+			            "Object": {
+			              "Role": "tbl_oficiale.id_unidad"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "tbl_oficiales_have_id_unidads"
+			        }
+			      ]
+			    },
+			    "calendario_has_mes_N": {
+			      "Binding": {
+			        "ConceptualEntity": "Calendario"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "calendario": {
+			          "Target": {
+			            "Entity": "calendario"
+			          }
+			        },
+			        "calendario.mes_N": {
+			          "Target": {
+			            "Entity": "calendario.mes_N"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "calendario"
+			            },
+			            "Object": {
+			              "Role": "calendario.mes_N"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "calendarios_have_mes_Ns"
+			        }
+			      ]
+			    },
+			    "calendario_has_año_me": {
+			      "Binding": {
+			        "ConceptualEntity": "Calendario"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "calendario": {
+			          "Target": {
+			            "Entity": "calendario"
+			          }
+			        },
+			        "calendario.año_me": {
+			          "Target": {
+			            "Entity": "calendario.año_me"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "calendario"
+			            },
+			            "Object": {
+			              "Role": "calendario.año_me"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "calendarios_have_año_me"
+			        }
+			      ]
+			    },
+			    "calendario_has_me": {
+			      "Binding": {
+			        "ConceptualEntity": "Calendario"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "calendario": {
+			          "Target": {
+			            "Entity": "calendario"
+			          }
+			        },
+			        "calendario.me": {
+			          "Target": {
+			            "Entity": "calendario.me"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "calendario"
+			            },
+			            "Object": {
+			              "Role": "calendario.me"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "calendarios_have_me"
+			        }
+			      ]
+			    },
+			    "calendario_has_año": {
+			      "Binding": {
+			        "ConceptualEntity": "Calendario"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "calendario": {
+			          "Target": {
+			            "Entity": "calendario"
+			          }
+			        },
+			        "calendario.año": {
+			          "Target": {
+			            "Entity": "calendario.año"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "calendario"
+			            },
+			            "Object": {
+			              "Role": "calendario.año"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "calendarios_have_años"
+			        }
+			      ]
+			    },
+			    "calendario_has_date": {
+			      "Binding": {
+			        "ConceptualEntity": "Calendario"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "calendario": {
+			          "Target": {
+			            "Entity": "calendario"
+			          }
+			        },
+			        "calendario.date": {
+			          "Target": {
+			            "Entity": "calendario.date"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "calendario"
+			            },
+			            "Object": {
+			              "Role": "calendario.date"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "calendarios_have_dates"
+			        }
+			      ]
+			    }
+			  },
+			  "Agents": {
+			    "Internal": {
+			      "Version": "1.1.0"
+			    }
+			  }
+			}
+		contentType: json
+

@@ -1,0 +1,145 @@
+table vwGestiones
+	lineageTag: 186438cd-1259-4c1b-ac9e-620bedabede3
+
+	/// Cantidad total de gestiones de cobro registradas
+	measure CantGestiones = count(vwGestiones[IdGestion])
+		formatString: 0
+		displayFolder: Gestiones
+		lineageTag: 6adb3218-3bc3-426e-a1f2-ee8f028e7cb8
+
+	/// Cantidad de casos de vwCasosGestiones filtrada por los oficiales visibles en vwGestiones
+	measure CantCasos =
+			
+			CALCULATE(
+			    SUM(vwCasosGestiones[CantCasos]),
+			    TREATAS(
+			        VALUES(vwGestiones[Oficiales]),
+			        vwCasosGestiones[Codigo]
+			    )
+			)
+		formatString: 0
+		displayFolder: Cartera
+		lineageTag: 7fc43901-bc56-455e-aa3b-c48f3a664ebb
+
+	column IdGestion
+		dataType: int64
+		isNullable: false
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: ac26f94a-2f6b-4270-9d9c-5c841700a9a4
+		summarizeBy: sum
+		sourceColumn: IdGestion
+
+		annotation SummarizationSetBy = Automatic
+
+	column fecha
+		dataType: dateTime
+		formatString: Long Date
+		sourceProviderType: date
+		lineageTag: 589b4f63-ef3a-4e11-b6f3-22ea4e122cf1
+		summarizeBy: none
+		sourceColumn: fecha
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column Sucursales
+		dataType: string
+		sourceProviderType: varchar(15)
+		lineageTag: e2dda451-f438-4f0f-b04c-878e494db54a
+		summarizeBy: none
+		sourceColumn: Sucursales
+
+		annotation SummarizationSetBy = Automatic
+
+	column Oficiales
+		dataType: string
+		sourceProviderType: varchar(15)
+		lineageTag: cfca9c83-ce5f-4299-9950-7404a8b6fd03
+		summarizeBy: none
+		sourceColumn: Oficiales
+
+		annotation SummarizationSetBy = Automatic
+
+	column Asesores
+		dataType: string
+		sourceProviderType: varchar(58)
+		lineageTag: 73edbcbb-3d08-48b6-9aeb-b1720bb8f099
+		summarizeBy: none
+		sourceColumn: Asesores
+
+		annotation SummarizationSetBy = Automatic
+
+	column Oficiales1
+		dataType: string
+		sourceProviderType: varchar(15)
+		lineageTag: 96cb7484-ad0b-45f2-8520-248ecbfb1ea5
+		summarizeBy: none
+		sourceColumn: Oficiales1
+
+		annotation SummarizationSetBy = Automatic
+
+	column Resultado
+		dataType: string
+		sourceProviderType: varchar(15)
+		lineageTag: cbc2721e-3a46-4d32-8c73-c2831cd95d0b
+		summarizeBy: none
+		sourceColumn: Resultado
+
+		annotation SummarizationSetBy = Automatic
+
+	column Descripcion
+		dataType: string
+		sourceProviderType: varchar(40)
+		lineageTag: 5c451111-7ef5-4128-b745-a79a43a50219
+		summarizeBy: none
+		sourceColumn: Descripcion
+
+		annotation SummarizationSetBy = Automatic
+
+	column GestionId
+		dataType: string
+		sourceProviderType: varchar(10)
+		lineageTag: c5a4e53a-ff28-4933-aea3-e1b520be5001
+		summarizeBy: none
+		sourceColumn: GestionId
+
+		annotation SummarizationSetBy = Automatic
+
+	column Indice
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: 1469c94c-3e33-4d1d-ac5e-47102c1c5fde
+		summarizeBy: sum
+		sourceColumn: Indice
+
+		annotation SummarizationSetBy = Automatic
+
+	partition vwGestiones = m
+		mode: dual
+		source =
+				let
+				    Origen = Sql.Database("192.168.9.104,1433", "SigecobDS"),
+				    dbo_vwGestiones = Origen{[Schema="dbo",Item="vwGestiones"]}[Data],
+				    #"Tipo cambiado" = Table.TransformColumnTypes(dbo_vwGestiones,{{"fecha", type date}}),
+				    #"Filtrado Historico" = Table.SelectRows(#"Tipo cambiado", each DateTime.From([fecha]) < RangeStart)
+				in
+				    #"Filtrado Historico"
+
+	partition RangeCurrent = m
+		mode: dual
+		source =
+				let
+				    Origen = Sql.Database("192.168.9.104,1433", "SigecobDS"),
+				    dbo_vwGestiones = Origen{[Schema="dbo",Item="vwGestiones"]}[Data],
+				    #"Tipo cambiado" = Table.TransformColumnTypes(dbo_vwGestiones,{{"fecha", type date}}),
+				    #"Filtrado Reciente" = Table.SelectRows(#"Tipo cambiado", each DateTime.From([fecha]) >= RangeStart and DateTime.From([fecha]) < RangeEnd)
+				in
+				    #"Filtrado Reciente"
+
+	annotation PBI_NavigationStepName = Navegación
+
+	annotation PBI_ResultType = Table
+

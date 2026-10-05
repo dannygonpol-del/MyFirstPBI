@@ -1,0 +1,143 @@
+table vwCasosDistribuidos
+	lineageTag: da5b5e11-45d6-4736-8fe4-e8125ac610b4
+
+	measure CantCasosPorDistribuir = ```
+			
+			
+			    Var _CantCasos = CALCULATE(
+			                                    DISTINCTCOUNT(vwCasosDistribuidos[CasoId]),
+			                                     //  CONTAINSSTRING(vwCasosDistribuidos[EstadoCaso], "GESTI"),                                      
+			                                       vwCasosDistribuidos[Codigo] IN {"DISTRIBUIR2", "JJMDENZ"}
+			                                     )
+			
+			  RETURN 
+			
+			    _CantCasos
+			
+			```
+		formatString: 0
+		lineageTag: fc656b7e-1d83-4507-8bdb-169439d7b834
+
+	measure CantCasosDistribuidos = ```
+			
+			 
+			    Var _CantCasos = CALCULATE(
+			                                DISTINCTCOUNT(vwCasosDistribuidos[CasoId]),
+			                                KEEPFILTERS(
+			                                   NOT(vwCasosDistribuidos[Codigo] IN {"DISTRIBUIR2", "JJMDENZ"})
+			                                )
+			                            )
+			
+			  RETURN 
+			
+			    _CantCasos
+			    
+			```
+		formatString: 0
+		lineageTag: 6e856e9d-27ef-42eb-92de-e28ffd3a2320
+
+	column UsuarioDistribuidor
+		dataType: string
+		sourceProviderType: varchar(10)
+		lineageTag: 1a1eff54-bf99-4639-b05b-3b62b58565eb
+		summarizeBy: none
+		sourceColumn: UsuarioDistribuidor
+
+		annotation SummarizationSetBy = Automatic
+
+	column CasoId
+		dataType: int64
+		isNullable: false
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: 73d0105f-f3c3-4328-807c-803c2be9fd9f
+		summarizeBy: count
+		sourceColumn: CasoId
+
+		annotation SummarizationSetBy = Automatic
+
+	column CodigoCliente
+		dataType: string
+		sourceProviderType: varchar(15)
+		lineageTag: 070df35b-a190-4a9a-8e21-fb97093939cf
+		summarizeBy: none
+		sourceColumn: CodigoCliente
+
+		annotation SummarizationSetBy = Automatic
+
+	column EstadoCaso
+		dataType: string
+		sourceProviderType: varchar(10)
+		lineageTag: f3aea157-4f0f-40a0-adc1-1d3944b68e57
+		summarizeBy: none
+		sourceColumn: EstadoCaso
+
+		annotation SummarizationSetBy = Automatic
+
+	column Codigo
+		dataType: string
+		sourceProviderType: varchar(15)
+		lineageTag: eee8321c-0ef6-4d91-8c69-c34459797d6e
+		summarizeBy: none
+		sourceColumn: Codigo
+
+		annotation SummarizationSetBy = Automatic
+
+	column Sucursal_id
+		dataType: string
+		sourceProviderType: varchar(15)
+		lineageTag: 8d372a18-431a-40e6-a6c9-a2177ac75997
+		summarizeBy: none
+		sourceColumn: Sucursal_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column FechaAsignado
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime
+		lineageTag: 153432b5-a9b1-4d32-97bb-618e264e71f1
+		summarizeBy: none
+		sourceColumn: FechaAsignado
+
+		annotation SummarizationSetBy = Automatic
+
+	column Inactivo
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		sourceProviderType: bit
+		lineageTag: 828a71ad-e68b-45e6-a848-a5f4ccfd7e6c
+		summarizeBy: none
+		sourceColumn: Inactivo
+
+		annotation SummarizationSetBy = Automatic
+
+	column LastOficial
+		dataType: string
+		sourceProviderType: varchar(15)
+		lineageTag: 492f7cc3-e4f4-4468-9ad7-2aa2def0653b
+		summarizeBy: none
+		sourceColumn: LastOficial
+
+		annotation SummarizationSetBy = Automatic
+
+	column Asesor
+		dataType: string
+		sourceProviderType: varchar(58)
+		lineageTag: 33126afa-d2cc-4c07-b01a-9f553635e317
+		summarizeBy: none
+		sourceColumn: Asesor
+
+		annotation SummarizationSetBy = Automatic
+
+	partition vwCasosDistribuidos = m
+		mode: dual
+		source =
+				let
+				    Origen = Sql.Database("192.168.9.104,1433", "SigecobDS"),
+				    dbo_vwCasosDistribuidos = Origen{[Schema="dbo",Item="vwCasosDistribuidos"]}[Data]
+				in
+				    dbo_vwCasosDistribuidos
+
+	annotation PBI_ResultType = Table
+

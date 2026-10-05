@@ -1,0 +1,83 @@
+table tblSupervisoresLideresAsesores
+	lineageTag: 8102a486-adc2-4f6a-abb5-a42e092092ca
+
+	measure Activos = ```
+			
+			
+			VAR _Tipo = SELECTEDVALUE(tblSupervisoresLideresAsesores[Tipo])
+			
+			RETURN
+			SWITCH(
+			    TRUE(),
+			
+			    _Tipo = "Supervisores",
+			        COALESCE(CALCULATE(count(tblSupervisoresAsesores[Codigo]), tblSupervisoresAsesores[TipoAsesor] ="S" && tblSupervisoresAsesores[EstatusPuesto]= "A"),0),
+			
+			    _Tipo = "Team Leader",
+			        COALESCE(CALCULATE(count(tblSupervisoresAsesores[Codigo]), tblSupervisoresAsesores[TipoAsesor] ="L" && tblSupervisoresAsesores[EstatusPuesto]= "A"),0),
+			
+			    _Tipo = "Asesores",
+			        COALESCE(CALCULATE(count(tblSupervisoresAsesores[Codigo]), tblSupervisoresAsesores[TipoAsesor] ="A" && tblSupervisoresAsesores[EstatusPuesto]= "A"),0)
+			        
+			    )
+			    
+			```
+		lineageTag: 2116be7c-f825-4107-860e-39c90183b50e
+
+	measure Capacidad = ```
+			
+			
+			VAR _Tipo = SELECTEDVALUE(tblSupervisoresLideresAsesores[Tipo])
+			
+			RETURN
+			SWITCH(
+			    TRUE(),
+			
+			    _Tipo = "Supervisores",
+			        COALESCE(CALCULATE(count(tblSupervisoresAsesores[Codigo]), tblSupervisoresAsesores[TipoAsesor] ="S"),0),
+			
+			    _Tipo = "Team Leader",
+			        COALESCE(CALCULATE(MAX(tblSupervisores[CapacidadAsesores]), tblSupervisores[TipoAsesor] ="T"),0),
+			
+			    _Tipo = "Asesores",
+			        COALESCE(CALCULATE(SUM(tblSupervisores[CapacidadAsesores]), tblSupervisores[Sucrusal_id] in {"CC1", "CC2", "CC3", "CC4","SWAT"} && tblSupervisores[TipoAsesor] <> "T"),0)
+			        
+			    )
+			    
+			```
+		lineageTag: 630b0cc4-c816-4cae-be91-c5a5babd74fd
+
+	measure Disponibilidad = ```
+			
+			
+			    [Capacidad] - [Activos]
+			```
+		formatString: 0
+		lineageTag: 0a039fc4-96fd-4eec-8b7e-38c101fd0dee
+
+	column Tipo
+		lineageTag: 9cf7ee38-2e20-4422-a253-c86cc14213aa
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Tipo]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition tblSupervisoresLideresAsesores = calculated
+		mode: import
+		source = ```
+				
+				
+				    DATATABLE(
+				        "Tipo", STRING,
+				        {
+				            {"Supervisores"},
+				            {"Team Leader"},
+				            {"Asesores"}
+				        }
+				    )
+				    
+				```
+
+	annotation PBI_Id = 1f7dee6a28a14d2cbf6722ae05d87e0b
+

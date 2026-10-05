@@ -1,0 +1,33 @@
+table ControlActualizacion
+	lineageTag: 2d7bc5f2-16cf-4036-87d8-cd01de00bc60
+
+	column FechaHoraActualizacion
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 36853572-e15c-486b-8f8b-7530e736e124
+		summarizeBy: none
+		sourceColumn: FechaHoraActualizacion
+
+		variation Variación
+			isDefault
+			relationship: aea1b7bc-d756-452d-b5d9-4206ca2d056a
+			defaultHierarchy: LocalDateTable_e62ec90d-a6e3-4bf2-afbb-a11400e2386f.'Jerarquía de fechas'
+
+		annotation SummarizationSetBy = Automatic
+
+	partition ControlActualizacion = m
+		mode: import
+		source =
+				let
+				    FechaHoraActualizacion = DateTime.LocalNow(),
+				    Tabla = #table(
+				        type table [FechaHoraActualizacion = datetime],
+				        {{FechaHoraActualizacion}}
+				    )
+				in
+				    Tabla
+
+	annotation PBI_NavigationStepName = Navegación
+
+	annotation PBI_ResultType = Table
+

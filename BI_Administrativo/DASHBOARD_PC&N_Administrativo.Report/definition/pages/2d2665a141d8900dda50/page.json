@@ -1,0 +1,145 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.1.0/schema.json",
+  "name": "2d2665a141d8900dda50",
+  "displayName": "HISTORICO ",
+  "displayOption": "FitToPage",
+  "height": 720,
+  "width": 1280,
+  "pageBinding": {
+    "name": "9b1e6c0f32b7e693e0c0",
+    "type": "Default",
+    "parameters": [],
+    "referenceScope": "CrossReport",
+    "acceptsFilterContext": "None"
+  },
+  "objects": {
+    "background": [
+      {
+        "properties": {
+          "image": {
+            "image": {
+              "name": {
+                "expr": {
+                  "Literal": {
+                    "Value": "'Diapositiva1.SVG'"
+                  }
+                }
+              },
+              "url": {
+                "expr": {
+                  "ResourcePackageItem": {
+                    "PackageName": "RegisteredResources",
+                    "PackageType": 1,
+                    "ItemName": "Diapositiva12028966106324882.SVG"
+                  }
+                }
+              },
+              "scaling": {
+                "expr": {
+                  "Literal": {
+                    "Value": "'Normal'"
+                  }
+                }
+              }
+            }
+          },
+          "transparency": {
+            "expr": {
+              "Literal": {
+                "Value": "3D"
+              }
+            }
+          }
+        }
+      }
+    ],
+    "pageRefresh": [
+      {
+        "properties": {
+          "show": {
+            "expr": {
+              "Literal": {
+                "Value": "true"
+              }
+            }
+          },
+          "duration": {
+            "expr": {
+              "Literal": {
+                "Value": "'PT5M'"
+              }
+            }
+          }
+        }
+      }
+    ]
+  },
+  "visibility": "HiddenInViewMode",
+  "visualInteractions": [
+    {
+      "source": "b90c4ac43e842ccdbbd4",
+      "target": "c74657285c90891b5318",
+      "type": "NoFilter"
+    },
+    {
+      "source": "b90c4ac43e842ccdbbd4",
+      "target": "b8a572eec0f934d36bf1",
+      "type": "NoFilter"
+    },
+    {
+      "source": "b90c4ac43e842ccdbbd4",
+      "target": "3b3aa35ab28c7cec3adc",
+      "type": "NoFilter"
+    },
+    {
+      "source": "3b3aa35ab28c7cec3adc",
+      "target": "b90c4ac43e842ccdbbd4",
+      "type": "NoFilter"
+    },
+    {
+      "source": "3b3aa35ab28c7cec3adc",
+      "target": "c74657285c90891b5318",
+      "type": "NoFilter"
+    },
+    {
+      "source": "3b3aa35ab28c7cec3adc",
+      "target": "b8a572eec0f934d36bf1",
+      "type": "NoFilter"
+    },
+    {
+      "source": "b8a572eec0f934d36bf1",
+      "target": "3b3aa35ab28c7cec3adc",
+      "type": "NoFilter"
+    },
+    {
+      "source": "b8a572eec0f934d36bf1",
+      "target": "b90c4ac43e842ccdbbd4",
+      "type": "NoFilter"
+    },
+    {
+      "source": "b8a572eec0f934d36bf1",
+      "target": "c74657285c90891b5318",
+      "type": "NoFilter"
+    },
+    {
+      "source": "fb6e220e0deb05572486",
+      "target": "b8a572eec0f934d36bf1",
+      "type": "NoFilter"
+    },
+    {
+      "source": "fb6e220e0deb05572486",
+      "target": "3b3aa35ab28c7cec3adc",
+      "type": "NoFilter"
+    },
+    {
+      "source": "b90c4ac43e842ccdbbd4",
+      "target": "fb6e220e0deb05572486",
+      "type": "NoFilter"
+    },
+    {
+      "source": "b8a572eec0f934d36bf1",
+      "target": "fb6e220e0deb05572486",
+      "type": "NoFilter"
+    }
+  ]
+}

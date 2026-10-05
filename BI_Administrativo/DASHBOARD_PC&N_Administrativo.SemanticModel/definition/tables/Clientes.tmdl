@@ -1,0 +1,477 @@
+table Clientes
+	lineageTag: 3110bb89-c433-41f3-871a-6e9dc341f468
+
+	column Codigo
+		dataType: string
+		lineageTag: dd48e87d-ae01-4f5e-8838-da3ec64e202b
+		summarizeBy: none
+		sourceColumn: Codigo
+
+		annotation SummarizationSetBy = Automatic
+
+	column Nombre
+		dataType: string
+		lineageTag: 2c7b1a7c-bd29-48a9-b7a0-06d9a3fb74c6
+		summarizeBy: none
+		sourceColumn: Nombre
+
+		annotation SummarizationSetBy = Automatic
+
+	column Direccion
+		dataType: string
+		lineageTag: 8384db95-92c9-4dd1-91ce-7d2f519d6316
+		summarizeBy: none
+		sourceColumn: Direccion
+
+		annotation SummarizationSetBy = Automatic
+
+	column Telefono
+		dataType: string
+		lineageTag: d8bed6da-b0fa-4a99-906b-17650debe3f3
+		summarizeBy: none
+		sourceColumn: Telefono
+
+		annotation SummarizationSetBy = Automatic
+
+	column Fax
+		dataType: string
+		lineageTag: 24209de3-7aae-4b52-a10e-e6675178fa32
+		summarizeBy: none
+		sourceColumn: Fax
+
+		annotation SummarizationSetBy = Automatic
+
+	column Contacto
+		dataType: string
+		lineageTag: ba5e3e4d-124d-42f6-994b-533e72c3806d
+		summarizeBy: none
+		sourceColumn: Contacto
+
+		annotation SummarizationSetBy = Automatic
+
+	column RncCedula
+		dataType: string
+		lineageTag: a003b96b-ce63-423a-9d1e-e508a89c8eff
+		summarizeBy: none
+		sourceColumn: RncCedula
+
+		annotation SummarizationSetBy = Automatic
+
+	column eMail
+		dataType: string
+		lineageTag: 6e880b14-bd01-424f-b8a2-f53de1c97c55
+		summarizeBy: none
+		sourceColumn: eMail
+
+		annotation SummarizationSetBy = Automatic
+
+	column NcfTipo
+		dataType: string
+		lineageTag: 8d6e6aa5-d330-4639-a79b-bf1d4cef8f4f
+		summarizeBy: none
+		sourceColumn: NcfTipo
+
+		annotation SummarizationSetBy = Automatic
+
+	column CondicionPago
+		dataType: string
+		lineageTag: f94f829e-caf7-4a5e-9c84-945f422e0807
+		summarizeBy: none
+		sourceColumn: CondicionPago
+
+		annotation SummarizationSetBy = Automatic
+
+	column ArchivoCarga
+		dataType: string
+		isHidden
+		lineageTag: 3702eaec-57dc-418c-89b9-ac8810126470
+		summarizeBy: none
+		sourceColumn: ArchivoCarga
+
+		annotation SummarizationSetBy = Automatic
+
+	column CargoFijoUnico
+		dataType: boolean
+		isHidden
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 586ddbb4-3fe7-4ea9-80ba-dbd07adb7ba4
+		summarizeBy: none
+		sourceColumn: CargoFijoUnico
+
+		annotation SummarizationSetBy = Automatic
+
+	column ModoAplicaPago_Abono
+		dataType: string
+		isHidden
+		lineageTag: 91a8e6bd-e2c3-4086-b3f0-b804ad63f70b
+		summarizeBy: none
+		sourceColumn: ModoAplicaPago_Abono
+
+		annotation SummarizationSetBy = Automatic
+
+	column ModoAplicaPago_Saldo
+		dataType: string
+		isHidden
+		lineageTag: 7e1028d9-8379-4461-a3f5-45448d41a4a4
+		summarizeBy: none
+		sourceColumn: ModoAplicaPago_Saldo
+
+		annotation SummarizationSetBy = Automatic
+
+	column NombreRepresentante
+		dataType: string
+		lineageTag: eda750f2-3fd5-4a2e-ba66-cbcb24b7cbf3
+		summarizeBy: none
+		sourceColumn: NombreRepresentante
+
+		annotation SummarizationSetBy = Automatic
+
+	column CedulaRepresentante
+		dataType: string
+		lineageTag: 55bbbd2d-ecdd-4bd8-892a-a490fff12018
+		summarizeBy: none
+		sourceColumn: CedulaRepresentante
+
+		annotation SummarizationSetBy = Automatic
+
+	column Sub_cliente
+		dataType: boolean
+		isHidden
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 5f20759a-9c38-42bb-8ce9-ef22a7e7d181
+		summarizeBy: none
+		sourceColumn: Sub_cliente
+
+		annotation SummarizationSetBy = Automatic
+
+	column AgruparEn
+		dataType: string
+		isHidden
+		lineageTag: 7bcd50c3-8fce-4ce7-be57-8297fe5dbdbf
+		summarizeBy: none
+		sourceColumn: AgruparEn
+
+		annotation SummarizationSetBy = Automatic
+
+	column MostrarDistribucionPago
+		dataType: boolean
+		isHidden
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: a48e74e8-d24e-4196-afb4-a66b7f629493
+		summarizeBy: none
+		sourceColumn: MostrarDistribucionPago
+
+		annotation SummarizationSetBy = Automatic
+
+	column SupervisadoPor
+		dataType: string
+		isHidden
+		lineageTag: 82dd7809-5686-4eda-90f7-324f952a2cf1
+		summarizeBy: none
+		sourceColumn: SupervisadoPor
+
+		annotation SummarizationSetBy = Automatic
+
+	column Inactivo
+		dataType: boolean
+		isHidden
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: a268334d-ae08-4e72-9273-5fe1782418e8
+		summarizeBy: none
+		sourceColumn: Inactivo
+
+		annotation SummarizationSetBy = Automatic
+
+	column FormatoRemision
+		dataType: string
+		isHidden
+		lineageTag: 7989e9bd-298c-4ce3-a296-9999e934e6b0
+		summarizeBy: none
+		sourceColumn: FormatoRemision
+
+		annotation SummarizationSetBy = Automatic
+
+	column ProductoSinGuion
+		dataType: boolean
+		isHidden
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: e261e4d1-39b2-44d7-84c8-613231e5e40b
+		summarizeBy: none
+		sourceColumn: ProductoSinGuion
+
+		annotation SummarizationSetBy = Automatic
+
+	column CedulaSinGuion
+		dataType: boolean
+		isHidden
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 8c703867-d9d1-40c4-aa22-e8cca970662c
+		summarizeBy: none
+		sourceColumn: CedulaSinGuion
+
+		annotation SummarizationSetBy = Automatic
+
+	column Generales
+		dataType: string
+		lineageTag: 4296a238-2c93-47bf-a452-5ed3a231a415
+		summarizeBy: none
+		sourceColumn: Generales
+
+		annotation SummarizationSetBy = Automatic
+
+	column TipoRecibo
+		dataType: string
+		isHidden
+		lineageTag: f038c99b-ed18-4ffb-abb8-67a8d52e274b
+		summarizeBy: none
+		sourceColumn: TipoRecibo
+
+		annotation SummarizationSetBy = Automatic
+
+	column GrupoCliente
+		dataType: string
+		lineageTag: a841f9ed-b01e-4cbb-a49f-4b3af8ef47eb
+		summarizeBy: none
+		sourceColumn: GrupoCliente
+
+		annotation SummarizationSetBy = Automatic
+
+	column AlertaCargoCobrado
+		dataType: boolean
+		isHidden
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: c9fe1794-25fa-465d-b920-accac892be8d
+		summarizeBy: none
+		sourceColumn: AlertaCargoCobrado
+
+		annotation SummarizationSetBy = Automatic
+
+	column CalcularHonCiclo
+		dataType: boolean
+		isHidden
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 2f4ae154-561b-459c-ba62-84a1307e2523
+		summarizeBy: none
+		sourceColumn: CalcularHonCiclo
+
+		annotation SummarizationSetBy = Automatic
+
+	column MetaMensual
+		dataType: double
+		lineageTag: d6acbc36-8d23-4ecd-90bc-147fe3ff1aaf
+		summarizeBy: sum
+		sourceColumn: MetaMensual
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column AutoCrearNoProd
+		dataType: boolean
+		isHidden
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 0d7664d3-8c0c-4238-9352-8a0df7e18cfd
+		summarizeBy: none
+		sourceColumn: AutoCrearNoProd
+
+		annotation SummarizationSetBy = Automatic
+
+	column PrefijoNoProd
+		dataType: string
+		isHidden
+		lineageTag: f30e311c-e40d-420a-a2f5-8935ddb5be62
+		summarizeBy: none
+		sourceColumn: PrefijoNoProd
+
+		annotation SummarizationSetBy = Automatic
+
+	column PromesaNoContagia
+		dataType: boolean
+		isHidden
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 82dd6871-139c-4384-b0a4-d9cc9b99bf2f
+		summarizeBy: none
+		sourceColumn: PromesaNoContagia
+
+		annotation SummarizationSetBy = Automatic
+
+	column VicidialCampaign
+		dataType: string
+		isHidden
+		lineageTag: 22312e14-2ce9-4205-8157-36444e2fcf62
+		summarizeBy: none
+		sourceColumn: VicidialCampaign
+
+		annotation SummarizationSetBy = Automatic
+
+	column VicidialList
+		dataType: string
+		isHidden
+		lineageTag: f5f94ae3-6617-4270-8a98-965d46bcc26d
+		summarizeBy: none
+		sourceColumn: VicidialList
+
+		annotation SummarizationSetBy = Automatic
+
+	column ICS
+		dataType: string
+		isHidden
+		lineageTag: cc319e25-c29b-4741-b076-0d1be71effbf
+		summarizeBy: none
+		sourceColumn: ICS
+
+		annotation SummarizationSetBy = Automatic
+
+	column ProgramaLealtad
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: c8496a92-a1e7-4e34-8894-c27f245968c2
+		summarizeBy: none
+		sourceColumn: ProgramaLealtad
+
+		annotation SummarizationSetBy = Automatic
+
+	column GestionPorCaso
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 9db98f2c-dc1f-4fd6-a644-3fba6eba5452
+		summarizeBy: none
+		sourceColumn: GestionPorCaso
+
+		annotation SummarizationSetBy = Automatic
+
+	column PermitirCasoDuplicado
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 6a5ecbab-be1b-4c14-aed3-097ac892e69a
+		summarizeBy: none
+		sourceColumn: PermitirCasoDuplicado
+
+		annotation SummarizationSetBy = Automatic
+
+	column CarteraComun
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 18beb951-b31f-46e3-8c76-578531f973a4
+		summarizeBy: none
+		sourceColumn: CarteraComun
+
+		annotation SummarizationSetBy = Automatic
+
+	column NoRebajarPago
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 80606b8c-8fa9-4483-b680-690be3fc8ed6
+		summarizeBy: none
+		sourceColumn: NoRebajarPago
+
+		annotation SummarizationSetBy = Automatic
+
+	column PrefijoTelLocal
+		dataType: string
+		isHidden
+		lineageTag: fa55daa3-bcd5-449d-9a7d-728a85a88e4d
+		summarizeBy: none
+		sourceColumn: PrefijoTelLocal
+
+		annotation SummarizationSetBy = Automatic
+
+	column PrefijoTelCel
+		dataType: string
+		isHidden
+		lineageTag: 7b5cf0a4-ad52-4db5-aff6-ffcdd46f04af
+		summarizeBy: none
+		sourceColumn: PrefijoTelCel
+
+		annotation SummarizationSetBy = Automatic
+
+	column FueraColaTrabajo
+		dataType: boolean
+		isHidden
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 33d46302-7991-46e2-a5b3-15a6c293acd2
+		summarizeBy: none
+		sourceColumn: FueraColaTrabajo
+
+		annotation SummarizationSetBy = Automatic
+
+	column ClienteId
+		dataType: string
+		isHidden
+		lineageTag: c8b12151-7bdb-4083-a9fa-2a4e55875069
+		summarizeBy: none
+		sourceColumn: ClienteId
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Nombre - Copia'
+		dataType: string
+		isHidden
+		lineageTag: b58e20cd-a2ee-4547-8840-601df1a8eddd
+		summarizeBy: none
+		sourceColumn: Nombre - Copia
+
+		annotation SummarizationSetBy = Automatic
+
+	column ClientesAgrupados =
+			
+			
+			VAR Codigo =
+			    TRIM(
+			        UPPER(Clientes[Codigo])
+			    )
+			
+			RETURN
+			SWITCH(
+			    TRUE(),
+			
+			    Codigo IN {
+			        "ZACTICS- BHD",
+			        "ZACTICS-BAN",
+			        "ZACTICS-BELCORP",
+			        "ADM-BAN",
+			        "ADM-BHD",
+			        "AYR-ALNAP"
+			    },
+			    "ZACTICS/ADMINISTRACION",
+			
+			    Codigo = "COBROSOLU--CS"
+			        || CONTAINSSTRING(Codigo, "-CS"),
+			
+			    "KENNY ORTEGA",
+			
+			    Clientes[Nombre]
+			)
+			
+			
+			
+			
+			
+			//SWITCH(
+			//    TRUE(),
+			//    Clientes[Codigo] IN {"ZACTICS- BHD","ZACTICS-BAN","ZACTICS-BELCORP","ADM-BAN","ADM-BHD","AYR-ALNAP"}, UPPER("Zactics/Administracion"),
+			//       Clientes[Codigo] IN {"COBROSOLU--CS"}
+			//        || CONTAINSSTRING(Clientes[Codigo], "-CS") || CONTAINSSTRING(Clientes[Codigo], "----CS") || CONTAINSSTRING(Clientes[Codigo], "---- CS"),
+			//    "KENNY ORTEGA",
+			//    Clientes[Nombre]
+			//)
+		lineageTag: 66bbc4d1-fbbc-43c5-af51-e15f19c55bfe
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Clientes = m
+		mode: import
+		source =
+				let
+				    Origen = Sql.Database("192.168.9.104,1433", "SigecobDS"),
+				    dbo_Clientes = Origen{[Schema="dbo",Item="Clientes"]}[Data],
+				    #"Columna duplicada" = Table.DuplicateColumn(dbo_Clientes, "Nombre", "Nombre - Copia"),
+				    #"Duplicados quitados" = Table.Distinct(#"Columna duplicada", {"Nombre - Copia"})
+				in
+				    #"Duplicados quitados"
+
+	annotation PBI_NavigationStepName = Navegación
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,60 @@
+table tblSupervisores
+	lineageTag: c0e04f9b-b6c9-4338-88bb-503d34d349cc
+
+	column Codigo
+		dataType: string
+		sourceProviderType: nvarchar(12)
+		lineageTag: 41cb8072-80a5-4f72-90e9-427e73bb72b6
+		summarizeBy: none
+		sourceColumn: Codigo
+
+		annotation SummarizationSetBy = Automatic
+
+	column Codigo1
+		dataType: string
+		sourceProviderType: nvarchar(12)
+		lineageTag: 4f075ee1-d95e-48c3-bfef-639336dc7a83
+		summarizeBy: none
+		sourceColumn: Codigo1
+
+		annotation SummarizationSetBy = Automatic
+
+	column TipoAsesor
+		dataType: string
+		sourceProviderType: nvarchar(1)
+		lineageTag: 0b889fef-10a5-441b-b6d5-90e859cd1e43
+		summarizeBy: none
+		sourceColumn: TipoAsesor
+
+		annotation SummarizationSetBy = Automatic
+
+	column Sucrusal_id
+		dataType: string
+		sourceProviderType: nvarchar(15)
+		lineageTag: f91f35f0-403d-48b4-b542-80c5f058e13e
+		summarizeBy: none
+		sourceColumn: Sucrusal_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column CapacidadAsesores
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: f9e964de-d1f0-48f2-8ffd-4d9551374665
+		summarizeBy: sum
+		sourceColumn: CapacidadAsesores
+
+		annotation SummarizationSetBy = Automatic
+
+	partition tblSupervisores = m
+		mode: dual
+		source =
+				let
+				    Origen = Sql.Database("192.168.9.104,1433", "SigecobDS"),
+				    dbo_tblSupervisores = Origen{[Schema="dbo",Item="tblSupervisores"]}[Data]
+				in
+				    dbo_tblSupervisores
+
+	annotation PBI_ResultType = Table
+

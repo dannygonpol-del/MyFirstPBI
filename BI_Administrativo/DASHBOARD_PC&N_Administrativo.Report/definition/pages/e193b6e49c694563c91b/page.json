@@ -1,0 +1,110 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.1.0/schema.json",
+  "name": "e193b6e49c694563c91b",
+  "displayName": "Comparativo HISTORICO ",
+  "displayOption": "FitToPage",
+  "height": 720,
+  "width": 1280,
+  "pageBinding": {
+    "name": "39a466b6c3686a70a546",
+    "type": "Default",
+    "parameters": [],
+    "referenceScope": "CrossReport",
+    "acceptsFilterContext": "None"
+  },
+  "objects": {
+    "background": [
+      {
+        "properties": {
+          "image": {
+            "image": {
+              "name": {
+                "expr": {
+                  "Literal": {
+                    "Value": "'Diapositiva1.SVG'"
+                  }
+                }
+              },
+              "url": {
+                "expr": {
+                  "ResourcePackageItem": {
+                    "PackageName": "RegisteredResources",
+                    "PackageType": 1,
+                    "ItemName": "Diapositiva12028966106324882.SVG"
+                  }
+                }
+              },
+              "scaling": {
+                "expr": {
+                  "Literal": {
+                    "Value": "'Normal'"
+                  }
+                }
+              }
+            }
+          },
+          "transparency": {
+            "expr": {
+              "Literal": {
+                "Value": "3D"
+              }
+            }
+          }
+        }
+      }
+    ],
+    "pageRefresh": [
+      {
+        "properties": {
+          "show": {
+            "expr": {
+              "Literal": {
+                "Value": "true"
+              }
+            }
+          },
+          "duration": {
+            "expr": {
+              "Literal": {
+                "Value": "'PT5M'"
+              }
+            }
+          }
+        }
+      }
+    ]
+  },
+  "visibility": "HiddenInViewMode",
+  "visualInteractions": [
+    {
+      "source": "b7d581be400601d48d5c",
+      "target": "dd4318443d1f468ce726",
+      "type": "NoFilter"
+    },
+    {
+      "source": "b7d581be400601d48d5c",
+      "target": "48aaca98c0b5a791f01d",
+      "type": "NoFilter"
+    },
+    {
+      "source": "48aaca98c0b5a791f01d",
+      "target": "58092c45cd647ea14582",
+      "type": "NoFilter"
+    },
+    {
+      "source": "58092c45cd647ea14582",
+      "target": "b7d581be400601d48d5c",
+      "type": "NoFilter"
+    },
+    {
+      "source": "48aaca98c0b5a791f01d",
+      "target": "dd4318443d1f468ce726",
+      "type": "NoFilter"
+    },
+    {
+      "source": "b7d581be400601d48d5c",
+      "target": "58092c45cd647ea14582",
+      "type": "NoFilter"
+    }
+  ]
+}

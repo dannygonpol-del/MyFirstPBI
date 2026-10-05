@@ -1,0 +1,14 @@
+createOrReplace
+
+	ref table vwCasosGestiones
+
+		/// Porcentaje del monto recuperado sobre el monto prometido para los asesores en contexto
+		measure '% Monto_Recuperado' = ```
+				
+				
+				                DIVIDE(vwCasosGestiones[Monto_recuperacion], vwCasosGestiones[Monto_Promesas], BLANK())
+				```
+			formatString: 0.00\ %;-0.00\ %;0.00\ %
+			displayFolder: Recuperación
+			lineageTag: b89726a8-ae23-4721-8731-092b506df15e
+

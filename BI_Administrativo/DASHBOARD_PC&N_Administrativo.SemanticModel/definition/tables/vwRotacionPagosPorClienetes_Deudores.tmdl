@@ -1,0 +1,316 @@
+table vwRotacionPagosPorClienetes_Deudores
+	lineageTag: f4275f10-b2e2-4c40-b5c2-35c04b665a3a
+
+	measure MontoPagado = ```
+			
+			
+			    sum(vwRotacionPagosPorClienetes_Deudores[MontoPago])
+			```
+		lineageTag: 60679747-cd8d-494c-9d89-b5cb9f826e14
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure MostrarFila =
+			
+			
+			VAR MesesConPago =
+			    CALCULATE(
+			        DISTINCTCOUNT(vwRotacionPagosPorClienetes_Deudores[Mes]),
+			        FILTER(
+			            ALL(vwRotacionPagosPorClienetes_Deudores[Mes]),
+			            CALCULATE(SUM(vwRotacionPagosPorClienetes_Deudores[MontoPago])) > 0
+			        )
+			    )
+			RETURN
+			IF(MesesConPago < 3, 1, 0)
+		formatString: 0
+		lineageTag: a822dc6b-5ae6-4659-9723-ea4ba611a7a9
+
+	measure ColorEstado = ```
+			
+			IF(
+			    SELECTEDVALUE(vwRotacionPagosPorClienetes_Deudores[EstadoAsesor]) = FALSE(),
+			    //"#00B050",    -- Verde
+			    "#FF0000"     -- Rojo
+			)
+			
+			```
+		lineageTag: 13cb3025-781c-4be5-a4f6-10f286b1aa85
+
+	measure PagosProcesados = ```
+			
+			
+			     SUMX(
+			    vwRotacionPagosPorClienetes_Deudores,
+			    SWITCH(
+			        vwRotacionPagosPorClienetes_Deudores[divisa],
+			        "RD", vwRotacionPagosPorClienetes_Deudores[MontoPago],
+			        "US", vwRotacionPagosPorClienetes_Deudores[MontoPago],
+			        0
+			    )
+			)
+			
+			
+			```
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: bd307b61-9796-44ca-bff9-52457cecdd30
+
+		annotation PBI_FormatHint = {"currencyCulture":"es-DO"}
+
+	column NombreCliente_Orig
+		dataType: string
+		sourceProviderType: varchar(100)
+		lineageTag: 35dd30d6-aefa-4e7e-97ba-c62d709ae2c5
+		summarizeBy: none
+		sourceColumn: NombreCliente_Orig
+
+		annotation SummarizationSetBy = Automatic
+
+	column NombreDeudor
+		dataType: string
+		sourceProviderType: varchar(60)
+		lineageTag: 7981b162-d1a7-421d-81ab-315930765bd4
+		summarizeBy: none
+		sourceColumn: NombreDeudor
+
+		annotation SummarizationSetBy = Automatic
+
+	column MesNum
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: bbcaaf6c-1478-49cb-8000-acce4901a73c
+		summarizeBy: sum
+		sourceColumn: MesNum
+
+		annotation SummarizationSetBy = Automatic
+
+	column Mes
+		dataType: string
+		sourceProviderType: varchar(10)
+		lineageTag: 08f6790a-c6fd-402c-ad73-ab9f5b530a58
+		summarizeBy: none
+		sourceColumn: Mes
+		sortByColumn: MesNum
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	column FechaPago
+		dataType: dateTime
+		isNullable: false
+		formatString: General Date
+		sourceProviderType: datetime
+		lineageTag: dc74bc89-f6f4-4770-b4a0-66f12927dc13
+		summarizeBy: none
+		sourceColumn: FechaPago
+
+		annotation SummarizationSetBy = Automatic
+
+	column MontoPago
+		dataType: decimal
+		sourceProviderType: money
+		lineageTag: 379dbb9e-40e0-4219-a652-0c0f1f02a9ad
+		summarizeBy: sum
+		sourceColumn: MontoPago
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Categoria
+		dataType: string
+		sourceProviderType: nchar
+		lineageTag: bb457e7a-4952-41ce-87ab-7936881ce9aa
+		summarizeBy: none
+		sourceColumn: Categoria
+
+		annotation SummarizationSetBy = Automatic
+
+	column FechaCreacion
+		dataType: dateTime
+		formatString: Long Date
+		sourceProviderType: date
+		lineageTag: 1ea75002-9dc7-4c92-8c58-f44837bd74c1
+		summarizeBy: none
+		sourceColumn: FechaCreacion
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column CasoId
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 532192b7-e76d-4669-949c-01e92ead7420
+		summarizeBy: count
+		sourceColumn: CasoId
+
+		annotation SummarizationSetBy = Automatic
+
+	column NoPagos
+		dataType: string
+		isNullable: false
+		sourceProviderType: varchar(1)
+		lineageTag: 7a655e3e-7bc3-4360-b8f1-4700084a2996
+		summarizeBy: none
+		sourceColumn: NoPagos
+
+		annotation SummarizationSetBy = Automatic
+
+	column Tipo_Pago
+		dataType: string
+		sourceProviderType: varchar(20)
+		lineageTag: 726b8ac6-1827-4d2e-a8e7-b7252ebccbb4
+		summarizeBy: none
+		sourceColumn: Tipo_Pago
+
+		annotation SummarizationSetBy = Automatic
+
+	column FechaApoderam
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime
+		lineageTag: b3addcae-cc79-468d-abfc-b641be24078b
+		summarizeBy: none
+		sourceColumn: FechaApoderam
+
+		annotation SummarizationSetBy = Automatic
+
+	column codigo
+		dataType: string
+		sourceProviderType: varchar(15)
+		lineageTag: 8e24c3b8-e242-4e21-a658-2ccc3966d12f
+		summarizeBy: none
+		sourceColumn: codigo
+
+		annotation SummarizationSetBy = Automatic
+
+	column Asesor
+		dataType: string
+		isNullable: false
+		sourceProviderType: varchar(58)
+		lineageTag: 7f728252-1042-4dff-81ec-3ff59243a74d
+		summarizeBy: none
+		sourceColumn: Asesor
+
+		annotation SummarizationSetBy = Automatic
+
+	column CodigoHomologado
+		dataType: string
+		sourceProviderType: nchar
+		lineageTag: 71d06b96-1fcc-4a26-bf21-56cb274fcc50
+		summarizeBy: none
+		sourceColumn: CodigoHomologado
+
+		annotation SummarizationSetBy = Automatic
+
+	column CodigoOriginal
+		dataType: string
+		sourceProviderType: nvarchar(15)
+		lineageTag: 0bfbd748-3e0b-4580-a982-ebeda11a9657
+		summarizeBy: none
+		sourceColumn: CodigoOriginal
+
+		annotation SummarizationSetBy = Automatic
+
+	column TipoPago
+		dataType: string
+		sourceProviderType: varchar(10)
+		lineageTag: 86e9df3e-82e1-45e4-9d16-3e4ed3d5131d
+		summarizeBy: none
+		sourceColumn: TipoPago
+
+		annotation SummarizationSetBy = Automatic
+
+	column Estado
+		dataType: string
+		sourceProviderType: varchar(10)
+		lineageTag: 3b2b157c-f8f8-4565-ad16-a0c1c7b402df
+		summarizeBy: none
+		sourceColumn: Estado
+
+		annotation SummarizationSetBy = Automatic
+
+	column EstadoCartera
+		dataType: string
+		sourceProviderType: varchar(10)
+		lineageTag: 7fb3af9a-1925-4a85-98b6-c8853a2be687
+		summarizeBy: none
+		sourceColumn: EstadoCartera
+
+		annotation SummarizationSetBy = Automatic
+
+	column EstadoAsesor
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		sourceProviderType: bit
+		lineageTag: 7ebcef9a-472e-4f39-8f10-77788c3f905a
+		summarizeBy: none
+		sourceColumn: EstadoAsesor
+
+		annotation SummarizationSetBy = Automatic
+
+	column PagoNo
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: e0e57ca7-e0be-4ff0-9a36-f04c46a49780
+		summarizeBy: sum
+		sourceColumn: PagoNo
+
+		annotation SummarizationSetBy = Automatic
+
+	column FechaAplicado
+		dataType: dateTime
+		formatString: Long Date
+		sourceProviderType: date
+		lineageTag: 79346c25-b1b6-4034-9680-17fdae39c693
+		summarizeBy: none
+		sourceColumn: FechaAplicado
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column divisa
+		dataType: string
+		sourceProviderType: varchar(3)
+		lineageTag: b1874f5e-20d2-42c7-9dea-5020547c4ce6
+		summarizeBy: none
+		sourceColumn: divisa
+
+		annotation SummarizationSetBy = Automatic
+
+	column Trimestral
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		sourceProviderType: bit
+		lineageTag: 61dad0c2-b3ca-454e-b68a-785e63b44ce8
+		summarizeBy: none
+		sourceColumn: Trimestral
+
+		annotation SummarizationSetBy = Automatic
+
+	column Sucursal_id
+		dataType: string
+		sourceProviderType: varchar(15)
+		lineageTag: b5e54719-258e-4971-8ecc-a2bca55e49b4
+		summarizeBy: none
+		sourceColumn: Sucursal_id
+
+		annotation SummarizationSetBy = Automatic
+
+	partition vwRotacionPagosPorClienetes_Deudores = m
+		mode: dual
+		source =
+				let
+				    Origen = Sql.Database("192.168.9.104,1433", "SigecobDS"),
+				    dbo_vwRotacionPagosPorClienetes_Deudores = Origen{[Schema="dbo",Item="vwRotacionPagosPorClienetes_Deudores"]}[Data]
+				in
+				    dbo_vwRotacionPagosPorClienetes_Deudores
+
+	annotation PBI_ResultType = Table
+

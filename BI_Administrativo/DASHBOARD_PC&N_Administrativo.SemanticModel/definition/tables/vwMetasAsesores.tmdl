@@ -1,0 +1,66 @@
+table vwMetasAsesores
+	lineageTag: 528d05fa-492f-43d0-aba1-c653756b9ff7
+
+	column Sucursal_id
+		dataType: string
+		isNullable: false
+		sourceProviderType: varchar(15)
+		lineageTag: 7fce2abf-3b07-4c4d-8c96-91abe827bbea
+		summarizeBy: none
+		sourceColumn: Sucursal_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column codigo
+		dataType: string
+		sourceProviderType: varchar(15)
+		lineageTag: 1538003d-5be3-45db-bb0d-abf2c25b8356
+		summarizeBy: none
+		sourceColumn: codigo
+
+		annotation SummarizationSetBy = Automatic
+
+	column nombres
+		dataType: string
+		sourceProviderType: varchar(40)
+		lineageTag: 1dc4c702-2def-43eb-9c00-3d04bdae035b
+		summarizeBy: none
+		sourceColumn: nombres
+
+		annotation SummarizationSetBy = Automatic
+
+	column MontoMetas
+		dataType: decimal
+		isNullable: false
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		sourceProviderType: money
+		lineageTag: c4613783-93a2-4c4a-b230-8a763610dcbf
+		summarizeBy: sum
+		sourceColumn: MontoMetas
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"es-DO"}
+
+	column Recuperado
+		dataType: double
+		sourceProviderType: float
+		lineageTag: a048e9fa-425e-4f44-9c1c-c3d486b83a34
+		summarizeBy: sum
+		sourceColumn: Recuperado
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition vwMetasAsesores = m
+		mode: dual
+		source =
+				let
+				    Origen = Sql.Database("192.168.9.104,1433", "SigecobDS"),
+				    dbo_vwMetasAsesores = Origen{[Schema="dbo",Item="vwMetasAsesores"]}[Data]
+				in
+				    dbo_vwMetasAsesores
+
+	annotation PBI_ResultType = Table
+

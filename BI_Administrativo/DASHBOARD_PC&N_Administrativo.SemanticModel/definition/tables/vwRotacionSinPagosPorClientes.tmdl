@@ -1,0 +1,94 @@
+table vwRotacionSinPagosPorClientes
+	lineageTag: d88d8e66-b3c6-4170-a0c8-441654b4521c
+
+	column Categoria
+		dataType: string
+		isNullable: false
+		sourceProviderType: nchar
+		lineageTag: 27cc5472-0ced-46de-8a0c-8209120f4263
+		summarizeBy: none
+		sourceColumn: Categoria
+
+		annotation SummarizationSetBy = Automatic
+
+	column CasoId
+		dataType: int64
+		isNullable: false
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: b944274f-8726-4181-ae24-bacc49db70b2
+		summarizeBy: count
+		sourceColumn: CasoId
+
+		annotation SummarizationSetBy = Automatic
+
+	column NombreDeudor
+		dataType: string
+		sourceProviderType: varchar(60)
+		lineageTag: 30f01322-84f0-438c-aa3f-9b2d9358ea64
+		summarizeBy: none
+		sourceColumn: NombreDeudor
+
+		annotation SummarizationSetBy = Automatic
+
+	column MesNum
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: b7b98c95-0a7d-4c27-b324-7334fcce5472
+		summarizeBy: sum
+		sourceColumn: MesNum
+
+		annotation SummarizationSetBy = Automatic
+
+	column Mes
+		dataType: string
+		sourceProviderType: varchar(10)
+		lineageTag: fc3cbd8d-4374-4b3e-83d7-747800ff5621
+		summarizeBy: none
+		sourceColumn: Mes
+
+		annotation SummarizationSetBy = Automatic
+
+	column MontoNoPagado
+		dataType: double
+		sourceProviderType: float
+		lineageTag: f4b62855-fe02-44d7-abd2-e5bc6e06b2e6
+		summarizeBy: sum
+		sourceColumn: MontoNoPagado
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column FechaApoderam
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime
+		lineageTag: a3ad34e8-8d2c-443b-9068-6ddee3afa038
+		summarizeBy: none
+		sourceColumn: FechaApoderam
+
+		annotation SummarizationSetBy = Automatic
+
+	column p
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime
+		lineageTag: c574e717-1464-4594-8729-a305186a76b6
+		summarizeBy: none
+		sourceColumn: p
+
+		annotation SummarizationSetBy = Automatic
+
+	partition vwRotacionSinPagosPorClientes = m
+		mode: dual
+		source =
+				let
+				    Origen = Sql.Database("192.168.9.104,1433", "SigecobDS"),
+				    dbo_vwRotacionSinPagosPorClientes = Origen{[Schema="dbo",Item="vwRotacionSinPagosPorClientes"]}[Data]
+				in
+				    dbo_vwRotacionSinPagosPorClientes
+
+	annotation PBI_ResultType = Table
+

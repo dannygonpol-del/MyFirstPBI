@@ -1,0 +1,60 @@
+table TablaMontosGestores
+	lineageTag: c3fef68a-79f3-460b-a755-6a385532fa31
+
+	measure 'Valor Montos' = ```
+			
+			
+			VAR _Tipo = SELECTEDVALUE(TablaMontosGestores[Montos])
+			
+			RETURN
+			SWITCH(
+			    TRUE(),
+			
+			    _Tipo = "Promesa",
+			        COALESCE(vwCasosGestiones[Monto_Promesas],0.00),
+			
+			    _Tipo = "Meta",
+			       COALESCE(vwCasosGestiones[Monto_Metas1$],0.00),
+			
+			    _Tipo = "Recuperado",
+			        COALESCE(vwCasosGestiones[Monto_recuperacion],0.00),
+			
+			    _Tipo = "% Efectividad",
+			        DIVIDE(vwCasosGestiones[Monto_recuperacion], vwCasosGestiones[Monto_Promesas], 0.00) * 100
+			
+			)
+			
+			// "% Efectividad"
+			
+			```
+		formatString: 0
+		displayFolder: Valores
+		lineageTag: 9751772b-94a7-4642-81cb-9d1f690b702b
+
+	column Montos
+		lineageTag: defbd4e4-6927-4e1f-8dec-f448b1479f9f
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Montos]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition TablaMontosGestores = calculated
+		mode: import
+		source = ```
+				
+				
+				    DATATABLE(
+				        "Montos", STRING,
+				        {           
+				            {"Promesa"},
+				            {"Meta"},
+				            {"Recuperado"},
+				            {"% Efectividad"}
+				        }
+				)
+				
+				```
+
+	annotation PBI_Id = a917b0c2e79e4015a042c39c07ac13fa
+

@@ -1,0 +1,297 @@
+table Oficiales
+	lineageTag: bf22bb43-fd85-4cb1-add4-3c3be64cb752
+
+	/// Cantidad de oficiales con estatus activo
+	measure OficialesActivos = CALCULATE(COUNTROWS(Oficiales), Oficiales[Activo] = TRUE())
+		formatString: #,0
+		displayFolder: Oficiales
+		lineageTag: 85b8deec-f01b-48eb-81f9-7d069213cbc1
+
+	column Codigo
+		dataType: string
+		isNullable: false
+		sourceProviderType: varchar(15)
+		lineageTag: e5ebe84c-c7dd-480d-92cd-6716bf5e99e3
+		summarizeBy: none
+		sourceColumn: Codigo
+
+		annotation SummarizationSetBy = Automatic
+
+	column Nombres
+		dataType: string
+		sourceProviderType: varchar(40)
+		lineageTag: 7770d88c-d7ff-43e6-b5eb-a801e12660ed
+		summarizeBy: none
+		sourceColumn: Nombres
+
+		annotation SummarizationSetBy = Automatic
+
+	column Comision
+		dataType: double
+		sourceProviderType: float
+		lineageTag: a7377074-b853-45bf-94d1-339b89dbe242
+		summarizeBy: sum
+		sourceColumn: Comision
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Status
+		dataType: string
+		sourceProviderType: varchar(1)
+		lineageTag: 6091fe61-08d4-4a8f-a4a2-ca459b926e76
+		summarizeBy: none
+		sourceColumn: Status
+
+		annotation SummarizationSetBy = Automatic
+
+	column Mark
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		sourceProviderType: bit
+		lineageTag: 057da966-c6a0-431d-9649-9552864a6629
+		summarizeBy: none
+		sourceColumn: Mark
+
+		annotation SummarizationSetBy = Automatic
+
+	column CalculoComision
+		dataType: string
+		sourceProviderType: varchar(30)
+		lineageTag: 158c6cdb-1551-4fc9-bd61-fc81fdf465b5
+		summarizeBy: none
+		sourceColumn: CalculoComision
+
+		annotation SummarizationSetBy = Automatic
+
+	column MostrarEstadistica
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		sourceProviderType: bit
+		lineageTag: 2a48d823-32b4-483a-bcb4-9300bb587850
+		summarizeBy: none
+		sourceColumn: MostrarEstadistica
+
+		annotation SummarizationSetBy = Automatic
+
+	column MontoExcentoComision
+		dataType: double
+		sourceProviderType: float
+		lineageTag: 388db591-8bf6-4e54-a702-0cb6c20b8a25
+		summarizeBy: sum
+		sourceColumn: MontoExcentoComision
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Sucursal_id
+		dataType: string
+		sourceProviderType: varchar(15)
+		lineageTag: 7a1692a9-a9b0-4d25-965d-eed7ab908526
+		summarizeBy: none
+		sourceColumn: Sucursal_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column GrupoComision
+		dataType: string
+		sourceProviderType: varchar(10)
+		lineageTag: 4574e318-7cbe-4113-8003-0924c0af9152
+		summarizeBy: none
+		sourceColumn: GrupoComision
+
+		annotation SummarizationSetBy = Automatic
+
+	column NoMostrarAlertas
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		sourceProviderType: bit
+		lineageTag: 978618e0-fea6-49b8-ad45-f0e31f0158bc
+		summarizeBy: none
+		sourceColumn: NoMostrarAlertas
+
+		annotation SummarizationSetBy = Automatic
+
+	column CodigoEmpl
+		dataType: string
+		sourceProviderType: varchar(10)
+		lineageTag: 4fbc5a59-19dc-4364-8e41-14b1296a3245
+		summarizeBy: none
+		sourceColumn: CodigoEmpl
+
+		annotation SummarizationSetBy = Automatic
+
+	column SupervisadoPor
+		dataType: string
+		sourceProviderType: varchar(10)
+		lineageTag: afda0f94-67fd-4f56-9579-ab3207e72d88
+		summarizeBy: none
+		sourceColumn: SupervisadoPor
+
+		annotation SummarizationSetBy = Automatic
+
+	column SupervisadoPor2
+		dataType: string
+		sourceProviderType: varchar(10)
+		lineageTag: 49fd868a-46f8-4448-9338-1ad07360fc57
+		summarizeBy: none
+		sourceColumn: SupervisadoPor2
+
+		annotation SummarizationSetBy = Automatic
+
+	column Email
+		dataType: string
+		sourceProviderType: varchar(50)
+		lineageTag: fe57e8fb-ddab-4e0d-adfd-3f57e64b5c6f
+		summarizeBy: none
+		sourceColumn: Email
+
+		annotation SummarizationSetBy = Automatic
+
+	column EmailPassword
+		dataType: string
+		sourceProviderType: varchar(20)
+		lineageTag: c5aa037f-d043-4582-aa4d-0190fed82b13
+		summarizeBy: none
+		sourceColumn: EmailPassword
+
+		annotation SummarizationSetBy = Automatic
+
+	column Extension
+		dataType: string
+		sourceProviderType: varchar(10)
+		lineageTag: 6113f80d-5400-4abb-83a7-f6b73443a59e
+		summarizeBy: none
+		sourceColumn: Extension
+
+		annotation SummarizationSetBy = Automatic
+
+	column Proposito
+		dataType: string
+		sourceProviderType: varchar(10)
+		lineageTag: 18b796f0-26da-4d8d-a865-d1e4425972c4
+		summarizeBy: none
+		sourceColumn: Proposito
+
+		annotation SummarizationSetBy = Automatic
+
+	column Activo
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		sourceProviderType: bit
+		lineageTag: 3c007f47-2906-43ca-a1d8-387c01d1c8cf
+		summarizeBy: none
+		sourceColumn: Activo
+
+		annotation SummarizationSetBy = Automatic
+
+	column ObjetivoMes
+		dataType: double
+		sourceProviderType: float
+		lineageTag: 39f337d1-6ee4-49aa-93aa-22565f7c1392
+		summarizeBy: sum
+		sourceColumn: ObjetivoMes
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column ConsultaBlock
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		sourceProviderType: bit
+		lineageTag: d23df95c-70c5-4ae9-93eb-f6c5215b6651
+		summarizeBy: none
+		sourceColumn: ConsultaBlock
+
+		annotation SummarizationSetBy = Automatic
+
+	column SacarTurbo
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		sourceProviderType: bit
+		lineageTag: eca1763f-6c00-4c8f-86f4-03061c76cbd6
+		summarizeBy: none
+		sourceColumn: SacarTurbo
+
+		annotation SummarizationSetBy = Automatic
+
+	column Division
+		dataType: string
+		sourceProviderType: varchar(10)
+		lineageTag: 03b80f21-034d-4f28-99e3-ebe921a4cdc6
+		summarizeBy: none
+		sourceColumn: Division
+
+		annotation SummarizationSetBy = Automatic
+
+	column Cliente
+		dataType: string
+		sourceProviderType: varchar(15)
+		lineageTag: bd17ade7-85cb-4d12-a940-00df2ba384ec
+		summarizeBy: none
+		sourceColumn: Cliente
+
+		annotation SummarizationSetBy = Automatic
+
+	column ClienteAGestionar
+		dataType: string
+		sourceProviderType: varchar(15)
+		lineageTag: cbc717bc-9df6-4406-a1b8-f5b0e8909f8c
+		summarizeBy: none
+		sourceColumn: ClienteAGestionar
+
+		annotation SummarizationSetBy = Automatic
+
+	column MetaGestion
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 22511add-a328-44ec-8a77-6837b4a9f291
+		summarizeBy: sum
+		sourceColumn: MetaGestion
+
+		annotation SummarizationSetBy = Automatic
+
+	column ModificadoPor
+		dataType: string
+		sourceProviderType: varchar(10)
+		lineageTag: b5d0ba05-abe6-4145-b0d1-e9def6da3bd7
+		summarizeBy: none
+		sourceColumn: ModificadoPor
+
+		annotation SummarizationSetBy = Automatic
+
+	column FechaModificado
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime
+		lineageTag: 588585c2-ca62-47ac-8d5e-6713327b4fd2
+		summarizeBy: none
+		sourceColumn: FechaModificado
+
+		annotation SummarizationSetBy = Automatic
+
+	column TransferirCaso
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		sourceProviderType: bit
+		lineageTag: ce4f561c-42b5-47b0-a203-3a38628cbc0f
+		summarizeBy: none
+		sourceColumn: TransferirCaso
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Oficiales = m
+		mode: dual
+		source =
+				let
+				    Origen = Sql.Database("192.168.9.104,1433", "SigecobDS"),
+				    dbo_Oficiales = Origen{[Schema="dbo",Item="Oficiales"]}[Data]
+				in
+				    dbo_Oficiales
+
+	annotation PBI_ResultType = Table
+

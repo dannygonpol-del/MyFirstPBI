@@ -1,0 +1,120 @@
+table vwCartera
+	lineageTag: 7da5bca8-b3e2-4cab-8506-4a5ab3adc4f0
+
+	measure Cant_Cartera = ```
+			
+			
+			    count(vwCartera[CasoID])
+			    
+			```
+		formatString: 0
+		lineageTag: 76541da8-f3e9-4141-84c0-6057ea71873b
+
+	column CasoID
+		dataType: int64
+		isNullable: false
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: c87ea2bf-b604-41bd-bf59-730a4573c1f5
+		summarizeBy: count
+		sourceColumn: CasoID
+
+		annotation SummarizationSetBy = Automatic
+
+	column FechaApoderam
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime
+		lineageTag: bfd85a20-cbac-4422-aeb5-1f30a3d82986
+		summarizeBy: none
+		sourceColumn: FechaApoderam
+
+		annotation SummarizationSetBy = Automatic
+
+	column IdMes
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 906cb556-55ca-4710-80e7-1b0d95ff7cc1
+		summarizeBy: sum
+		sourceColumn: IdMes
+
+		annotation SummarizationSetBy = Automatic
+
+	column IdAno
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: a031591d-e7eb-4c04-80ec-edf1c560907f
+		summarizeBy: sum
+		sourceColumn: IdAno
+
+		annotation SummarizationSetBy = Automatic
+
+	column Sucursal_id
+		dataType: string
+		sourceProviderType: varchar(15)
+		lineageTag: 82ee76b4-706f-4853-b2c7-a95150f6705f
+		summarizeBy: none
+		sourceColumn: Sucursal_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column CodigoCliente
+		dataType: string
+		sourceProviderType: varchar(15)
+		lineageTag: 23f01ff8-6fff-42d0-bdf0-710cec2bac9f
+		summarizeBy: none
+		sourceColumn: CodigoCliente
+
+		annotation SummarizationSetBy = Automatic
+
+	column NombreCliente
+		dataType: string
+		sourceProviderType: varchar(40)
+		lineageTag: 870000c1-f3aa-4d46-8e83-2bbfd3ee849a
+		summarizeBy: none
+		sourceColumn: NombreCliente
+
+		annotation SummarizationSetBy = Automatic
+
+	column FechaAsignado
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime
+		lineageTag: e5abaf72-8968-4f03-86ef-6add97e18991
+		summarizeBy: none
+		sourceColumn: FechaAsignado
+
+		annotation SummarizationSetBy = Automatic
+
+	column FechaCreacion
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime
+		lineageTag: d88cd7c9-cec7-4195-bb70-0e3ef81274ee
+		summarizeBy: none
+		sourceColumn: FechaCreacion
+
+		annotation SummarizationSetBy = Automatic
+
+	column Estatus
+		dataType: string
+		sourceProviderType: varchar(9)
+		lineageTag: a8ba7a65-5b5f-4f68-ad03-58b0df974ea3
+		summarizeBy: none
+		sourceColumn: Estatus
+
+		annotation SummarizationSetBy = Automatic
+
+	partition vwCartera = m
+		mode: dual
+		source =
+				let
+				    Origen = Sql.Database("192.168.9.104,1433", "SigecobDS"),
+				    dbo_vwCartera = Origen{[Schema="dbo",Item="vwCartera"]}[Data]
+				in
+				    dbo_vwCartera
+
+	annotation PBI_ResultType = Table
+

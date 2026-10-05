@@ -1,0 +1,40 @@
+table tblOficiales
+	lineageTag: 1e12ee04-e934-4a12-9f10-292d9bad6ce3
+
+	column IdUnidad
+		dataType: string
+		lineageTag: 3efbe301-beb7-4818-a061-5046841ea7c2
+		summarizeBy: none
+		sourceColumn: IdUnidad
+
+		annotation SummarizationSetBy = Automatic
+
+	column ClasificacionUnidades =
+			
+			SWITCH(
+			    TRUE(),
+			    tblOficiales[IdUnidad] IN {"CC1","CC2","CC3","CC4","SWAT"}, "Unidades de Negocios",
+			    tblOficiales[IdUnidad] IN {"ADMINISTRATIVOS"}, "Administrativos",
+			    tblOficiales[IdUnidad] IN {"GA"}, "Area Legal",
+			    tblOficiales[IdUnidad]   -- valor por defecto
+			)
+		lineageTag: 5cb02fd2-b427-4c85-96ad-4dd85a95a74a
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	partition tblOficiales = m
+		mode: import
+		source =
+				let
+				    Origen = Excel.Workbook(File.Contents("C:\PROYECTOBI\tblMaestra_unidades.xlsx"), null, true),
+				    tblOficiales_Sheet = Origen{[Item="tblOficiales",Kind="Sheet"]}[Data],
+				    #"Tipo cambiado" = Table.TransformColumnTypes(tblOficiales_Sheet,{{"Column1", type text}}),
+				    #"Columnas con nombre cambiado" = Table.RenameColumns(#"Tipo cambiado",{{"Column1", "IdUnidad"}})
+				in
+				    #"Columnas con nombre cambiado"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navegación
+

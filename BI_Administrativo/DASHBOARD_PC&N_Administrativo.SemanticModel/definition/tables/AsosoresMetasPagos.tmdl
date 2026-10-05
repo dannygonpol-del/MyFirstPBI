@@ -1,0 +1,56 @@
+table AsosoresMetasPagos
+	lineageTag: 01303251-eba4-4d25-af88-51a6a4418239
+
+	column Codigo
+		lineageTag: 6a05b877-7812-45fb-ac0b-05bc53833a58
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Codigo]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Sucursal_id
+		lineageTag: 6b4fe32b-45fd-4143-8e0b-d0fa5e55db66
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Sucursal_id]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition AsosoresMetasPagos = calculated
+		mode: import
+		source = ```
+				
+				
+				VAR _Pagos =
+				    SELECTCOLUMNS(
+				        vwPagos,
+				        "Codigo", vwPagos[Codigo],
+				        "Sucursal_id", vwPagos[Sucursal_id]
+				    )
+				
+				VAR _Metas =
+				    SELECTCOLUMNS(
+				        vwMetasAsesores,
+				        "Codigo", vwMetasAsesores[Codigo],
+				        "Sucursal_id", vwMetasAsesores[Sucursal_id]
+				    )
+				
+				VAR _Combinacion =
+				    UNION(
+				        _Pagos,
+				        _Metas
+				    )
+				
+				RETURN
+				    DISTINCT(
+				        FILTER(
+				            _Combinacion,
+				            [Codigo] <> BLANK()
+				        )
+				    )
+				
+				```
+
+	annotation PBI_Id = e06918ecdd794ef68bc1f87b21db49c6
+

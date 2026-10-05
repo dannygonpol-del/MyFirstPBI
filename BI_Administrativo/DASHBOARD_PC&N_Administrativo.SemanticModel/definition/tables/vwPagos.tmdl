@@ -1,0 +1,1155 @@
+table vwPagos
+	lineageTag: 6e6b0721-eef9-4be8-a4c7-e4405814c995
+
+	/// Porcentaje de la meta que falta por cumplir (en blanco si ya se superó)
+	measure %PorCumplir = ```
+			
+			
+			    VAR TotalMeta       = MAX(vwPagos[MontoMeta])
+			    VAR TotalRecuperado = SUM(vwPagos[MontoPagado])
+			    VAR MetaFaltante    = TotalMeta - TotalRecuperado
+			
+			    RETURN    
+			            IF(
+			                    MetaFaltante <= 0.00,
+			                    BLANK(), 
+			                //  DIVIDE(MetaFaltante, TotalMeta)
+			
+			                DIVIDE(TotalRecuperado, TotalMeta) //* 100
+			                
+			                ) 
+			```
+		formatString: 0.00%
+		displayFolder: Recuperación
+		lineageTag: bb3c45e8-153d-4ff6-83a3-2af2db4d599a
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	/// Monto faltante para alcanzar la meta (por oficial o total según contexto)
+	measure PorCumplir = ```
+			VAR TotalMeta       =  CALCULATE(SUM(vwMetas[MontoMetas]), TREATAS(values(vwPagos[Sucursal_id]),vwMetas[Unidad]))
+			VAR TotalRecuperado = SUM(vwPagos[MontoPagado])
+			VAR Resultado       = abs(TotalMeta - TotalRecuperado)
+			
+			RETURN
+			IF(
+			    ISINSCOPE(vwPagos[codigo]),
+			    -- Cálculo por fila
+			    ABS(
+			        MAX(vwPagos[MontoMeta]) - 
+			        SUM(vwPagos[MontoPagado])
+			    )
+			    ,
+			    -- Cálculo SOLO para el total
+			    Resultado
+			)
+			```
+		formatString: $#,0.00;($#,0.00);$#,0.00
+		displayFolder: Recuperación
+		lineageTag: 96c2b552-974c-4d07-9f31-0b815e63d922
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	/// Monto que excede la meta (negativo = meta superada)
+	measure Cumplido = ```
+			VAR TotalMeta       = MAX(vwPagos[MontoMeta])
+			VAR TotalRecuperado = SUM(vwPagos[MontoPagado])
+			VAR MetaFaltante    = TotalMeta - TotalRecuperado
+			
+			RETURN     IF(
+			        MetaFaltante < 0.00, MetaFaltante,
+			        BLANK()        
+			    ) 
+			```
+		formatString: $#,0.00;($#,0.00);$#,0.00
+		displayFolder: Recuperación
+		lineageTag: 612772c3-ce06-44c4-b2a3-a2b73399d715
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	/// Color semáforo para el % pendiente: azul si meta cumplida, rojo si falta
+	measure Color%PorCumplir =
+			
+			--VAR Pct = [PorCumplir]
+			VAR TotalMeta       =  CALCULATE(SUM(vwMetas[MontoMetas]), TREATAS(values(vwPagos[Sucursal_id]),vwMetas[Unidad]))
+			VAR TotalRecuperado = SUM(vwPagos[MontoPagado])
+			VAR Resultado       = (TotalMeta - TotalRecuperado)
+			
+			RETURN
+			    SWITCH(
+			        TRUE(),
+			       -- ISBLANK(Resultado), "#FF4C4C" -- Valores en negativo
+			        Resultado < 0.00, "#000000" -- Valores en negativo COLOR NEGRO
+			
+			      , Resultado > 0.00, "#990000"  --COLOR ROJO
+			
+			        --, "#0000FF"
+			    )
+		displayFolder: Recuperación
+		lineageTag: f4f4b675-e846-41d6-8336-a98e1abb299c
+
+	/// Meta del oficial o total de la sucursal según nivel de contexto
+	measure MontoMeta$ = ```
+			
+			
+			    IF(ISINSCOPE(vwPagos[codigo]),max(vwPagos[MontoMeta]), 
+			        CALCULATE(SUM(vwMetas[MontoMetas]), 
+			            TREATAS(values(vwPagos[Sucursal_id]),vwMetas[Unidad])))
+			
+			```
+		formatString: $#,0.00;($#,0.00);$#,0.00
+		displayFolder: Recuperación
+		lineageTag: 97207d14-34a3-444c-97ae-eb5f6dadacfa
+
+		annotation PBI_FormatHint = {"currencyCulture":"es-DO"}
+
+	/// Monto cobrado ignorando el filtro de cliente (para totales correctos)
+	measure 'Monto Cobrado Sin Filtro' =
+			
+			CALCULATE(
+			    [MontoRecuperado],
+			    ALL(Clientes[Nombre])
+			)
+		formatString: $#,0.00;($#,0.00);$#,0.00
+		displayFolder: Recuperación
+		lineageTag: 12689813-4848-490d-a3f1-b5b2bbac8f72
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	/// Suma total de pagos recibidos
+	measure MontoRecuperado = ```
+			
+			
+			//sum(vwPagos[MontoPagado])
+			
+			  VAR FechaInicio = MIN(Calendario[Date])
+			   // DATE(YEAR(TODAY()), MONTH(TODAY()), 1)
+			  
+			  --  DATE(2026,5,1)
+			   -- MIN(Calendario[Date])
+			
+			   VAR FechaFin = MAX(Calendario[Date])
+			   
+			   //EOMONTH(TODAY(), 0) --TODAY()
+			   
+			   -- DATE(2026,5,31)
+			     --MAX(Calendario[Date])
+			      
+			
+			RETURN
+			
+			CALCULATE(
+			    //sum(vwCasos[MontoPrometido]),
+			
+			    sum(vwPagos[MontoPagadoRDUS]),
+			
+			   TREATAS(
+			        VALUES(vwCasos[CodigoCliente]),
+			       vwPagos[CodigoCliente]
+			    )
+			    
+			  )
+			```
+		formatString: $#,0.00;($#,0.00);$#,0.00
+		displayFolder: Recuperación
+		lineageTag: 72424139-d185-4a20-bce3-352dfdddc18f
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	/// Porcentaje de recuperación sobre la meta asignada
+	measure %Recuperacion = DIVIDE([MontoRecuperado], [MontoMeta$], 0)
+		formatString: 0.00%
+		displayFolder: Recuperación
+		lineageTag: a5eda110-d430-4e4e-b454-bc0aa98d5aa4
+
+	/// Porcentaje del monto en revisión respecto al total recuperado; en blanco si revisión >= total
+	measure %PorRevision = ```
+			
+			VAR   TotalRecuperado     = SUM(vwPagos[MontoPagado])
+			VAR TotalRevision  = SUM(vwPagos[MontoPagadoRevision])
+			VAR RecuperacionTotalFaltante    = TotalRecuperado - TotalRevision
+			
+			RETURN    
+			 IF(
+			        RecuperacionTotalFaltante <= 0.00,
+			        BLANK(), 
+			        DIVIDE(TotalRevision, TotalRecuperado)
+			    ) 
+			//  RecuperacionTotalFaltante
+			```
+		displayFolder: Recuperación
+		lineageTag: 9e72fd0f-fb0d-47eb-ad94-f07ff237d836
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	/// Suma acumulada del monto en revisión desde enero hasta el mes seleccionado en el año en curso
+	measure MontoRevisionMesesAnteriores =
+			
+			VAR FechaSeleccionada = MAX('Calendario'[Date])
+			
+			RETURN
+			CALCULATE(
+			    SUM(vwPagos[MontoPagadoRevision]),
+			    FILTER(
+			        ALL('Calendario'),
+			        YEAR('Calendario'[Date]) = YEAR(FechaSeleccionada) &&
+			        MONTH('Calendario'[Date]) <= MONTH(FechaSeleccionada)
+			    )
+			)
+		displayFolder: Recuperación
+		lineageTag: 2504449a-2a06-4673-8222-d7e16a1ebf27
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	/// Monto faltante para la meta: por fila usa MontoMeta del asesor; total usa la meta de la sucursal
+	measure PorCumplir01 = ```
+			VAR TotalMeta       =  CALCULATE(SUM(vwMetas[MontoMetas]), TREATAS(values(vwPagos[Sucursal_id]),vwMetas[Unidad]))
+			VAR TotalRecuperado = SUM(vwPagos[MontoPagado])
+			VAR Resultado       = (TotalMeta - TotalRecuperado)
+			
+			RETURN
+			IF(
+			    ISINSCOPE(vwPagos[codigo]),
+			    -- Cálculo por fila
+			    ABS(
+			        MAX(vwPagos[MontoMeta]) - 
+			        SUM(vwPagos[MontoPagado])
+			    )
+			    ,
+			    -- Cálculo SOLO para el total
+			    Resultado
+			)
+			```
+		displayFolder: Recuperación
+		lineageTag: bfedcdba-24a7-4ad8-b0f6-8cf99a4b2ffc
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	/// Monto en revisión del mes anterior al seleccionado
+	measure MontoRevisionPrev = CALCULATE([MontoRevisionMesesAnteriores], PREVIOUSMONTH(Calendario[Date]))
+		displayFolder: Recuperación
+		lineageTag: a6713fe0-3bfb-473d-a202-92ca68fb6788
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	/// Suma del monto pagado en revisión (estado distinto de PROCESADO)
+	measure RecuperadoRevision = sum(vwPagos[MontoPagadoRevision])
+		displayFolder: Recuperación
+		lineageTag: e0250b79-51c5-43be-8c49-2634f26fad83
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	/// Cantidad total de pagos registrados
+	measure CantPagos = count(vwPagos[PagoNo])
+		formatString: 0
+		displayFolder: Pagos
+		lineageTag: 85974d9c-39fa-4ed7-a592-903e255a1a42
+
+	/// Cantidad de pagos con estado PROCESADO
+	measure CantPagosProc =
+			
+			CALCULATE(
+			    COUNTROWS(vwPagos),
+			    vwPagos[Estado] = "PROCESADO"
+			)
+		formatString: 0
+		displayFolder: Pagos
+		lineageTag: 6e86b4de-e36c-4628-8964-89c17a03adda
+
+	/// Cantidad de pagos con estado distinto de PROCESADO (en revisión)
+	measure CantPagosRev =
+			
+			CALCULATE(
+			    COUNTROWS(vwPagos),
+			    vwPagos[Estado] <> "PROCESADO"
+			)
+		formatString: 0
+		displayFolder: Pagos
+		lineageTag: 13aafd76-886d-4e90-8d5b-b8640dc32d8b
+
+	/// Suma total del monto pagado sin distinción de estado
+	measure MontosCobrados = sum(vwPagos[MontoPagado])
+		displayFolder: Pagos
+		lineageTag: ea952470-6491-41e0-90e0-4e44ec125b11
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	/// Suma del monto pagado de registros con estado PROCESADO
+	measure MontosProcesados = ```
+			
+			CALCULATE(
+			    sum(vwPagos[MontoPagadoRDUS]),
+			    vwPagos[Estado] = "PROCESADO"
+			)
+			
+			```
+		displayFolder: Pagos
+		lineageTag: 6c16ac8b-a348-4477-be78-804dd1bcebf1
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	/// Suma del monto pagado de registros con estado distinto de PROCESADO
+	measure MontosRevision =
+			
+			CALCULATE(
+			    sum(vwPagos[MontoPagadoRDUS]),
+			    vwPagos[Estado] <> "PROCESADO"
+			)
+		displayFolder: Pagos
+		lineageTag: 1ac52da0-cd16-4535-8e63-9da0c97228be
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	/// Cantidad distinta de promesas de los clientes que tienen pagos en el contexto actual
+	measure Cant_Promesas_clientes = ```
+			
+			
+			 
+			CALCULATE(
+			    COUNT(vwCasos[IdPromesa]),
+			
+			             REMOVEFILTERS(Calendario),
+			
+			    TREATAS(
+			        VALUES(vwPagos[Codigo]),
+			        vwCasos[codigo]
+			    ),
+			
+			    TREATAS(
+			        VALUES(vwPagos[CodigoCliente]),
+			        vwCasos[CodigoCliente]
+			    ),
+			
+			    TREATAS(
+			        VALUES(vwPagos[CasoID]),
+			        vwCasos[CasoId]
+			    )
+			
+			
+			)
+			
+			
+			```
+		formatString: 0
+		displayFolder: Promesas
+		lineageTag: 208d64fb-e0f4-49e3-b4ce-89f66dd13676
+
+	/// Suma del monto prometido de los clientes que tienen pagos en el contexto actual
+	measure Monto_Promesas_clientes_Deudores = ```
+			
+			
+			 
+			  VAR FechaInicio =
+			    DATE(YEAR(TODAY()), MONTH(TODAY()), 1)
+			  
+			  --  DATE(2026,5,1)
+			   -- MIN(Calendario[Date])
+			
+			   VAR FechaFin = EOMONTH(TODAY(), 0) --TODAY()
+			   
+			   -- DATE(2026,5,31)
+			     --MAX(Calendario[Date])
+			      
+			
+			RETURN
+			
+			CALCULATE(
+			    //sum(vwCasos[MontoPrometido]),
+			
+			    vwCasos[Monto_Prometido],
+			
+			            REMOVEFILTERS(Calendario),
+			
+			        TREATAS(
+			        VALUES(vwPagos[Codigo]),
+			        vwCasos[Codigo]
+			    )
+			    ,
+			
+			    TREATAS(
+			        VALUES(vwPagos[CodigoCliente]),
+			        vwCasos[CodigoCliente]
+			    )
+			    ,
+			
+			        TREATAS(
+			        VALUES(vwPagos[CasoID]),
+			        vwCasos[CasoId]
+			    )
+			
+			   // , vwCasos[Estado] = "Pendiente"
+			
+			    
+			    //,
+			
+			    //vwCasos[FechaCreacion] >= _FechaInicio &&
+			    //vwCasos[FechaCreacion] <= _FechaFin + 1
+			)
+			
+			
+			//CALCULATE(
+			//    sum(vwCasos[MontoPrometido]),
+			//    FILTER(
+			//        ALL(vwCasos[codigo]),
+			//        vwCasos[codigo]
+			//            IN VALUES(vwCasosGestiones[Codigo])
+			            
+			//    )
+			    
+			//    , (vwCasos[FechaPromesa]) >= FechaInicio,
+			//     (vwCasos[FechaPromesa]) <= FechaFin
+			
+			//     , vwCasos[Estado] = "Pendiente"
+			
+			 
+			//)
+			```
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		displayFolder: Promesas
+		lineageTag: bfe8b630-16d0-441e-a94a-ab2c7120d30c
+
+		annotation PBI_FormatHint = {"currencyCulture":"es-DO"}
+
+	measure %RecuperacionAplicada = ```
+			
+			
+			VAR _MetaAsesor =
+			    CALCULATE(
+			        MAX(vwMetasAsesores[MontoMetas]),
+			        REMOVEFILTERS(Calendario),
+			        FILTER(
+			            ALL(vwMetasAsesores),
+			            vwMetasAsesores[Codigo]  in VALUES(AsosoresMetasPagos[Codigo])  ///= SELECTEDVALUE(vwPagos[Codigo])
+			        )
+			    )
+			
+			VAR _MetaUnidad =
+			    CALCULATE(
+			        MAX(vwMetas[MontoMetas]),
+			        REMOVEFILTERS(Calendario),
+			        FILTER(
+			            ALL(vwMetas),
+			            vwMetas[Unidad] in VALUES(AsosoresMetasPagos[Sucursal_id])  //= SELECTEDVALUE(vwPagos[Sucursal_id])
+			        )
+			    )
+			
+			   VAR _TotalGeneral = DIVIDE([MontosAplicados], vwMetas[MetasUnidadesAsesores], 0) 
+			
+			 RETURN
+			
+			SWITCH(
+			    TRUE(),
+			
+			    -- Cuando estoy en el nivel Cliente
+			    ISINSCOPE(vwPagos[NombreDeudor]), BLANK(),
+			
+			    -- Cuando estoy en el nivel Asesor
+			    ISINSCOPE(vwPagos[Asesor]), DIVIDE([MontosAplicados], _MetaAsesor, 0),
+			  
+			    -- Cuando estoy en el nivel Unidades
+			    ISINSCOPE(vwCasosGestiones[Sucursal_id]), DIVIDE([MontosAplicados], _MetaUnidad, 0),
+			
+			      -- Totales
+			     _TotalGeneral 
+			)   
+			
+			// Var _Efectividad = 
+			//          DIVIDE([MontosAplicados], vwMetas[MetasUnidadesAsesores], 0)
+			
+			//RETURN
+			//IF(
+			//    ISINSCOPE(vwPagos[NombreDeudor]),
+			//    BLANK(),
+			//    _Efectividad
+			//)
+			
+			
+			```
+		formatString: 0.00\ %;-0.00\ %;0.00\ %
+		displayFolder: Recuperación
+		lineageTag: cd6671a9-b6b0-451e-8acd-ee93c5eaccef
+
+	measure MontosAplicados = ```
+			
+			
+			    sum(vwPagos[MontoPagadoRDUS])
+			```
+		displayFolder: Pagos
+		lineageTag: 7f229fcb-ea46-4935-8e35-7819126b9ddc
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure CantPromesasUndAsesoresCliDeu = ```
+			
+			
+			CALCULATE(
+			    DISTINCTCOUNT(vwCasos[IdPromesa]),
+			    FILTER(
+			        vwCasos,
+			        vwCasos[Codigo] IN VALUES(AsesoresCasosGestionesPagos[Codigo]) 
+			        && vwCasos[CodigoCliente] in VALUES(vwPagos[CodigoCliente])
+			        && vwCasos[CasoId] in VALUES(vwPagos[CasoId])
+			
+			    )
+			)
+			+ CALCULATE(
+			    [Cant_Contactos],
+			    vwGestiones[GestionId] = "0087"
+			)
+			
+			```
+		formatString: 0
+		displayFolder: Promesas
+		lineageTag: 2a5de4e9-0cf4-47d5-a03c-39cd7394ed07
+
+	measure Monto_Promesas_clientes = ```
+			
+			
+			 
+			  VAR FechaInicio =
+			    DATE(YEAR(TODAY()), MONTH(TODAY()), 1)
+			  
+			  --  DATE(2026,5,1)
+			   -- MIN(Calendario[Date])
+			
+			   VAR FechaFin = EOMONTH(TODAY(), 0) --TODAY()
+			   
+			   -- DATE(2026,5,31)
+			     --MAX(Calendario[Date])
+			      
+			
+			RETURN
+			
+			CALCULATE(
+			    sum(vwCasos[MontoPrometido]),
+			
+			    TREATAS(
+			        VALUES(vwPagos[CodigoCliente]),
+			        vwCasos[CodigoCliente]
+			    )
+			    ,
+			
+			        TREATAS(
+			        VALUES(vwPagos[CasoID]),
+			        vwCasos[CasoId]
+			    )
+			
+			   // , vwCasos[Estado] = "Pendiente"
+			
+			    
+			    //,
+			
+			    //vwCasos[FechaCreacion] >= _FechaInicio &&
+			    //vwCasos[FechaCreacion] <= _FechaFin + 1
+			)
+			```
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		displayFolder: Promesas
+		lineageTag: 1d399c4b-5ad6-41c9-99a9-fbb4ea89418e
+
+		annotation PBI_FormatHint = {"currencyCulture":"es-DO"}
+
+	measure '% PromesaCobrada' = ```
+			
+			
+			        DIVIDE(vwPagos[MontosAplicados], vwPagos[Monto_Promesas_clientes_Deudores], blank())
+			        
+			```
+		formatString: 0.00\ %;-0.00\ %;0.00\ %
+		displayFolder: Recuperación
+		lineageTag: 1775870f-7824-4839-b84c-f9044dfecd97
+
+	measure Pagos_Aplicados = sum(vwPagos[MontoPagadoRDUS])
+		displayFolder: Pagos
+		lineageTag: c02f64f5-2817-4905-a0cc-db6730e90195
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Monto Recuperado cliente' = ```
+			
+			
+			CALCULATE(
+			    SUM(vwPagos[MontoPagadoRDUS]),
+			    FILTER(
+			        vwPagos,
+			        vwPagos[CodigoCliente] IN VALUES(vwCasos[CodigoCliente]) &&
+			        vwPagos[Sucursal_id] IN VALUES(vwCasos[Sucursal])
+			    )
+			)
+			
+			```
+		displayFolder: Recuperación
+		lineageTag: e3661f3e-d28a-44dd-908c-3577c879ec9a
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure %RecuperacionProcesada = ```
+			
+			
+			 Var _Efectividad = DIVIDE([MontosProcesados], vwMetas[MetasUnidadesAsesores], 0)
+			
+			RETURN
+			IF(
+			    ISINSCOPE(vwPagos[NombreDeudor]),
+			    BLANK(),
+			
+			  _Efectividad  
+			
+			    
+			)
+			
+			```
+		formatString: 0.00\ %;-0.00\ %;0.00\ %
+		displayFolder: Recuperación
+		lineageTag: 8cb25d0c-302e-4f06-aa1c-979dc5f95118
+
+	measure MontosAplicadosCarteraVigente = ```
+			
+			
+			CALCULATE(
+			    sum(vwPagos[MontoPagadoRDUS]),
+			    //vwPagos[Estado] = "PROCESADO" && 
+			    NOT( vwPagos[EstadoBanco] in {"CASTIGADO", "CASTIGO"})
+			)
+			
+			```
+		displayFolder: Pagos
+		lineageTag: cb3184b5-5977-4a30-8773-1adf4a0b1309
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure MontosAplicadosCarteraCastigada = ```
+			
+			
+			CALCULATE(
+			    sum(vwPagos[MontoPagadoRDUS]),
+			    // vwPagos[Estado] = "PROCESADO" && 
+			    vwPagos[EstadoBanco] in {"CASTIGADO", "CASTIGO"}
+			)
+			
+			```
+		displayFolder: Pagos
+		lineageTag: 9eac0d94-517c-4b8f-b92c-f138565909bd
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure CantidadExpedientes = ```
+			
+			
+			CALCULATE(
+			    vwPagos[CantPagos]
+			 //   DISTINCTCOUNT(vwPagos[CasoID]),
+			  //    REMOVEFILTERS(Calendario)
+			)
+			
+			```
+		formatString: 0
+		lineageTag: e520be34-6634-45a4-b563-306e75f0ec8d
+
+	measure CantidadExpedientes_Vigentes = ```
+			
+			
+			CALCULATE(
+			  //  DISTINCTCOUNT(vwPagos[CasoID]),
+			
+			      vwPagos[CantPagos],
+			    // vwPagos[Estado] = "PROCESADO" && 
+			    NOT( vwPagos[EstadoBanco] in {"CASTIGADO", "CASTIGO"})
+			)
+			
+			
+			```
+		formatString: 0
+		lineageTag: 3e16e6f2-fb34-4c81-b95a-91495b50df39
+
+	measure CantidadExpedientes_cASTIGADA_bk = ```
+			
+			
+			CALCULATE(
+			    vwCasosGestiones[Cant_Casos$_bk],
+			    TREATAS(
+			        VALUES(vwPagos[Sucursal_id]),
+			        vwCasosGestiones[Sucursal_id] 
+			
+			    ),
+			
+			    TREATAS(
+			           VALUES(vwPagos[Codigo]), vwCasosGestiones[Codigo]
+			
+			    ),
+			    vwPagos[EstadoBanco] <> "VIGENTE", 
+			    REMOVEFILTERS(Calendario)
+			)
+			```
+		formatString: 0
+		lineageTag: f03343ed-fd9f-48ad-b2e1-8b66f90eece5
+
+	measure CantidadExpedientes_Castigadas = ```
+			
+			
+			CALCULATE(
+			    //DISTINCTCOUNT(vwPagos[PagoNo]),
+			      vwPagos[CantPagos],
+			    // vwPagos[Estado] = "PROCESADO" && 
+			     vwPagos[EstadoBanco] in {"CASTIGADO", "CASTIGO"}
+			  //  REMOVEFILTERS(Calendario)
+			)
+			
+			
+			```
+		formatString: 0
+		lineageTag: 410099e9-5740-4613-8f12-1e5630564aa1
+
+	measure '% Efectividad' = ```
+			
+			
+			    DIVIDE(vwPagos[Pagos_Aplicados], vwMetas[MetasUnidadesAsesores], BLANK())
+			
+			
+			```
+		formatString: 0.00\ %;-0.00\ %;0.00\ %
+		displayFolder: Recuperación
+		lineageTag: 315a7821-8efd-41d7-b182-75e575d2c677
+
+	/// Narrativa automática para tooltip del gráfico Recuperación por Unidad Año vs Año
+	measure Narrativa_Tooltip_Recuperacion = ```
+			
+			
+			VAR _Unidad    = SELECTEDVALUE(vwRotacionPagosPorUnidades_Deudores[Sucursal_id], "Todas las unidades")
+			VAR _Supervisor = vwRotacionPagosPorUnidades_Deudores[NombreSupervisor]
+			VAR _YearAct   = YEAR(TODAY())
+			VAR _YearAnt   = _YearAct - 1
+			VAR _MonthAct  = vwPagos[NombreMes]
+			
+			VAR _RecAct    = CALCULATE(
+			                    SUM(vwRotacionPagosPorUnidades_Deudores[MontoPagoRDUS]),
+			                    vwRotacionPagosPorUnidades_Deudores[Año] = _YearAct
+			                 )
+			VAR _RecAnt    = CALCULATE(
+			                    SUM(vwRotacionPagosPorUnidades_Deudores[MontoPagoRDUS]),
+			                    vwRotacionPagosPorUnidades_Deudores[Año] = _YearAnt
+			                 )
+			
+			VAR _Meta      = CALCULATE(
+			                    (SUM(vwMetas[MontoMetas])) * MONTH(TODAY()),
+			                    TREATAS(VALUES(vwRotacionPagosPorUnidades_Deudores[Sucursal_id]), vwMetas[Unidad])
+			                 )
+			
+			VAR _Var       = IF(NOT ISBLANK(_RecAnt) && _RecAnt <> 0, DIVIDE(_RecAct - _RecAnt, _RecAnt), BLANK())
+			VAR _VarPct    = IF(NOT ISBLANK(_Var), FORMAT(ABS(_Var), "#,0.0%"), "N/D")
+			VAR _VarDir    = IF(_Var > 0, "▲ subió", IF(_Var < 0, "▼ bajó", "→ igual"))
+			
+			VAR _PctMeta   = IF(NOT ISBLANK(_Meta) && _Meta <> 0, DIVIDE(_RecAct, _Meta), BLANK())
+			VAR _PctMetaTxt= IF(NOT ISBLANK(_PctMeta), FORMAT(_PctMeta, "#,0.0%"), "Sin meta")
+			VAR _EstadoMeta= IF(_PctMeta >= 1, "✅ Meta cumplida", IF(_PctMeta >= 0.8, "🔶 Cerca de la meta", "🔴 Por debajo de la meta")) & " al mes de " & _MonthAct & " del " & YEAR(TODAY())
+			
+			VAR _RecActTxt = IF(NOT ISBLANK(_RecAct), FORMAT(_RecAct, "$#,0"), "Sin datos")
+			VAR _RecAntTxt = IF(NOT ISBLANK(_RecAnt), FORMAT(_RecAnt, "$#,0"), "Sin datos")
+			VAR _MetaTxt   = IF(NOT ISBLANK(_Meta) && _Meta <> 0, FORMAT(_Meta, "$#,0"), "Sin meta")
+			
+			RETURN
+			  "📍 Unidad: " & _Unidad & " " & _Supervisor 
+			& UNICHAR(10)
+			& "━━━━━━━━━━━━━━━━━━━━━━━"
+			& UNICHAR(10)
+			& "📅 " & _YearAct & ":  " & _RecActTxt
+			& UNICHAR(10)
+			& "📅 " & _YearAnt & ":  " & _RecAntTxt
+			& UNICHAR(10)
+			& "━━━━━━━━━━━━━━━━━━━━━━━"
+			& UNICHAR(10)
+			& "📈 Variación: " & _VarDir & " " & _VarPct
+			& UNICHAR(10)
+			
+			//& "🎯 Meta:  " & _MetaTxt
+			//& UNICHAR(10)
+			//& "📊 Avance meta:  " & _PctMetaTxt
+			//& UNICHAR(10)
+			
+			//& _EstadoMeta
+			
+			```
+		displayFolder: Títulos dinámicos
+		lineageTag: 8545d9ac-3c01-4384-ad09-230bf264cdd9
+		dataCategory: Unconstrained
+
+	measure NombreMes = ```
+			
+			SWITCH(
+			    MONTH(TODAY()),
+			    1, "Enero",
+			    2, "Febrero",
+			    3, "Marzo",
+			    4, "Abril",
+			    5, "Mayo",
+			    6, "Junio",
+			    7, "Julio",
+			    8, "Agosto",
+			    9, "Septiembre",
+			    10, "Octubre",
+			    11, "Noviembre",
+			    12, "Diciembre",
+			    BLANK()
+			)
+			
+			```
+		displayFolder: Títulos dinámicos
+		lineageTag: f6ab13c6-57a1-41cc-ad90-77cf6eb8a66c
+
+	column Sucursal_id
+		dataType: string
+		sourceProviderType: varchar(15)
+		lineageTag: 03734107-729b-47fd-9f2f-0c84e1515e1e
+		summarizeBy: none
+		sourceColumn: Sucursal_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column MontoPagado
+		dataType: decimal
+		sourceProviderType: money
+		lineageTag: 4a428f25-6749-40a8-b9c5-6bc7bed26744
+		summarizeBy: sum
+		sourceColumn: MontoPagado
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column FechaPago
+		dataType: dateTime
+		isNullable: false
+		formatString: General Date
+		sourceProviderType: datetime
+		lineageTag: 8bbf2aaa-0f26-4dcd-8e56-c4b847e54351
+		summarizeBy: none
+		sourceColumn: FechaPago
+
+		annotation SummarizationSetBy = Automatic
+
+	column FechaCreacion
+		dataType: dateTime
+		formatString: Long Date
+		sourceProviderType: date
+		lineageTag: 95bb75fa-5f1a-461f-9d3f-7afb5ae9a49d
+		summarizeBy: none
+		sourceColumn: FechaCreacion
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column Estado
+		dataType: string
+		sourceProviderType: varchar(10)
+		lineageTag: de2a9cf8-5806-418a-975d-6cb21ff80dbb
+		summarizeBy: none
+		sourceColumn: Estado
+
+		annotation SummarizationSetBy = Automatic
+
+	column NombreDeudor
+		dataType: string
+		sourceProviderType: varchar(60)
+		lineageTag: 7280d421-4d17-4703-8b10-0aa49f1591d6
+		summarizeBy: none
+		sourceColumn: NombreDeudor
+
+		annotation SummarizationSetBy = Automatic
+
+	column CodigoCliente
+		dataType: string
+		sourceProviderType: varchar(15)
+		lineageTag: 1935bf4c-34f7-4fae-87a4-26f67923db03
+		summarizeBy: none
+		sourceColumn: CodigoCliente
+
+		annotation SummarizationSetBy = Automatic
+
+	column MontoMeta
+		dataType: decimal
+		isNullable: false
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		sourceProviderType: money
+		lineageTag: 4176a339-631d-49e5-b7cf-7607b452881c
+		summarizeBy: sum
+		sourceColumn: MontoMeta
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"es-DO"}
+
+	column MontoPagadoRevision
+		dataType: double
+		isNullable: false
+		sourceProviderType: float
+		lineageTag: 63b96a9c-06a3-4a8a-aae0-d032a07d0b2e
+		summarizeBy: sum
+		sourceColumn: MontoPagadoRevision
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Asesor
+		dataType: string
+		sourceProviderType: varchar(58)
+		lineageTag: fae0114a-c66f-4c90-86f3-8a80b98dfbb9
+		summarizeBy: none
+		sourceColumn: Asesor
+
+		annotation SummarizationSetBy = Automatic
+
+	column MontoPagadoProcesados
+		dataType: double
+		isNullable: false
+		sourceProviderType: float
+		lineageTag: ca7488f6-7c15-473c-9841-9b7ab8ae4569
+		summarizeBy: sum
+		sourceColumn: MontoPagadoProcesados
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column CantidadPagadoProcesados
+		dataType: int64
+		isNullable: false
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 6dcf0923-87be-4d19-b78f-0ea7f73153d5
+		summarizeBy: sum
+		sourceColumn: CantidadPagadoProcesados
+
+		annotation SummarizationSetBy = Automatic
+
+	column CantidadPagadoRevision
+		dataType: int64
+		isNullable: false
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: f897c84f-35f4-4a16-a34b-baead256c467
+		summarizeBy: sum
+		sourceColumn: CantidadPagadoRevision
+
+		annotation SummarizationSetBy = Automatic
+
+	column PagoNo
+		dataType: int64
+		isNullable: false
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: e1940c65-a3a0-4135-ae4f-d9a3471c7c62
+		summarizeBy: sum
+		sourceColumn: PagoNo
+
+		annotation SummarizationSetBy = Automatic
+
+	column NombreCliente_Orig
+		dataType: string
+		sourceProviderType: varchar(100)
+		lineageTag: 34e08cda-8b66-41bd-bf63-ee93cd29377e
+		summarizeBy: none
+		sourceColumn: NombreCliente_Orig
+
+		annotation SummarizationSetBy = Automatic
+
+	column ClasePago
+		dataType: string
+		sourceProviderType: varchar(20)
+		lineageTag: 63fa9261-6047-4bf2-81bb-6c4956b0d983
+		summarizeBy: none
+		sourceColumn: ClasePago
+
+		annotation SummarizationSetBy = Automatic
+
+	column FechaApoderam
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime
+		lineageTag: 2ee09c3f-f0f9-4ae1-a0e1-b05e0edf4282
+		summarizeBy: none
+		sourceColumn: FechaApoderam
+
+		annotation SummarizationSetBy = Automatic
+
+	column MontoNoPagado
+		dataType: decimal
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		sourceProviderType: money
+		lineageTag: 984bb109-6d78-48fb-89ba-7340fa415863
+		summarizeBy: sum
+		sourceColumn: MontoNoPagado
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"es-DO"}
+
+	column TipoPago
+		dataType: string
+		sourceProviderType: varchar(10)
+		lineageTag: 0567a3ed-9e70-40bb-9aff-2711310a46f7
+		summarizeBy: none
+		sourceColumn: TipoPago
+
+		annotation SummarizationSetBy = Automatic
+
+	column FechaAplicado
+		dataType: dateTime
+		formatString: Long Date
+		sourceProviderType: date
+		lineageTag: 975249a3-349f-409a-8dd3-475dab5ab847
+		summarizeBy: none
+		sourceColumn: FechaAplicado
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column Divisa
+		dataType: string
+		sourceProviderType: varchar(3)
+		lineageTag: b5f47615-783b-4dd7-8a2e-40e7c0a6d006
+		summarizeBy: none
+		sourceColumn: Divisa
+
+		annotation SummarizationSetBy = Automatic
+
+	column MontoPagadoRDUS
+		dataType: double
+		isNullable: false
+		sourceProviderType: float
+		lineageTag: 08c765ae-8ba5-4e0f-bde4-d68aace28bf5
+		summarizeBy: sum
+		sourceColumn: MontoPagadoRDUS
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column NombreCliente
+		dataType: string
+		sourceProviderType: nchar
+		lineageTag: 78a380db-2f16-43c4-90c6-56277a34bcc5
+		summarizeBy: none
+		sourceColumn: NombreCliente
+
+		annotation SummarizationSetBy = Automatic
+
+	column CasoID
+		dataType: int64
+		isNullable: false
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: fd138109-2fb7-4da6-9921-b5b6f26e1c42
+		summarizeBy: count
+		sourceColumn: CasoID
+
+		annotation SummarizationSetBy = Automatic
+
+	column Codigo
+		dataType: string
+		sourceProviderType: varchar(15)
+		lineageTag: 3435417f-5300-4074-a373-91dfc764bf01
+		summarizeBy: none
+		sourceColumn: Codigo
+
+		annotation SummarizationSetBy = Automatic
+
+	column Nombres
+		dataType: string
+		sourceProviderType: varchar(40)
+		lineageTag: e16f0d69-29f0-426b-9070-33e5120bd1f2
+		summarizeBy: none
+		sourceColumn: Nombres
+
+		annotation SummarizationSetBy = Automatic
+
+	column Tasa
+		dataType: double
+		sourceProviderType: float
+		lineageTag: f4e16a2e-4a73-41c3-b64f-540a20466e4e
+		summarizeBy: sum
+		sourceColumn: Tasa
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column MontoPagadoRD
+		dataType: decimal
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		sourceProviderType: money
+		lineageTag: 2f9c29a7-a0b4-4b59-802d-537029f1b630
+		summarizeBy: sum
+		sourceColumn: MontoPagadoRD
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"es-DO"}
+
+	column MontoPagadoUS
+		dataType: double
+		isNullable: false
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		sourceProviderType: float
+		lineageTag: a95d094a-4444-45d9-b396-905ca2e4d474
+		summarizeBy: sum
+		sourceColumn: MontoPagadoUS
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"es-DO"}
+
+	column Indice
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: 902e53a7-dbbb-45aa-a324-d5aaa6d7c657
+		summarizeBy: sum
+		sourceColumn: Indice
+
+		annotation SummarizationSetBy = Automatic
+
+	column Asesores
+		dataType: string
+		sourceProviderType: varchar(58)
+		lineageTag: e8dad3dd-7c72-4b3d-8cde-67df77fa3ee4
+		summarizeBy: none
+		sourceColumn: Asesores
+
+		annotation SummarizationSetBy = Automatic
+
+	column EstadoBanco
+		dataType: string
+		sourceProviderType: varchar(10)
+		lineageTag: 5c4de0d7-97e7-48fb-a930-45d4044d73a1
+		summarizeBy: none
+		sourceColumn: EstadoBanco
+
+		annotation SummarizationSetBy = Automatic
+
+	partition vwPagos = m
+		mode: dual
+		source =
+				let
+				    Origen = Sql.Database("192.168.9.104,1433", "SigecobDS"),
+				    dbo_vwPagos = Origen{[Schema="dbo",Item="vwPagos"]}[Data],
+				    #"Filtrado Historico" = Table.SelectRows(dbo_vwPagos, each DateTime.From([FechaPago]) < RangeStart)
+				in
+				    #"Filtrado Historico"
+
+	partition RangeCurrent = m
+		mode: dual
+		source =
+				let
+				    Origen = Sql.Database("192.168.9.104,1433", "SigecobDS"),
+				    dbo_vwPagos = Origen{[Schema="dbo",Item="vwPagos"]}[Data],
+				    #"Filtrado Reciente" = Table.SelectRows(dbo_vwPagos, each DateTime.From([FechaPago]) >= RangeStart and DateTime.From([FechaPago]) < RangeEnd)
+				in
+				    #"Filtrado Reciente"
+
+	annotation PBI_NavigationStepName = Navegación
+
+	annotation PBI_ResultType = Table
+

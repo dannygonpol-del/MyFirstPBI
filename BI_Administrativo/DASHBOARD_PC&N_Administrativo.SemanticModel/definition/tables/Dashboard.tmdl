@@ -1,0 +1,24 @@
+table Dashboard
+	lineageTag: a2dff2ab-72e1-46a3-8944-5cfd4748f14f
+
+	column Dashboard
+		lineageTag: 3b4b5d2c-5663-41db-9962-a643529af862
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Dashboard]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Dashboard = calculated
+		mode: import
+		source =
+				
+				DATATABLE(
+				    "Dashboard", STRING,
+				    {
+				        {"Dashboard Administrativo"}
+				    }
+				)
+
+	annotation PBI_Id = 99d8224fe83a430e8f57094a0cd88fa8
+

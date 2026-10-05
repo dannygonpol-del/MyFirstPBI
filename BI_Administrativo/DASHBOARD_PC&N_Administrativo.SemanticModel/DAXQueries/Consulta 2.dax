@@ -1,0 +1,36 @@
+DEFINE
+	VAR __DS0FilterTable = 
+		TREATAS({"CC1",
+			"CC2",
+			"CC3",
+			"CC4",
+			"SWAT"}, 'vwCasosGestiones'[Sucursal_id])
+
+	VAR __DS0FilterTable2 = 
+		FILTER(
+			KEEPFILTERS(VALUES('Calendario'[Date])),
+			'Calendario'[Date] >= DATE(2026, 6, 1)
+		)
+
+	VAR __DS0Core = 
+		SUMMARIZECOLUMNS(
+			ROLLUPADDISSUBTOTAL('vwCasosGestiones'[Oficiales], "IsGrandTotalRowTotal"),
+			__DS0FilterTable,
+			__DS0FilterTable2,
+			"Cant_Casos_", 'vwCasosGestiones'[Cant_Casos$],
+			"Casos_Dias__0_15", 'vwCasosGestiones'[Casos_Dias_ 0_15],
+			"Casos_Dias__16_30", 'vwCasosGestiones'[Casos_Dias_ 16_30],
+			"Casos_Dias__Mas_30", 'vwCasosGestiones'[Casos_Dias_ Mas_30]
+		)
+
+	VAR __DS0PrimaryWindowed = 
+		TOPN(502, __DS0Core, [IsGrandTotalRowTotal], 0, 'vwCasosGestiones'[Oficiales], 0)
+
+EVALUATE
+	SUMMARIZECOLUMNS(__DS0FilterTable, __DS0FilterTable2, "Titulo", IGNORE('vwCasosGestiones'[Titulo]))
+
+EVALUATE
+	__DS0PrimaryWindowed
+
+ORDER BY
+	[IsGrandTotalRowTotal] DESC, 'vwCasosGestiones'[Oficiales] DESC

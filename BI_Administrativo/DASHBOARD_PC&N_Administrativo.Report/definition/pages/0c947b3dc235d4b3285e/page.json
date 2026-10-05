@@ -1,0 +1,497 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.1.0/schema.json",
+  "name": "0c947b3dc235d4b3285e",
+  "displayName": "DATA GENERAL ",
+  "displayOption": "FitToPage",
+  "height": 720,
+  "width": 1280,
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "6ec87aae52e7192117e3",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "vwCasosGestiones"
+              }
+            },
+            "Property": "INACTIVO"
+          }
+        },
+        "type": "Categorical",
+        "filter": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "v",
+              "Entity": "vwCasosGestiones",
+              "Type": 0
+            }
+          ],
+          "Where": [
+            {
+              "Condition": {
+                "Not": {
+                  "Expression": {
+                    "In": {
+                      "Expressions": [
+                        {
+                          "Column": {
+                            "Expression": {
+                              "SourceRef": {
+                                "Source": "v"
+                              }
+                            },
+                            "Property": "INACTIVO"
+                          }
+                        }
+                      ],
+                      "Values": [
+                        [
+                          {
+                            "Literal": {
+                              "Value": "true"
+                            }
+                          }
+                        ]
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        },
+        "howCreated": "User",
+        "objects": {
+          "general": [
+            {
+              "properties": {
+                "isInvertedSelectionMode": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "true"
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        }
+      },
+      {
+        "name": "4fe8044520e100382e0b",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "vwCasosGestiones"
+              }
+            },
+            "Property": "Sucursal_id"
+          }
+        },
+        "type": "Categorical",
+        "filter": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "v",
+              "Entity": "vwCasosGestiones",
+              "Type": 0
+            }
+          ],
+          "Where": [
+            {
+              "Condition": {
+                "In": {
+                  "Expressions": [
+                    {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Source": "v"
+                          }
+                        },
+                        "Property": "Sucursal_id"
+                      }
+                    }
+                  ],
+                  "Values": [
+                    [
+                      {
+                        "Literal": {
+                          "Value": "'ADMINISTRATIVOS'"
+                        }
+                      }
+                    ],
+                    [
+                      {
+                        "Literal": {
+                          "Value": "'CC1'"
+                        }
+                      }
+                    ],
+                    [
+                      {
+                        "Literal": {
+                          "Value": "'CC2'"
+                        }
+                      }
+                    ],
+                    [
+                      {
+                        "Literal": {
+                          "Value": "'CC3'"
+                        }
+                      }
+                    ],
+                    [
+                      {
+                        "Literal": {
+                          "Value": "'CC4'"
+                        }
+                      }
+                    ],
+                    [
+                      {
+                        "Literal": {
+                          "Value": "'SWAT'"
+                        }
+                      }
+                    ],
+                    [
+                      {
+                        "Literal": {
+                          "Value": "'LEGAL'"
+                        }
+                      }
+                    ]
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        "howCreated": "User"
+      },
+      {
+        "name": "d5bd41999d4672cc34ae",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "vwCasosGestiones"
+              }
+            },
+            "Property": "EstadoCaso"
+          }
+        },
+        "type": "Categorical",
+        "filter": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "v",
+              "Entity": "vwCasosGestiones",
+              "Type": 0
+            }
+          ],
+          "Where": [
+            {
+              "Condition": {
+                "Not": {
+                  "Expression": {
+                    "In": {
+                      "Expressions": [
+                        {
+                          "Column": {
+                            "Expression": {
+                              "SourceRef": {
+                                "Source": "v"
+                              }
+                            },
+                            "Property": "EstadoCaso"
+                          }
+                        }
+                      ],
+                      "Values": [
+                        [
+                          {
+                            "Literal": {
+                              "Value": "'DESAPARECI'"
+                            }
+                          }
+                        ],
+                        [
+                          {
+                            "Literal": {
+                              "Value": "'DEV-CLIENT'"
+                            }
+                          }
+                        ],
+                        [
+                          {
+                            "Literal": {
+                              "Value": "'DICE-PAGO'"
+                            }
+                          }
+                        ],
+                        [
+                          {
+                            "Literal": {
+                              "Value": "'ENV-REESTR'"
+                            }
+                          }
+                        ],
+                        [
+                          {
+                            "Literal": {
+                              "Value": "'FALLECIDO'"
+                            }
+                          }
+                        ],
+                        [
+                          {
+                            "Literal": {
+                              "Value": "'ILOCALIZAB'"
+                            }
+                          }
+                        ],
+                        [
+                          {
+                            "Literal": {
+                              "Value": "'INCOBRABLE'"
+                            }
+                          }
+                        ],
+                        [
+                          {
+                            "Literal": {
+                              "Value": "'INSOLVENTE'"
+                            }
+                          }
+                        ],
+                        [
+                          {
+                            "Literal": {
+                              "Value": "'NO-LABORA'"
+                            }
+                          }
+                        ],
+                        [
+                          {
+                            "Literal": {
+                              "Value": "'PRESO'"
+                            }
+                          }
+                        ],
+                        [
+                          {
+                            "Literal": {
+                              "Value": "'REN-PAGO'"
+                            }
+                          }
+                        ],
+                        [
+                          {
+                            "Literal": {
+                              "Value": "'SOL-CO-DOC'"
+                            }
+                          }
+                        ]
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        },
+        "howCreated": "User",
+        "objects": {
+          "general": [
+            {
+              "properties": {
+                "isInvertedSelectionMode": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "true"
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "pageBinding": {
+    "name": "d457e1b8828e2db28005",
+    "type": "Default",
+    "parameters": [],
+    "acceptsFilterContext": "None"
+  },
+  "objects": {
+    "background": [
+      {
+        "properties": {
+          "image": {
+            "image": {
+              "name": {
+                "expr": {
+                  "Literal": {
+                    "Value": "'Diapositiva1.SVG'"
+                  }
+                }
+              },
+              "url": {
+                "expr": {
+                  "ResourcePackageItem": {
+                    "PackageName": "RegisteredResources",
+                    "PackageType": 1,
+                    "ItemName": "Diapositiva13549743511440041.SVG"
+                  }
+                }
+              },
+              "scaling": {
+                "expr": {
+                  "Literal": {
+                    "Value": "'Normal'"
+                  }
+                }
+              }
+            }
+          },
+          "transparency": {
+            "expr": {
+              "Literal": {
+                "Value": "3D"
+              }
+            }
+          }
+        }
+      }
+    ],
+    "pageRefresh": [
+      {
+        "properties": {
+          "show": {
+            "expr": {
+              "Literal": {
+                "Value": "true"
+              }
+            }
+          },
+          "duration": {
+            "expr": {
+              "Literal": {
+                "Value": "'PT5M'"
+              }
+            }
+          }
+        }
+      }
+    ]
+  },
+  "visibility": "HiddenInViewMode",
+  "visualInteractions": [
+    {
+      "source": "969565506b9e9641a324",
+      "target": "efa5406cce5fc48de239",
+      "type": "NoFilter"
+    },
+    {
+      "source": "efa5406cce5fc48de239",
+      "target": "969565506b9e9641a324",
+      "type": "NoFilter"
+    },
+    {
+      "source": "969565506b9e9641a324",
+      "target": "8618d48aba80704f4538",
+      "type": "DataFilter"
+    },
+    {
+      "source": "969565506b9e9641a324",
+      "target": "17e492ccb94f2c493462",
+      "type": "DataFilter"
+    },
+    {
+      "source": "969565506b9e9641a324",
+      "target": "d388171a61688e0e45a9",
+      "type": "DataFilter"
+    },
+    {
+      "source": "efa5406cce5fc48de239",
+      "target": "8618d48aba80704f4538",
+      "type": "NoFilter"
+    },
+    {
+      "source": "efa5406cce5fc48de239",
+      "target": "d388171a61688e0e45a9",
+      "type": "NoFilter"
+    },
+    {
+      "source": "efa5406cce5fc48de239",
+      "target": "17e492ccb94f2c493462",
+      "type": "NoFilter"
+    },
+    {
+      "source": "efa5406cce5fc48de239",
+      "target": "23784f15a5cb6e32e72b",
+      "type": "NoFilter"
+    },
+    {
+      "source": "8618d48aba80704f4538",
+      "target": "efa5406cce5fc48de239",
+      "type": "NoFilter"
+    },
+    {
+      "source": "d388171a61688e0e45a9",
+      "target": "efa5406cce5fc48de239",
+      "type": "NoFilter"
+    },
+    {
+      "source": "17e492ccb94f2c493462",
+      "target": "efa5406cce5fc48de239",
+      "type": "NoFilter"
+    },
+    {
+      "source": "17e492ccb94f2c493462",
+      "target": "23784f15a5cb6e32e72b",
+      "type": "NoFilter"
+    },
+    {
+      "source": "8618d48aba80704f4538",
+      "target": "23784f15a5cb6e32e72b",
+      "type": "NoFilter"
+    },
+    {
+      "source": "d388171a61688e0e45a9",
+      "target": "23784f15a5cb6e32e72b",
+      "type": "NoFilter"
+    },
+    {
+      "source": "d388171a61688e0e45a9",
+      "target": "969565506b9e9641a324",
+      "type": "NoFilter"
+    },
+    {
+      "source": "8618d48aba80704f4538",
+      "target": "969565506b9e9641a324",
+      "type": "NoFilter"
+    },
+    {
+      "source": "8618d48aba80704f4538",
+      "target": "ffd432dd8309b9253229",
+      "type": "NoFilter"
+    },
+    {
+      "source": "efa5406cce5fc48de239",
+      "target": "ffd432dd8309b9253229",
+      "type": "NoFilter"
+    }
+  ]
+}

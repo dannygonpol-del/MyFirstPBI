@@ -1,0 +1,1076 @@
+table vwCasos
+	lineageTag: e54ab9c8-771f-4a5f-9e6a-7314002755f8
+
+	/// Suma total del monto prometido en promesas de pago
+	measure Monto_Prometido = ```
+			
+			
+			// sum(vwCasos[MontoPrometido])
+			
+			CALCULATE(
+			    sum(vwCasos[MontoPrometido]),
+			    TREATAS(
+			        VALUES(vwPagos[Sucursal_id]),
+			        vwCasos[Sucursal]
+			    )  
+			
+			    , vwCasos[Devolucion] = FALSE()
+			    
+			
+			)
+			
+			
+			
+			
+			
+			```
+		formatString: $#,0.00;($#,0.00);$#,0.00
+		displayFolder: Promesas
+		lineageTag: 1909d0cc-395c-4f1b-b7c4-55dd9ba67531
+
+		annotation PBI_FormatHint = {"currencyCulture":"es-DO"}
+
+	/// Suma total del monto cumplido en promesas de pago
+	measure Monto_Cumplido = sum(vwCasos[MontoCumplido])
+		formatString: $#,0.00;($#,0.00);$#,0.00
+		displayFolder: Promesas
+		lineageTag: 9b90217c-b64a-4410-8690-91760f8be602
+
+		annotation PBI_FormatHint = {"currencyCulture":"es-DO"}
+
+	/// Cantidad total de promesas de pago registradas
+	measure CantPromesas = ```
+			
+			
+			VAR _CodigoActual =
+			    VALUES(AsesoresCasosGestionesPagos[Codigo])
+			
+			VAR _FechaInicial =
+			    MIN(Calendario[Date])    
+			
+			VAR _FechaFinal =
+			    MAX(Calendario[Date])
+			
+			RETURN
+			
+			CALCULATE(
+			    DISTINCTCOUNT(vwCasos[IdPromesa]),
+			    REMOVEFILTERS(vwCasos),
+			    TREATAS(
+			        _CodigoActual,
+			        vwCasos[Codigo]
+			    ),
+			    REMOVEFILTERS(Calendario),
+			
+			    vwCasos[FechaPromesa] >= _FechaInicial && vwCasos[FechaPromesa] <= _FechaFinal
+			
+			  //   , (vwCasos[FechaPromesa] = _FechaFinal)
+			)
+			
+			```
+		formatString: 0
+		displayFolder: Promesas
+		lineageTag: 454f92b5-65f1-4fcd-974e-92944a9f4143
+
+	/// Porcentaje del monto cumplido sobre el monto prometido
+	measure %PromesasCumplidas =
+			DIVIDE(
+			    SUM(vwCasos[MontoCumplido]),
+			    SUM(vwCasos[MontoPrometido]),
+			    0
+			)
+		formatString: 0.00%
+		displayFolder: Promesas
+		lineageTag: 18940be5-9939-4fe5-95ca-f06d04f18874
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	/// Suma total del monto prometido (alias de Monto_Prometido)
+	measure MontoPromesas = sum(vwCasos[MontoPrometido])
+		formatString: $#,0.00;($#,0.00);$#,0.00
+		displayFolder: Promesas
+		lineageTag: 64b1b585-ab0e-4c4f-9586-a321a1c0c694
+
+		annotation PBI_FormatHint = {"currencyCulture":"es-DO"}
+
+	/// Monto cumplido filtrado por el rango de fechas del calendario
+	measure MontosCumplidos = ```
+			CALCULATE(    SUM(vwCasos[MontoCumplido]),    
+			DATESBETWEEN(        'Calendario'[date],        MIN('Calendario'[date]),        MAX('Calendario'[date])    ))
+			```
+		formatString: $#,0.00;($#,0.00);$#,0.00
+		displayFolder: Promesas
+		lineageTag: 649ce0f3-a596-4798-b94d-cad3fcb103aa
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	/// Cantidad de promesas con estado CUMPLIDA
+	measure CantPromesasCumplidas = ```
+			
+			
+			CALCULATE(COUNTROWS(vwCasos), vwCasos[Estado] = "CUMPLIDA")
+			
+			```
+		formatString: #,0
+		displayFolder: Promesas
+		lineageTag: 2a8364be-109b-4922-bd4f-3e28829a726e
+
+	/// Cantidad de promesas con estado Incumplida
+	measure CantPromesasIncumplidas = CALCULATE(COUNTROWS(vwCasos), vwCasos[Estado] = "Incumplida")
+		formatString: #,0
+		displayFolder: Promesas
+		lineageTag: fe0d60a7-16f0-46a3-9d89-08cad71328dc
+
+	/// Cantidad de promesas con estado Pendiente
+	measure CantPromesasPendientes = CALCULATE(COUNTROWS(vwCasos), vwCasos[Estado] = "Pendiente")
+		formatString: #,0
+		displayFolder: Promesas
+		lineageTag: cb66ef64-9316-4dfd-b07f-bda78438c6d2
+
+	/// Porcentaje de promesas cumplidas sobre el total de promesas
+	measure %EfectividadPromesas = ```
+			
+			
+			       DIVIDE([CantPromesasCumplidas], [CantPromesas], 0)
+			
+			
+			```
+		formatString: 0.00%
+		displayFolder: Promesas
+		lineageTag: 09a267a0-e92c-45a9-b3d1-f40dc5f70881
+
+	/// Suma total del monto en atraso de los casos
+	measure MontoAtraso = SUM(vwCasos[MontoAtrasoRD])
+		formatString: $#,0.00;($#,0.00);$#,0.00
+		displayFolder: Promesas
+		lineageTag: 26b1ee62-a500-45fd-94cd-28037a97d8f5
+
+	/// Proporción entre la cantidad de pagos y la cantidad de promesas registradas
+	measure %PromesasPagos = DIVIDE(vwPagos[CantPagos],[CantPromesas] ,0)
+		displayFolder: Promesas
+		lineageTag: fe633e06-838d-4b1d-98bc-c0b4423fc40d
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	/// Cantidad distinta de casos activos, filtrada por contexto de vwCasosGestiones sin filtro de calendario
+	measure CantidadCasos = ```
+			
+			
+			CALCULATE(
+			    DISTINCTCOUNT(vwCarteraVigente[Expedientes]),
+			
+			    TREATAS(
+			        VALUES(vwPagos[Sucursal_id]),   
+			        vwCarteraVigente[Sucursal_id]
+			    ),
+			
+			        vwCarteraVigente[CodigoCliente] in VALUES(vwCasos[CodigoCliente])
+			    
+			    ,   (vwCarteraVigente[Devolucion] = FALSE())
+			
+			    , REMOVEFILTERS(Calendario)
+			)
+			
+			
+			```
+		formatString: 0
+		displayFolder: Cartera
+		lineageTag: 0751a7e9-ff64-4a06-bb96-e470f4c56e83
+
+	/// Suma del saldo de deuda de los casos visibles en el contexto actual
+	measure Monto_Deuda = ```
+			
+			
+			CALCULATE(
+			    SUM(vwDeudas[deuda]),
+			    FILTER(
+			        ALL(vwDeudas[casoid]),
+			         vwDeudas[casoid]
+			            IN VALUES(vwCasos[CasoId])            
+			    ) 
+			
+			
+			
+			
+			
+			)
+			```
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		displayFolder: Cartera
+		lineageTag: 464e00ff-6d10-4f19-a889-af7178f5fbbb
+
+		annotation PBI_FormatHint = {"currencyCulture":"es-DO"}
+
+	/// Nombre del asesor seleccionado en el contexto actual (para títulos de reportes)
+	measure Titulo_Asesor = ```
+			
+			
+			      SELECTEDVALUE(vwCasos[NombreCliente], "")
+			```
+		displayFolder: Títulos dinámicos
+		lineageTag: 13bf94c8-b37d-464f-b767-c49afc1560c2
+
+	/// Cantidad de promesas con estado Pendiente para el asesor en contexto
+	measure Promesas_Pendientes = ```
+			
+			
+			VAR _CodigoActual =
+			    VALUES(AsesoresCasosGestionesPagos[Codigo])
+			
+			VAR _FechaInicial =
+			    MIN(Calendario[Date])    
+			
+			VAR _FechaFinal =
+			    MAX(Calendario[Date])
+			
+			RETURN
+			
+			CALCULATE(
+			    DISTINCTCOUNT(vwCasos[IdPromesa]),
+			    REMOVEFILTERS(vwCasos),
+			    TREATAS(
+			        _CodigoActual,
+			        vwCasos[Codigo]
+			    ),
+			    vwCasos[Estado] = "Pendiente"
+			
+			    ,REMOVEFILTERS(Calendario),
+			
+			    vwCasos[FechaPromesa] >= _FechaInicial && vwCasos[FechaPromesa] <= _FechaFinal
+			
+			  //   , (vwCasos[FechaPromesa] = _FechaFinal)
+			)
+			
+			//CALCULATE(
+			//    DISTINCTCOUNT(vwCasos[IdPromesa]),
+			//    TREATAS(
+			//        VALUES(vwCasosGestiones[Sucursal_id]),
+			//        vwCasos[Sucursal]
+			//    ),
+			//    vwCasos[Estado] = "Pendiente"
+			//)
+			
+			```
+		formatString: 0
+		displayFolder: Promesas
+		lineageTag: 7c4fee8a-05c5-480a-8680-183f33cf1faf
+
+	measure Promesas_Cumplida = ```
+			
+			
+			VAR _CodigoActual =
+			    VALUES(AsesoresCasosGestionesPagos[Codigo])
+			
+			VAR _FechaInicial =
+			    MIN(Calendario[Date])    
+			
+			VAR _FechaFinal =
+			    MAX(Calendario[Date])
+			
+			RETURN
+			
+			CALCULATE(
+			    DISTINCTCOUNT(vwCasos[IdPromesa]),
+			    REMOVEFILTERS(vwCasos),
+			    TREATAS(
+			        _CodigoActual,
+			        vwCasos[Codigo]
+			    ),
+			    vwCasos[Estado] = "Cumplida"
+			
+			    ,REMOVEFILTERS(Calendario),
+			
+			    vwCasos[FechaPromesa] >= _FechaInicial && vwCasos[FechaPromesa] <= _FechaFinal
+			
+			  //   , (vwCasos[FechaPromesa] = _FechaFinal)
+			)
+			
+			```
+		formatString: 0
+		displayFolder: Promesas
+		lineageTag: 9b1d09b1-194b-4884-b9c5-d5f5226b107c
+
+	measure Promesas_Incumplida = ```
+			
+			
+			VAR _CodigoActual =
+			    VALUES(AsesoresCasosGestionesPagos[Codigo])
+			
+			VAR _FechaInicial =
+			    MIN(Calendario[Date])    
+			
+			VAR _FechaFinal =
+			    MAX(Calendario[Date])
+			
+			RETURN
+			
+			CALCULATE(
+			    DISTINCTCOUNT(vwCasos[IdPromesa]),
+			    REMOVEFILTERS(vwCasos),
+			    TREATAS(
+			        _CodigoActual,
+			        vwCasos[Codigo]
+			    ),
+			    vwCasos[Estado] = "Incumplida"
+			
+			    ,REMOVEFILTERS(Calendario),
+			
+			    vwCasos[FechaPromesa] >= _FechaInicial && vwCasos[FechaPromesa] <= _FechaFinal
+			
+			  //   , (vwCasos[FechaPromesa] = _FechaFinal)
+			)
+			```
+		formatString: 0
+		displayFolder: Promesas
+		lineageTag: 52a67200-c6bc-4847-9859-3468df1bf000
+
+	measure Promesas_Vencida = ```
+			
+			
+			VAR _CodigoActual =
+			    VALUES(AsesoresCasosGestionesPagos[Codigo])
+			
+			VAR _FechaInicial =
+			    MIN(Calendario[Date])    
+			
+			VAR _FechaFinal =
+			    MAX(Calendario[Date])
+			
+			RETURN
+			
+			CALCULATE(
+			    DISTINCTCOUNT(vwCasos[IdPromesa]),
+			    REMOVEFILTERS(vwCasos),
+			    TREATAS(
+			        _CodigoActual,
+			        vwCasos[Codigo]
+			    ),
+			    vwCasos[Estado] = "Vencida"
+			
+			    ,REMOVEFILTERS(Calendario),
+			
+			    vwCasos[FechaPromesa] >= _FechaInicial && vwCasos[FechaPromesa] <= _FechaFinal
+			
+			  //   , (vwCasos[FechaPromesa] = _FechaFinal)
+			)
+			
+			```
+		formatString: 0
+		displayFolder: Promesas
+		lineageTag: 85fafbfc-38e0-431d-85f2-ce2cc6d75197
+
+	measure Efectividad = ```
+			
+			
+			  DIVIDE( vwCasos[Promesas_Cumplida], vwCasos[CantPromesas], BLANK()) 
+			
+			
+			
+			```
+		formatString: 0.00\ %;-0.00\ %;0.00\ %
+		displayFolder: Promesas
+		lineageTag: 211b75ce-c1d0-4291-98f8-d36d8a070f0a
+
+	/// Monto total pagado cruzando vwCasos con vwPagos por código de caso
+	measure Monto_Recuperado$ = ```
+			
+			  
+			    CALCULATE(
+			       // (vwPagos[MontoRecuperado]),
+			
+			       SUM(vwPagos[MontoPagadoRDUS]),
+			        FILTER(
+			            vwPagos,
+			            vwPagos[CodigoCliente] in values(vwCasos[CodigoCliente]
+			        )
+			    )
+			
+			
+			// IF(ISINSCOPE(vwPagos[codigo]),max(vwPagos[MontoMeta]), CALCULATE(SUM(vwMetas[MontoMetas]), TREATAS(values(vwPagos[Sucursal_id]),vwMetas[Unidad])))
+			)
+			```
+		displayFolder: Recuperación
+		lineageTag: c6940138-b52a-4b4b-8429-dae733694624
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure MontoMetaUnidades = ```
+			
+			
+			    IF(ISINSCOPE(vwCasos[codigo]),max(vwPagos[MontoMeta]), 
+			        CALCULATE(SUM(vwMetas[MontoMetas]), TREATAS(values(vwCasos[Sucursal]),vwMetas[Unidad]))
+			        
+			        )
+			```
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		displayFolder: Promesas
+		lineageTag: 50679fe7-decf-4ebe-990b-b83f5d55948e
+
+		annotation PBI_FormatHint = {"currencyCulture":"es-DO"}
+
+	measure %MontoRecuperadoMontoPromesas = ```
+			
+			
+			    DIVIDE([Monto_Recuperado$], [Monto_Prometido], BLANK())
+			    
+			```
+		displayFolder: Recuperación
+		lineageTag: 40eb1d6b-518d-4fa4-bc37-a57f3c498e27
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure CantPromesasClientes = ```
+			
+			
+			CALCULATE(
+			    DISTINCTCOUNT(vwCasos[IdPromesa]),
+			    TREATAS(
+			        VALUES(vwCasosGestiones[CodigoCliente]),
+			        vwCasos[CodigoCliente]
+			    )  
+			
+			)
+			
+			+ CALCULATE(
+			    [Cant_Contactos],
+			    vwGestiones[GestionId] = "0087"
+			)
+			```
+		formatString: 0
+		displayFolder: Promesas
+		lineageTag: c7f6cd87-b732-4f85-963a-06b3f4ff6a80
+
+	measure CantPromesasPay = ```
+			
+			
+			CALCULATE(
+			    DISTINCTCOUNT(vwCasos[IdPromesa]),
+			
+			         REMOVEFILTERS(Calendario),
+			
+			    TREATAS(
+			        VALUES(vwPagos[Sucursal_id]),
+			        vwCasos[Sucursal]
+			    )  
+			
+			)
+			
+			+ CALCULATE(
+			    [Cant_Contactos],
+			    vwGestiones[GestionId] = "0087"
+			)
+			
+			```
+		formatString: 0
+		displayFolder: Promesas
+		lineageTag: 01bc2e7e-de18-4eb1-a98c-6aa3b826f766
+
+	measure CantPromesasAsesor = ```
+			
+			
+			VAR _CodigoActual =
+			    VALUES(AsesoresCasosGestionesPagos[Codigo])
+			
+			VAR _FechaInicial =
+			    MIN(Calendario[Date])    
+			
+			VAR _FechaFinal =
+			    MAX(Calendario[Date])
+			
+			RETURN
+			
+			CALCULATE(
+			    DISTINCTCOUNT(vwCasos[IdPromesa]),
+			    REMOVEFILTERS(vwCasos),
+			    TREATAS(
+			        _CodigoActual,
+			        vwCasos[Codigo]
+			    ),
+			    REMOVEFILTERS(Calendario),
+			
+			    vwCasos[FechaPromesa] >= _FechaInicial && vwCasos[FechaPromesa] <= _FechaFinal
+			
+			  //   , (vwCasos[FechaPromesa] = _FechaFinal)
+			)
+			
+			
+			```
+		formatString: 0
+		displayFolder: Promesas
+		lineageTag: 9798f79c-a68c-4721-97b0-d03646fa7e01
+
+	measure Promesas_PendientesAsesor = ```
+			
+			
+			VAR _CodigoActual =
+			    VALUES(AsesoresCasosGestionesPagos[Codigo])
+			
+			VAR _FechaInicial =
+			    MIN(Calendario[Date])    
+			
+			VAR _FechaFinal =
+			    MAX(Calendario[Date])
+			
+			RETURN
+			
+			CALCULATE(
+			    DISTINCTCOUNT(vwCasos[IdPromesa]),
+			    REMOVEFILTERS(vwCasos),
+			    TREATAS(
+			        _CodigoActual,
+			        vwCasos[Codigo]
+			    ),
+			    vwCasos[Estado] = "Pendiente"
+			
+			    ,REMOVEFILTERS(Calendario),
+			
+			    vwCasos[FechaPromesa] >= _FechaInicial && vwCasos[FechaPromesa] <= _FechaFinal
+			
+			  //   , (vwCasos[FechaPromesa] = _FechaFinal)
+			)
+			
+			```
+		formatString: 0
+		displayFolder: Promesas
+		lineageTag: 4e482838-dc03-4316-8d5a-f2dcdf977c9f
+
+	measure Promesas_CumplidaAsesores = ```
+			
+			
+			VAR _CodigoActual =
+			    VALUES(AsesoresCasosGestionesPagos[Codigo])
+			
+			VAR _FechaInicial =
+			    MIN(Calendario[Date])    
+			
+			VAR _FechaFinal =
+			    MAX(Calendario[Date])
+			
+			RETURN
+			
+			CALCULATE(
+			    DISTINCTCOUNT(vwCasos[IdPromesa]),
+			    REMOVEFILTERS(vwCasos),
+			    TREATAS(
+			        _CodigoActual,
+			        vwCasos[Codigo]
+			    ),
+			    vwCasos[Estado] = "Cumplida"
+			
+			    ,REMOVEFILTERS(Calendario),
+			
+			    vwCasos[FechaPromesa] >= _FechaInicial && vwCasos[FechaPromesa] <= _FechaFinal
+			
+			  //   , (vwCasos[FechaPromesa] = _FechaFinal)
+			)
+			
+			```
+		formatString: 0
+		displayFolder: Promesas
+		lineageTag: 8c2e9d80-7c19-4895-9d34-52abea7e8e8d
+
+	measure Promesas_IncumplidaAsesores = ```
+			
+			
+			VAR _CodigoActual =
+			    VALUES(AsesoresCasosGestionesPagos[Codigo])
+			
+			VAR _FechaInicial =
+			    MIN(Calendario[Date])    
+			
+			VAR _FechaFinal =
+			    MAX(Calendario[Date])
+			
+			RETURN
+			
+			CALCULATE(
+			    DISTINCTCOUNT(vwCasos[IdPromesa]),
+			    REMOVEFILTERS(vwCasos),
+			    TREATAS(
+			        _CodigoActual,
+			        vwCasos[Codigo]
+			    ),
+			    vwCasos[Estado] = "Incumplida"
+			
+			    ,REMOVEFILTERS(Calendario),
+			
+			    vwCasos[FechaPromesa] >= _FechaInicial && vwCasos[FechaPromesa] <= _FechaFinal
+			
+			  //   , (vwCasos[FechaPromesa] = _FechaFinal)
+			)
+			
+			```
+		formatString: 0
+		displayFolder: Promesas
+		lineageTag: 62e815bf-1920-4240-b176-f5b7f07e89cf
+
+	measure Promesas_VencidaAsesores = ```
+			
+			
+			
+			VAR _CodigoActual =
+			    VALUES(AsesoresCasosGestionesPagos[Codigo])
+			
+			VAR _FechaInicial =
+			    MIN(Calendario[Date])    
+			
+			VAR _FechaFinal =
+			    MAX(Calendario[Date])
+			
+			RETURN
+			
+			CALCULATE(
+			    DISTINCTCOUNT(vwCasos[IdPromesa]),
+			    REMOVEFILTERS(vwCasos),
+			    TREATAS(
+			        _CodigoActual,
+			        vwCasos[Codigo]
+			    ),
+			    vwCasos[Estado] = "Vencida"
+			
+			    ,REMOVEFILTERS(Calendario),
+			
+			    vwCasos[FechaPromesa] >= _FechaInicial && vwCasos[FechaPromesa] <= _FechaFinal
+			
+			  //   , (vwCasos[FechaPromesa] = _FechaFinal)
+			)
+			
+			```
+		formatString: 0
+		displayFolder: Promesas
+		lineageTag: 389c73c9-fd1d-40b6-888f-810d633f3a5d
+
+	measure %EfectividadPromesasAsesores = ```
+			
+			
+			       DIVIDE([CantPromesasCumplidas], [CantPromesas], 0)
+			       
+			```
+		displayFolder: Promesas
+		lineageTag: 390c08d0-ffd8-4351-8981-d6e65122ca13
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure EfectividadAsesor = ```
+			
+			
+			  DIVIDE( vwCasos[Promesas_CumplidaAsesores], vwCasos[CantPromesasAsesor], BLANK()) 
+			
+			```
+		formatString: 0.00\ %;-0.00\ %;0.00\ %
+		displayFolder: Promesas
+		lineageTag: 11e0c806-dda8-4425-8e31-5520ef7aa723
+
+	measure CantPromesas_Clientes = ```
+			
+			
+			CALCULATE(
+			    DISTINCTCOUNT(vwCasos[CasoId]),
+			
+			    TREATAS(
+			        VALUES(vwCasosGestiones[Codigo]),
+			        vwCasos[Codigo]
+			    ),
+			
+			       REMOVEFILTERS(vwPagos)
+			)
+			
+			```
+		formatString: 0
+		displayFolder: Promesas
+		lineageTag: 8e62c09f-5263-4e1d-9b8d-10cc1143f8cf
+
+	measure Monto_Recuperado_CL = ```
+			
+			
+			CALCULATE(
+			    SUM(vwPagos[MontoPagadoRDUS]),
+			    FILTER(
+			        vwCasos,
+			        vwCasos[CodigoCliente] IN VALUES(vwPagos[CodigoCliente])
+			        
+			    )
+			)
+			```
+		displayFolder: Recuperación
+		lineageTag: b6d1f536-5bed-4080-9da7-8448fa600ee6
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure Monto_Prometido_Clientes = ```
+			
+			
+			
+			
+			CALCULATE(
+			    sum(vwCasos[MontoPrometido]),
+			
+			    TREATAS(
+			        VALUES(vwPagos[CodigoCliente]),
+			        vwCasos[CodigoCliente]
+			    )
+			    
+			  //  ,        REMOVEFILTERS(vwPagos)
+			)
+			
+			```
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		displayFolder: Promesas
+		lineageTag: f1948f62-2d27-490e-960e-20697b302a7e
+
+		annotation PBI_FormatHint = {"currencyCulture":"es-DO"}
+
+	measure CantPagosClientes = ```
+			
+			
+			
+			    CALCULATE(
+			       // (vwPagos[MontoRecuperado]),
+			
+			       COUNT(vwPagos[PagoNo]),
+			        FILTER(
+			            vwPagos,
+			            vwPagos[CodigoCliente] in values(vwCasos[CodigoCliente]
+			        )
+			    )
+			
+			
+			// IF(ISINSCOPE(vwPagos[codigo]),max(vwPagos[MontoMeta]), CALCULATE(SUM(vwMetas[MontoMetas]), TREATAS(values(vwPagos[Sucursal_id]),vwMetas[Unidad])))
+			)
+			```
+		formatString: 0
+		displayFolder: Recuperación
+		lineageTag: bc5fec55-8a0b-4024-933c-47dc5edcea1e
+
+	measure Monto_Recuperado_Vigente = ```
+			
+			
+			    CALCULATE(
+			       // (vwPagos[MontoRecuperado]),
+			
+			       vwPagos[MontosAplicadosCarteraVigente],
+			        FILTER(
+			            vwPagos,
+			            vwPagos[CodigoCliente] in values(vwCasos[CodigoCliente]
+			        )
+			    )
+			
+			
+			// IF(ISINSCOPE(vwPagos[codigo]),max(vwPagos[MontoMeta]), CALCULATE(SUM(vwMetas[MontoMetas]), TREATAS(values(vwPagos[Sucursal_id]),vwMetas[Unidad])))
+			)
+			
+			```
+		displayFolder: Recuperación
+		lineageTag: b19f91ff-4822-47b3-ae08-aabe899eae86
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure Monto_Recuperado_Castigado = ```
+			
+			
+			    CALCULATE(
+			       // (vwPagos[MontoRecuperado]),
+			
+			       vwPagos[MontosAplicadosCarteraCastigada],
+			        FILTER(
+			            vwPagos,
+			            vwPagos[CodigoCliente] in values(vwCasos[CodigoCliente]
+			        )
+			    )
+			
+			
+			// IF(ISINSCOPE(vwPagos[codigo]),max(vwPagos[MontoMeta]), CALCULATE(SUM(vwMetas[MontoMetas]), TREATAS(values(vwPagos[Sucursal_id]),vwMetas[Unidad])))
+			)
+			
+			```
+		displayFolder: Recuperación
+		lineageTag: 50f5a14b-9bb0-4351-9656-3502f493c6e8
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure CantPromesasClientes01 = ```
+			
+			
+			VAR _CodigoActual =
+			    VALUES(AsesoresCasosGestionesPagos[Codigo])
+			
+			VAR _FechaInicial =
+			    MIN(Calendario[Date])    
+			
+			VAR _FechaFinal =
+			    MAX(Calendario[Date])
+			
+			RETURN    
+			
+			CALCULATE(
+			    DISTINCTCOUNT(vwCasos[IdPromesa]),
+			    TREATAS(
+			        VALUES(vwCasosGestiones[CodigoCliente]),
+			        vwCasos[CodigoCliente]
+			    )  ,
+			    REMOVEFILTERS(Calendario),
+			
+			    vwCasos[FechaPromesa] >= _FechaInicial && vwCasos[FechaPromesa] <= _FechaFinal
+			
+			)
+			
+			//+ CALCULATE(
+			//    [Cant_Contactos],
+			//    vwGestiones[GestionId] = "0087"
+			//)
+			```
+		formatString: 0
+		displayFolder: Promesas
+		lineageTag: daa9c5a0-1692-4df5-aa7d-21938af1763c
+
+	column CasoId
+		dataType: int64
+		isNullable: false
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: 6cc2cfa9-c5c0-42cb-927b-d02ab724ee0c
+		summarizeBy: count
+		sourceColumn: CasoId
+
+		annotation SummarizationSetBy = Automatic
+
+	column codigo
+		dataType: string
+		isNullable: false
+		sourceProviderType: varchar(15)
+		lineageTag: 2c3e857f-9c0f-4614-b55a-d9f5d5576c53
+		summarizeBy: none
+		sourceColumn: codigo
+
+		annotation SummarizationSetBy = Automatic
+
+	column CodigoCliente
+		dataType: string
+		sourceProviderType: varchar(15)
+		lineageTag: 8655a4d0-33e7-4b28-b060-39f69ac822c0
+		summarizeBy: none
+		sourceColumn: CodigoCliente
+
+		annotation SummarizationSetBy = Automatic
+
+	column NombreDeudor
+		dataType: string
+		sourceProviderType: varchar(40)
+		lineageTag: 56849a96-4217-47bf-a39d-d40d61166f27
+		summarizeBy: none
+		sourceColumn: NombreDeudor
+
+		annotation SummarizationSetBy = Automatic
+
+	column MontoAtrasoRD
+		dataType: decimal
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		sourceProviderType: money
+		lineageTag: 695fe6ee-40a4-4ed5-8800-895904318af7
+		summarizeBy: sum
+		sourceColumn: MontoAtrasoRD
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"es-DO"}
+
+	column MontoPrometido
+		dataType: decimal
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		sourceProviderType: money
+		lineageTag: 5da0c7e3-7ea9-4e02-a0bf-d660278e4c94
+		summarizeBy: sum
+		sourceColumn: MontoPrometido
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"es-DO"}
+
+	column MontoCumplido
+		dataType: double
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		sourceProviderType: float
+		lineageTag: 47b0f019-5fd7-4d7b-9a69-7fe3d0374a9c
+		summarizeBy: sum
+		sourceColumn: MontoCumplido
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"es-DO"}
+
+	column FechaPromesa
+		dataType: dateTime
+		formatString: Long Date
+		sourceProviderType: date
+		lineageTag: 1da85913-f664-4f97-9893-b7a2ff3fc78f
+		summarizeBy: none
+		sourceColumn: FechaPromesa
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column Sucursal
+		dataType: string
+		sourceProviderType: varchar(15)
+		lineageTag: 7a8dbe2f-f562-43b9-a30a-d9040a7fc1c7
+		summarizeBy: none
+		sourceColumn: Sucursal
+
+		annotation SummarizationSetBy = Automatic
+
+	column Estado
+		dataType: string
+		sourceProviderType: varchar(20)
+		lineageTag: ac9af65d-f9db-49d2-8c0e-f4cf9840566b
+		summarizeBy: none
+		sourceColumn: Estado
+
+		annotation SummarizationSetBy = Automatic
+
+	column FechaCreacion
+		dataType: dateTime
+		formatString: Long Date
+		sourceProviderType: date
+		lineageTag: 6fdde94f-14f6-415b-a795-74bb64c0fa22
+		summarizeBy: none
+		sourceColumn: FechaCreacion
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column codigo1
+		dataType: string
+		sourceProviderType: varchar(15)
+		lineageTag: 99960e91-dca6-4d14-bf77-640a467d8b27
+		summarizeBy: none
+		sourceColumn: codigo1
+
+		annotation SummarizationSetBy = Automatic
+
+	column IdPromesa
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 9a334d4f-0a65-4034-9582-691380cc407e
+		summarizeBy: sum
+		sourceColumn: IdPromesa
+
+		annotation SummarizationSetBy = Automatic
+
+	column VencidaFecha
+		dataType: string
+		isNullable: false
+		sourceProviderType: varchar(1)
+		lineageTag: ac8bcbf6-71f6-435f-984e-5250c12b3d49
+		summarizeBy: none
+		sourceColumn: VencidaFecha
+
+		annotation SummarizationSetBy = Automatic
+
+	column NombreDeudorID
+		dataType: string
+		sourceProviderType: varchar(93)
+		lineageTag: e000251e-dc17-4d9b-8b88-3f25055b7e03
+		summarizeBy: none
+		sourceColumn: NombreDeudorID
+
+		annotation SummarizationSetBy = Automatic
+
+	column NombreCliente
+		dataType: string
+		sourceProviderType: varchar(100)
+		lineageTag: bcb4f713-502d-4dd1-8450-3af251f8a885
+		summarizeBy: none
+		sourceColumn: NombreCliente
+
+		annotation SummarizationSetBy = Automatic
+
+	column codigo2
+		dataType: string
+		sourceProviderType: varchar(10)
+		lineageTag: b42bc244-cdc8-4933-902e-ca8e23f68f59
+		summarizeBy: none
+		sourceColumn: codigo2
+
+		annotation SummarizationSetBy = Automatic
+
+	column SucursalPromesa
+		dataType: string
+		sourceProviderType: varchar(15)
+		lineageTag: c406ed12-9881-44e4-a9da-0ee656e182a8
+		summarizeBy: none
+		sourceColumn: SucursalPromesa
+
+		annotation SummarizationSetBy = Automatic
+
+	column CategoriaCliente
+		dataType: string
+		sourceProviderType: nchar
+		lineageTag: f6c1cba5-6309-451a-a519-9b18586b2110
+		summarizeBy: none
+		sourceColumn: CategoriaCliente
+
+		annotation SummarizationSetBy = Automatic
+
+	column Indice
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: 411e6b22-c42e-4894-964c-694dd593d009
+		summarizeBy: sum
+		sourceColumn: Indice
+
+		annotation SummarizationSetBy = Automatic
+
+	column EstadoCaso
+		dataType: string
+		sourceProviderType: varchar(10)
+		lineageTag: 5d31ea15-aa37-4c58-9612-a944501ea1f4
+		summarizeBy: none
+		sourceColumn: EstadoCaso
+
+		annotation SummarizationSetBy = Automatic
+
+	column Devolucion
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		sourceProviderType: bit
+		lineageTag: fe663d4e-7794-4b20-ba3f-8ad96c7ec343
+		summarizeBy: none
+		sourceColumn: Devolucion
+
+		annotation SummarizationSetBy = Automatic
+
+	column Expedientes
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: 5f25bbda-c8c8-4828-aed6-5dabe4aeaf0c
+		summarizeBy: sum
+		sourceColumn: Expedientes
+
+		annotation SummarizationSetBy = Automatic
+
+	column EstadoBanco
+		dataType: string
+		sourceProviderType: varchar(10)
+		lineageTag: 7abeed3a-7364-4070-8b92-4d4efb7788b5
+		summarizeBy: none
+		sourceColumn: EstadoBanco
+
+		annotation SummarizationSetBy = Automatic
+
+	partition vwCasos = m
+		mode: dual
+		source =
+				let
+				    Origen = Sql.Database("192.168.9.104,1433", "SigecobDS"),
+				    dbo_vwCasos = Origen{[Schema="dbo",Item="vwCasos"]}[Data],
+				    #"Columnas quitadas" = Table.RemoveColumns(dbo_vwCasos,{"CountIdPromesa"})
+				in
+				    #"Columnas quitadas"
+
+	annotation PBI_ResultType = Table
+

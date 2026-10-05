@@ -1,0 +1,27 @@
+table DimCodigo
+	lineageTag: fe7569d7-e2b2-4ede-9f81-b013402b68a2
+
+	column Codigo
+		lineageTag: 47b526db-d3b6-469e-8b7e-cbba2024f255
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Codigo]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition DimCodigo = calculated
+		mode: import
+		source = ```
+				
+				
+				DISTINCT(
+				    UNION(
+				        SELECTCOLUMNS(vwCasosGestiones,"Codigo",vwCasosGestiones[Codigo]),
+				        SELECTCOLUMNS(vwPagos,"Codigo",vwPagos[Codigo])
+				    )
+				)
+				
+				```
+
+	annotation PBI_Id = 6d93fe199e9c4557bbe0c0245102b28e
+

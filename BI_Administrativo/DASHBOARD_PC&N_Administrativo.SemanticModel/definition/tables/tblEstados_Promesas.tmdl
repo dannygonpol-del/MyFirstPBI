@@ -1,0 +1,25 @@
+table tblEstados_Promesas
+	lineageTag: becd2ef4-83bf-4c80-af4a-a4bff92c9d12
+
+	column Estados
+		dataType: string
+		sourceProviderType: nvarchar(20)
+		lineageTag: 41020500-da12-4573-9fb1-038b899dcc69
+		summarizeBy: none
+		sourceColumn: Estados
+
+		annotation SummarizationSetBy = Automatic
+
+	partition tblEstados_Promesas = m
+		mode: dual
+		source =
+				let
+				    Origen = Sql.Database("192.168.9.104,1433", "SigecobDS"),
+				    dbo_tblEstados_Promesas = Origen{[Schema="dbo",Item="tblEstados_Promesas"]}[Data]
+				in
+				    dbo_tblEstados_Promesas
+
+	annotation PBI_NavigationStepName = Navegación
+
+	annotation PBI_ResultType = Table
+

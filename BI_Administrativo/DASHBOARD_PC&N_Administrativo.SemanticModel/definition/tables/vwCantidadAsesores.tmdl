@@ -1,0 +1,33 @@
+table vwCantidadAsesores
+	lineageTag: 5e5f59bb-407e-420b-871f-96688135697c
+
+	column Sucursal_id
+		dataType: string
+		sourceProviderType: varchar(15)
+		lineageTag: dc5b8d44-4ed4-460e-b3c9-ed2c8158c0cc
+		summarizeBy: none
+		sourceColumn: Sucursal_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column CantidadAsesores
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 85dfc386-357c-4f4f-a104-12c3bd335e2f
+		summarizeBy: sum
+		sourceColumn: CantidadAsesores
+
+		annotation SummarizationSetBy = Automatic
+
+	partition vwCantidadAsesores = m
+		mode: import
+		source =
+				let
+				    Origen = Sql.Database("192.168.9.104,1433", "SigecobDS"),
+				    dbo_vwCantidadAsesores = Origen{[Schema="dbo",Item="vwCantidadAsesores"]}[Data]
+				in
+				    dbo_vwCantidadAsesores
+
+	annotation PBI_ResultType = Table
+

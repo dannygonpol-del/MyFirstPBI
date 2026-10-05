@@ -1,0 +1,24 @@
+table tblClasePago
+	lineageTag: d9955e73-9f3f-4561-922c-b6fc158c7296
+
+	column ClasePagos
+		dataType: string
+		lineageTag: a0039591-b27d-4e85-85e9-06c3b0f41d07
+		summarizeBy: none
+		sourceColumn: ClasePagos
+
+		annotation SummarizationSetBy = Automatic
+
+	partition tblClasePago = m
+		mode: import
+		source =
+				let
+				    Origen = Excel.Workbook(File.Contents("C:\PROYECTOBI\tblClasePagos.xlsx"), null, true),
+				    tblClasePago_Sheet = Origen{[Item="tblClasePago",Kind="Sheet"]}[Data],
+				    #"Tipo cambiado" = Table.TransformColumnTypes(tblClasePago_Sheet,{{"Column1", type text}}),
+				    #"Columnas con nombre cambiado" = Table.RenameColumns(#"Tipo cambiado",{{"Column1", "ClasePagos"}})
+				in
+				    #"Columnas con nombre cambiado"
+
+	annotation PBI_ResultType = Table
+

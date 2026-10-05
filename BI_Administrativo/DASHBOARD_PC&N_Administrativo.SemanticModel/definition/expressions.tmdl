@@ -1,0 +1,12 @@
+/// Inicio de la ventana incremental (buffer de 3 dias)
+expression RangeStart = #datetime(2026, 8, 7, 0, 0, 0) meta [IsParameterQuery=true, Type="DateTime", IsParameterQueryRequired=true]
+	lineageTag: a8a7beb2-9c26-44aa-ad80-d208f817be29
+
+	annotation PBI_ResultType = DateTime
+
+/// Fin de la ventana incremental (fecha lejana para siempre incluir datos nuevos)
+expression RangeEnd = #datetime(2030, 1, 1, 0, 0, 0) meta [IsParameterQuery=true, Type="DateTime", IsParameterQueryRequired=true]
+	lineageTag: cca916ec-ed67-4d81-8bbf-9358e8160b1e
+
+	annotation PBI_ResultType = DateTime
+

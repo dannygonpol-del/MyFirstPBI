@@ -1,0 +1,277 @@
+table vwRotacionPagosPorUnidades_Deudores
+	lineageTag: 748ac0f2-362e-4b3b-b455-a8f7a1e84d2f
+
+	measure YearAct = ```
+			
+			    YEAR(TODAY())
+			    
+			```
+		formatString: 0
+		lineageTag: 0842fd88-eb3f-4911-9c2d-d38d8d05ba00
+
+	measure YearLast = ```
+			
+			    YEAR(TODAY()) -1
+			```
+		formatString: 0
+		lineageTag: 737e6824-5ec3-42ee-af8c-5246be3455b5
+
+	measure 'Filtro Año Actual' = ```
+			
+			
+			IF(
+			    MAX(Calendario[Año]) = [YearAct],
+			    1,
+			    0
+			)
+			
+			```
+		formatString: 0
+		lineageTag: e5c3078a-b582-4534-a248-46ac44be7130
+
+	measure NombreSupervisor = ```
+			
+			
+			SWITCH(
+			    SELECTEDVALUE(vwRotacionPagosPorUnidades_Deudores[Sucursal_id]),
+			    "CC1", "Juana Valdez / Carlos Ozuna",
+			    "CC2", "Ricauri Alvarado",
+			    "CC3", "Maria Escolastico",
+			    "CC4", "Noelis Canela / Erika Minaya",
+			    "SWAT", "Yina Martinez",
+			    BLANK()
+			)
+			
+			```
+		lineageTag: d2e6d224-f34d-420a-a711-b00d45403a27
+
+	column codigo
+		dataType: string
+		sourceProviderType: varchar(15)
+		lineageTag: 8f3292ad-cec9-4862-8f73-b497c0f35a85
+		summarizeBy: none
+		sourceColumn: codigo
+
+		annotation SummarizationSetBy = Automatic
+
+	column Asesor
+		dataType: string
+		isNullable: false
+		sourceProviderType: varchar(58)
+		lineageTag: 262c358c-34b5-458e-8207-df5b3d07f083
+		summarizeBy: none
+		sourceColumn: Asesor
+
+		annotation SummarizationSetBy = Automatic
+
+	column PagoNo
+		dataType: int64
+		isNullable: false
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: d3e0100d-e287-46ff-9143-86820349a2a0
+		summarizeBy: sum
+		sourceColumn: PagoNo
+
+		annotation SummarizationSetBy = Automatic
+
+	column CasoId
+		dataType: int64
+		isNullable: false
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: f325b1e5-de7b-46fa-b012-7c6ff574e342
+		summarizeBy: count
+		sourceColumn: CasoId
+
+		annotation SummarizationSetBy = Automatic
+
+	column Tipo_Pago
+		dataType: string
+		isNullable: false
+		sourceProviderType: varchar(20)
+		lineageTag: 8bba60b8-6ffc-4f72-9628-d9b01375e3f0
+		summarizeBy: none
+		sourceColumn: Tipo_Pago
+
+		annotation SummarizationSetBy = Automatic
+
+	column MesNum
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: eb7ded61-dfe5-4a86-bbf3-868a0ec128b5
+		summarizeBy: sum
+		sourceColumn: MesNum
+
+		annotation SummarizationSetBy = Automatic
+
+	column Mes
+		dataType: string
+		sourceProviderType: varchar(10)
+		lineageTag: b28d2836-c14a-4933-bd3e-27ec59fe5d60
+		summarizeBy: none
+		sourceColumn: Mes
+		sortByColumn: MesNum
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	column FechaPago
+		dataType: dateTime
+		isNullable: false
+		formatString: General Date
+		sourceProviderType: datetime
+		lineageTag: a0971258-9314-4df8-8bcb-36eabab7d5f6
+		summarizeBy: none
+		sourceColumn: FechaPago
+
+		annotation SummarizationSetBy = Automatic
+
+	column FechaCreacion
+		dataType: dateTime
+		formatString: Long Date
+		sourceProviderType: date
+		lineageTag: 69c91d0d-a666-4c02-80b4-b52629432d24
+		summarizeBy: none
+		sourceColumn: FechaCreacion
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column divisa
+		dataType: string
+		sourceProviderType: varchar(3)
+		lineageTag: 8a4cc803-692e-44e5-9fce-0742ce49a707
+		summarizeBy: none
+		sourceColumn: divisa
+
+		annotation SummarizationSetBy = Automatic
+
+	column MontoPago
+		dataType: decimal
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		sourceProviderType: money
+		lineageTag: 6af30a01-3e8a-4215-be17-0e3d55d0d043
+		summarizeBy: sum
+		sourceColumn: MontoPago
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"es-DO"}
+
+	column NoPagos
+		dataType: string
+		isNullable: false
+		sourceProviderType: varchar(1)
+		lineageTag: 3bf309d0-2a1e-4d75-b0df-1ec86cf095bd
+		summarizeBy: none
+		sourceColumn: NoPagos
+
+		annotation SummarizationSetBy = Automatic
+
+	column TipoPago
+		dataType: string
+		sourceProviderType: varchar(10)
+		lineageTag: d2d00a07-0b61-470d-8cb9-04a89a06aeac
+		summarizeBy: none
+		sourceColumn: TipoPago
+
+		annotation SummarizationSetBy = Automatic
+
+	column Estado
+		dataType: string
+		sourceProviderType: varchar(10)
+		lineageTag: 4329398e-f1b9-42c9-874b-c6043aee9b75
+		summarizeBy: none
+		sourceColumn: Estado
+
+		annotation SummarizationSetBy = Automatic
+
+	column EstadoCartera
+		dataType: string
+		sourceProviderType: varchar(10)
+		lineageTag: 25e0810e-2711-4a98-baca-1acdbadc7d4c
+		summarizeBy: none
+		sourceColumn: EstadoCartera
+
+		annotation SummarizationSetBy = Automatic
+
+	column EstadoAsesor
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		sourceProviderType: bit
+		lineageTag: 383f953d-e985-4c8e-b758-b68dbf2bd327
+		summarizeBy: none
+		sourceColumn: EstadoAsesor
+
+		annotation SummarizationSetBy = Automatic
+
+	column Sucursal_id
+		dataType: string
+		sourceProviderType: varchar(15)
+		lineageTag: 565a47e4-2735-4e49-8e17-4367e5c4c0b2
+		summarizeBy: none
+		sourceColumn: Sucursal_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column MontoPagoRDUS
+		dataType: double
+		sourceProviderType: float
+		lineageTag: 6966b2dd-86af-477d-b570-28639e3ea443
+		summarizeBy: sum
+		sourceColumn: MontoPagoRDUS
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column MontoPagadoRD
+		dataType: decimal
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		sourceProviderType: money
+		lineageTag: 7c9ad0d5-6fd8-4114-ac34-4d85d30f0f5b
+		summarizeBy: sum
+		sourceColumn: MontoPagadoRD
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"es-DO"}
+
+	column MontoPagadoUS
+		dataType: double
+		isNullable: false
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		sourceProviderType: float
+		lineageTag: f198917d-b84b-4162-9500-e0a7a64c37de
+		summarizeBy: sum
+		sourceColumn: MontoPagadoUS
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"es-DO"}
+
+	column Año
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 5c2fab12-91fc-40b2-bf1f-139a6bf809fd
+		summarizeBy: sum
+		sourceColumn: Año
+
+		annotation SummarizationSetBy = Automatic
+
+	partition vwRotacionPagosPorUnidades_Deudores = m
+		mode: dual
+		source =
+				let
+				    Origen = Sql.Database("192.168.9.104,1433", "SigecobDS"),
+				    dbo_vwRotacionPagosPorUnidades_Deudores = Origen{[Schema="dbo",Item="vwRotacionPagosPorUnidades_Deudores"]}[Data]
+				in
+				    dbo_vwRotacionPagosPorUnidades_Deudores
+
+	annotation PBI_ResultType = Table
+

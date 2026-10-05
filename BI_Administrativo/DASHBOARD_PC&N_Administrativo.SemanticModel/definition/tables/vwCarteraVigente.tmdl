@@ -1,0 +1,62 @@
+table vwCarteraVigente
+	lineageTag: ebc2cc89-6f6a-4210-86b2-48bbd12d38dc
+
+	column Expedientes
+		dataType: int64
+		isNullable: false
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: 72f3f068-8e71-4068-ba9c-2a53c0e8d408
+		summarizeBy: sum
+		sourceColumn: Expedientes
+
+		annotation SummarizationSetBy = Automatic
+
+	column Sucursal_id
+		dataType: string
+		sourceProviderType: varchar(15)
+		lineageTag: 15c51147-95a4-4d6a-aeae-78ade0f20777
+		summarizeBy: none
+		sourceColumn: Sucursal_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column Devolucion
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		sourceProviderType: bit
+		lineageTag: 0d1f76eb-ab0e-452e-8433-bda0c34d1818
+		summarizeBy: none
+		sourceColumn: Devolucion
+
+		annotation SummarizationSetBy = Automatic
+
+	column CodigoCliente
+		dataType: string
+		sourceProviderType: varchar(15)
+		lineageTag: d5234b42-f2b8-4113-a753-68c4e9084d3b
+		summarizeBy: none
+		sourceColumn: CodigoCliente
+
+		annotation SummarizationSetBy = Automatic
+
+	column NombreCliente
+		dataType: string
+		sourceProviderType: varchar(40)
+		lineageTag: f4bdc6ae-625f-4c07-b65e-7e1094b68d0b
+		summarizeBy: none
+		sourceColumn: NombreCliente
+
+		annotation SummarizationSetBy = Automatic
+
+	partition vwCarteraVigente = m
+		mode: dual
+		source =
+				let
+				    Origen = Sql.Database("192.168.9.104,1433", "SigecobDS"),
+				    dbo_vwCarteraVigente = Origen{[Schema="dbo",Item="vwCarteraVigente"]}[Data]
+				in
+				    dbo_vwCarteraVigente
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,44 @@
+table vwUltimaActualizacionPowerBI
+	lineageTag: 5c36018d-36ea-40c6-a74d-7ae65e031f89
+
+	measure 'Ultima Actualizacion' = ```
+			
+			
+			VAR _FechaHora =
+			    MAX(ControlActualizacion[FechaHoraActualizacion])
+			
+			RETURN
+			  
+			   "Última actualización: "
+			    & FORMAT(
+			        UTCNOW() - TIME(4,0,0),
+			        "dd/MM/yyyy HH:mm:ss"
+			    )
+			    
+			    //"Última actualización: "
+			   //     & FORMAT(_FechaHora, "dd/MM/yyyy HH:mm:ss")
+			
+			```
+		lineageTag: d547b5e3-c3f6-49c7-b211-564a008a6cb3
+
+	column FechaHoraActualizacion
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: 65e0e48c-dd07-4aba-9b32-08bc6549aab3
+		summarizeBy: none
+		sourceColumn: FechaHoraActualizacion
+
+		annotation SummarizationSetBy = Automatic
+
+	partition vwUltimaActualizacionPowerBI = m
+		mode: directQuery
+		source =
+				let
+				    Origen = Sql.Database("192.168.9.104,1433", "SigecobDS"),
+				    dbo_vwUltimaActualizacionPowerBI = Origen{[Schema="dbo",Item="vwUltimaActualizacionPowerBI"]}[Data]
+				in
+				    dbo_vwUltimaActualizacionPowerBI
+
+	annotation PBI_ResultType = Table
+

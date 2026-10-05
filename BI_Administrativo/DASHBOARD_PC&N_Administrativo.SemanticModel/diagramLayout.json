@@ -1,0 +1,437 @@
+{
+  "version": "1.1.0",
+  "diagrams": [
+    {
+      "ordinal": 0,
+      "scrollPosition": {
+        "x": 0,
+        "y": 112
+      },
+      "nodes": [
+        {
+          "location": {
+            "x": 320,
+            "y": 0
+          },
+          "nodeIndex": "tblOficiales",
+          "nodeLineageTag": "1e12ee04-e934-4a12-9f10-292d9bad6ce3",
+          "size": {
+            "height": 145,
+            "width": 234
+          },
+          "zIndex": 12
+        },
+        {
+          "location": {
+            "x": 326,
+            "y": 218
+          },
+          "nodeIndex": "Clientes",
+          "nodeLineageTag": "3110bb89-c433-41f3-871a-6e9dc341f468",
+          "size": {
+            "height": 104,
+            "width": 234
+          },
+          "zIndex": 11,
+          "expandedHeight": 300
+        },
+        {
+          "location": {
+            "x": 1050,
+            "y": 225
+          },
+          "nodeIndex": "vwCasos",
+          "nodeLineageTag": "e54ab9c8-771f-4a5f-9e6a-7314002755f8",
+          "size": {
+            "height": 374,
+            "width": 273
+          },
+          "zIndex": 28
+        },
+        {
+          "location": {
+            "x": 687,
+            "y": 255.25
+          },
+          "nodeIndex": "Oficiales",
+          "nodeLineageTag": "bf22bb43-fd85-4cb1-add4-3c3be64cb752",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 13
+        },
+        {
+          "location": {
+            "x": 677,
+            "y": 576.625
+          },
+          "nodeIndex": "vwPagos",
+          "nodeLineageTag": "6e6b0721-eef9-4be8-a4c7-e4405814c995",
+          "size": {
+            "height": 320,
+            "width": 236
+          },
+          "zIndex": 29
+        },
+        {
+          "location": {
+            "x": 1346,
+            "y": 284.625
+          },
+          "nodeIndex": "vwMetas",
+          "nodeLineageTag": "e7672911-eab7-4a5a-a374-3a016835e21b",
+          "size": {
+            "height": 104,
+            "width": 234
+          },
+          "zIndex": 15,
+          "expandedHeight": 152
+        },
+        {
+          "location": {
+            "x": 1293,
+            "y": 0
+          },
+          "nodeIndex": "vwDeudas",
+          "nodeLineageTag": "7bd58c55-8f3d-4126-a491-76f8e29d4fcc",
+          "size": {
+            "height": 152,
+            "width": 234
+          },
+          "zIndex": 19,
+          "expandedHeight": 176
+        },
+        {
+          "location": {
+            "x": 0,
+            "y": 0
+          },
+          "nodeIndex": "Calendario",
+          "nodeLineageTag": "8148b837-bfa6-434b-b794-984da19c8d1a",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 32
+        },
+        {
+          "location": {
+            "x": 0,
+            "y": 289.8125
+          },
+          "nodeIndex": "tblEstados_Promesas",
+          "nodeLineageTag": "becd2ef4-83bf-4c80-af4a-a4bff92c9d12",
+          "size": {
+            "height": 104,
+            "width": 234
+          },
+          "zIndex": 17,
+          "expandedHeight": 104
+        },
+        {
+          "location": {
+            "x": 1039,
+            "y": 0
+          },
+          "nodeIndex": "vwGestiones",
+          "nodeLineageTag": "186438cd-1259-4c1b-ac9e-620bedabede3",
+          "size": {
+            "height": 152,
+            "width": 233
+          },
+          "zIndex": 18
+        },
+        {
+          "location": {
+            "x": 0,
+            "y": 446.125
+          },
+          "nodeIndex": "vwCasosGestiones",
+          "nodeLineageTag": "bc520186-5b52-444d-ad8c-51d0cda4ec2b",
+          "size": {
+            "height": 460,
+            "width": 234
+          },
+          "zIndex": 27
+        },
+        {
+          "location": {
+            "x": 2149,
+            "y": 512.625
+          },
+          "nodeIndex": "vwCantidadAsesores",
+          "nodeLineageTag": "5e5f59bb-407e-420b-871f-96688135697c",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 16
+        },
+        {
+          "location": {
+            "x": 1374,
+            "y": 633.625
+          },
+          "nodeIndex": "vwMetasAsesores",
+          "nodeLineageTag": "528d05fa-492f-43d0-aba1-c653756b9ff7",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 20
+        },
+        {
+          "location": {
+            "x": 1897,
+            "y": 259.625
+          },
+          "nodeIndex": "vwRotacionPagosPorClienetes_Deudores",
+          "nodeLineageTag": "f4275f10-b2e2-4c40-b5c2-35c04b665a3a",
+          "size": {
+            "height": 224,
+            "width": 265
+          },
+          "zIndex": 23
+        },
+        {
+          "location": {
+            "x": 2181,
+            "y": 271.625
+          },
+          "nodeIndex": "TablaIndicadores",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 14
+        },
+        {
+          "location": {
+            "x": 2465,
+            "y": 271.625
+          },
+          "nodeIndex": "TablaMontosGestores",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 10
+        },
+        {
+          "location": {
+            "x": 2046,
+            "y": 0
+          },
+          "nodeIndex": "tblClasePago",
+          "nodeLineageTag": "d9955e73-9f3f-4561-922c-b6fc158c7296",
+          "size": {
+            "height": 104,
+            "width": 234
+          },
+          "zIndex": 9
+        },
+        {
+          "location": {
+            "x": 616,
+            "y": 0
+          },
+          "nodeIndex": "vwRotacionSinPagosPorClientes",
+          "nodeLineageTag": "d88d8e66-b3c6-4170-a0c8-441654b4521c",
+          "size": {
+            "height": 224,
+            "width": 336
+          },
+          "zIndex": 22
+        },
+        {
+          "location": {
+            "x": 513,
+            "y": 0
+          },
+          "nodeIndex": "vwCartera",
+          "nodeLineageTag": "7da5bca8-b3e2-4cab-8506-4a5ab3adc4f0",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 21
+        },
+        {
+          "location": {
+            "x": 1741,
+            "y": 712.5
+          },
+          "nodeIndex": "DimCodigo",
+          "nodeLineageTag": "fe7569d7-e2b2-4ede-9f81-b013402b68a2",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 8
+        },
+        {
+          "location": {
+            "x": 2749,
+            "y": 251.5
+          },
+          "nodeIndex": "vwRotacionPagosPorUnidades_Deudores",
+          "nodeLineageTag": "748ac0f2-362e-4b3b-b455-a8f7a1e84d2f",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 24
+        },
+        {
+          "location": {
+            "x": 290,
+            "y": 462.25
+          },
+          "nodeIndex": "AsesoresCasosGestionesPagos",
+          "nodeLineageTag": "709c0f24-a755-42a0-885a-908edda8de8d",
+          "size": {
+            "height": 200,
+            "width": 246
+          },
+          "zIndex": 6
+        },
+        {
+          "location": {
+            "x": 3033,
+            "y": 359.3125
+          },
+          "nodeIndex": "Dashboard",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 7
+        },
+        {
+          "location": {
+            "x": 3317,
+            "y": 359.3125
+          },
+          "nodeIndex": "tblSupervisoresLideresAsesores",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 5
+        },
+        {
+          "location": {
+            "x": 3601,
+            "y": 359.3125
+          },
+          "nodeIndex": "tblSupervisoresAsesores",
+          "nodeLineageTag": "3fcbceca-2e2d-4e2b-ac53-6bcf174ace2c",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 25
+        },
+        {
+          "location": {
+            "x": 3885,
+            "y": 359.3125
+          },
+          "nodeIndex": "tblSupervisores",
+          "nodeLineageTag": "c0e04f9b-b6c9-4338-88bb-503d34d349cc",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 26
+        },
+        {
+          "location": {
+            "x": 1084,
+            "y": 618.3125
+          },
+          "nodeIndex": "AsosoresMetasPagos",
+          "nodeLineageTag": "01303251-eba4-4d25-af88-51a6a4418239",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 4
+        },
+        {
+          "location": {
+            "x": 4169,
+            "y": 348.3125
+          },
+          "nodeIndex": "tblPromesas",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 3
+        },
+        {
+          "location": {
+            "x": 4737,
+            "y": 356.25
+          },
+          "nodeIndex": "vwCarteraVigente",
+          "nodeLineageTag": "ebc2cc89-6f6a-4210-86b2-48bbd12d38dc",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 30
+        },
+        {
+          "location": {
+            "x": 5021,
+            "y": 404.25
+          },
+          "nodeIndex": "vwUltimaActualizacionPowerBI",
+          "nodeLineageTag": "5c36018d-36ea-40c6-a74d-7ae65e031f89",
+          "size": {
+            "height": 104,
+            "width": 234
+          },
+          "zIndex": 1
+        },
+        {
+          "location": {
+            "x": 5305,
+            "y": 404.25
+          },
+          "nodeIndex": "ControlActualizacion",
+          "nodeLineageTag": "2d7bc5f2-16cf-4036-87d8-cd01de00bc60",
+          "size": {
+            "height": 104,
+            "width": 234
+          },
+          "zIndex": 2
+        },
+        {
+          "location": {
+            "x": 260,
+            "y": 115.25
+          },
+          "nodeIndex": "vwCasosDistribuidos",
+          "nodeLineageTag": "da5b5e11-45d6-4736-8fe4-e8125ac610b4",
+          "size": {
+            "height": 272,
+            "width": 234
+          },
+          "zIndex": 31
+        }
+      ],
+      "name": "Todas las tablas",
+      "zoomValue": 100,
+      "pinKeyFieldsToTop": false,
+      "showExtraHeaderInfo": false,
+      "hideKeyFieldsWhenCollapsed": false,
+      "tablesLocked": false
+    }
+  ],
+  "selectedDiagram": "Todas las tablas",
+  "defaultDiagram": "Todas las tablas"
+}
